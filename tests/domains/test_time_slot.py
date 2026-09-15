@@ -3,7 +3,7 @@ from calendar import MONDAY, SATURDAY, TUESDAY
 import pytest
 
 from data.constraints import END_TIME, START_TIME
-from data.time_slot import TimeSlot
+from domains.time_slot import TimeSlot
 
 
 def test_valid_slot_holds_its_values():

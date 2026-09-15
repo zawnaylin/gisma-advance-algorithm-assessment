@@ -1,7 +1,7 @@
 import pytest
 
-from data.class_information import ClassInformation
-from data.student_group import StudentGroup
+from domains.class_information import ClassInformation
+from domains.student_group import StudentGroup
 
 
 def make_class(class_id="C0001"):
@@ -18,8 +18,12 @@ def test_class_ids_reflects_membership():
     assert group.class_ids() == ["C0001", "C0002"]
 
 
-def test_classes_property_is_a_copy():
+def test_classes_cannot_be_mutated_from_outside():
     original = [make_class("C0001")]
     group = StudentGroup("G-1", original)
-    group.classes.append(make_class("C0002"))
+
+    with pytest.raises(AttributeError):
+        group.classes.append(make_class("C0002"))
+
+    original.append(make_class("C0003"))
     assert group.class_ids() == ["C0001"]

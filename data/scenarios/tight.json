@@ -1,8 +1,28 @@
 {
   "rooms": [
     {
+      "room_id": "R-104",
+      "capacity": 15
+    },
+    {
+      "room_id": "R-109",
+      "capacity": 15
+    },
+    {
       "room_id": "R-100",
       "capacity": 20
+    },
+    {
+      "room_id": "R-107",
+      "capacity": 20
+    },
+    {
+      "room_id": "R-106",
+      "capacity": 25
+    },
+    {
+      "room_id": "R-115",
+      "capacity": 25
     },
     {
       "room_id": "R-101",
@@ -17,188 +37,20 @@
       "capacity": 30
     },
     {
-      "room_id": "R-104",
-      "capacity": 15
-    },
-    {
-      "room_id": "R-105",
-      "capacity": 120
-    },
-    {
-      "room_id": "R-106",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-107",
-      "capacity": 20
-    },
-    {
-      "room_id": "R-108",
-      "capacity": 20
-    },
-    {
-      "room_id": "R-109",
-      "capacity": 15
-    },
-    {
-      "room_id": "R-110",
-      "capacity": 30
-    },
-    {
-      "room_id": "R-111",
-      "capacity": 20
-    },
-    {
-      "room_id": "R-112",
-      "capacity": 15
-    },
-    {
-      "room_id": "R-113",
-      "capacity": 30
-    },
-    {
-      "room_id": "R-114",
-      "capacity": 30
-    },
-    {
-      "room_id": "R-115",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-116",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-117",
-      "capacity": 15
-    },
-    {
-      "room_id": "R-118",
-      "capacity": 30
-    },
-    {
-      "room_id": "R-119",
-      "capacity": 15
-    },
-    {
       "room_id": "R-120",
       "capacity": 80
-    },
-    {
-      "room_id": "R-121",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-122",
-      "capacity": 20
-    },
-    {
-      "room_id": "R-123",
-      "capacity": 120
     },
     {
       "room_id": "R-124",
       "capacity": 100
     },
     {
-      "room_id": "R-125",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-126",
-      "capacity": 15
-    },
-    {
-      "room_id": "R-127",
-      "capacity": 15
-    },
-    {
-      "room_id": "R-128",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-129",
+      "room_id": "R-105",
       "capacity": 120
-    },
-    {
-      "room_id": "R-130",
-      "capacity": 80
-    },
-    {
-      "room_id": "R-131",
-      "capacity": 15
-    },
-    {
-      "room_id": "R-132",
-      "capacity": 15
-    },
-    {
-      "room_id": "R-133",
-      "capacity": 100
-    },
-    {
-      "room_id": "R-134",
-      "capacity": 20
     },
     {
       "room_id": "R-135",
       "capacity": 500
-    },
-    {
-      "room_id": "R-136",
-      "capacity": 100
-    },
-    {
-      "room_id": "R-137",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-138",
-      "capacity": 30
-    },
-    {
-      "room_id": "R-139",
-      "capacity": 20
-    },
-    {
-      "room_id": "R-140",
-      "capacity": 20
-    },
-    {
-      "room_id": "R-141",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-142",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-143",
-      "capacity": 15
-    },
-    {
-      "room_id": "R-144",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-145",
-      "capacity": 30
-    },
-    {
-      "room_id": "R-146",
-      "capacity": 20
-    },
-    {
-      "room_id": "R-147",
-      "capacity": 20
-    },
-    {
-      "room_id": "R-148",
-      "capacity": 30
-    },
-    {
-      "room_id": "R-149",
-      "capacity": 80
     }
   ],
   "classes": [

@@ -1,9 +1,9 @@
 from dataclasses import dataclass
 
-from data.class_information import ClassInformation
-from data.professor import Professor
-from data.room import Room
-from data.time_slot import TimeSlot
+from domains.class_information import ClassInformation
+from domains.professor import Professor
+from domains.room import Room
+from domains.time_slot import TimeSlot
 
 
 @dataclass(frozen=True)

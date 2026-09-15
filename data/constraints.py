@@ -10,3 +10,6 @@ AVAILABLE_DAY = (MONDAY,
                  WEDNESDAY,
                  THURSDAY,
                  FRIDAY)
+
+# Longest a single class may run, bounded by the length of the school day
+MAX_CLASS_DURATION = END_TIME - START_TIME

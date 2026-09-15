@@ -1,8 +1,28 @@
 {
   "rooms": [
     {
+      "room_id": "R-104",
+      "capacity": 15
+    },
+    {
+      "room_id": "R-109",
+      "capacity": 15
+    },
+    {
       "room_id": "R-100",
       "capacity": 20
+    },
+    {
+      "room_id": "R-107",
+      "capacity": 20
+    },
+    {
+      "room_id": "R-106",
+      "capacity": 25
+    },
+    {
+      "room_id": "R-115",
+      "capacity": 25
     },
     {
       "room_id": "R-101",
@@ -13,276 +33,100 @@
       "capacity": 30
     },
     {
-      "room_id": "R-103",
-      "capacity": 30
-    },
-    {
-      "room_id": "R-104",
-      "capacity": 15
-    },
-    {
-      "room_id": "R-105",
-      "capacity": 120
-    },
-    {
-      "room_id": "R-106",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-107",
-      "capacity": 20
-    },
-    {
-      "room_id": "R-108",
-      "capacity": 20
-    },
-    {
-      "room_id": "R-109",
-      "capacity": 15
-    },
-    {
-      "room_id": "R-110",
-      "capacity": 30
-    },
-    {
-      "room_id": "R-111",
-      "capacity": 20
-    },
-    {
-      "room_id": "R-112",
-      "capacity": 15
-    },
-    {
-      "room_id": "R-113",
-      "capacity": 30
-    },
-    {
-      "room_id": "R-114",
-      "capacity": 30
-    },
-    {
-      "room_id": "R-115",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-116",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-117",
-      "capacity": 15
-    },
-    {
-      "room_id": "R-118",
-      "capacity": 30
-    },
-    {
-      "room_id": "R-119",
-      "capacity": 15
-    },
-    {
       "room_id": "R-120",
       "capacity": 80
-    },
-    {
-      "room_id": "R-121",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-122",
-      "capacity": 20
-    },
-    {
-      "room_id": "R-123",
-      "capacity": 120
     },
     {
       "room_id": "R-124",
       "capacity": 100
     },
     {
-      "room_id": "R-125",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-126",
-      "capacity": 15
-    },
-    {
-      "room_id": "R-127",
-      "capacity": 15
-    },
-    {
-      "room_id": "R-128",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-129",
+      "room_id": "R-105",
       "capacity": 120
-    },
-    {
-      "room_id": "R-130",
-      "capacity": 80
-    },
-    {
-      "room_id": "R-131",
-      "capacity": 15
-    },
-    {
-      "room_id": "R-132",
-      "capacity": 15
-    },
-    {
-      "room_id": "R-133",
-      "capacity": 100
-    },
-    {
-      "room_id": "R-134",
-      "capacity": 20
-    },
-    {
-      "room_id": "R-135",
-      "capacity": 500
-    },
-    {
-      "room_id": "R-136",
-      "capacity": 100
-    },
-    {
-      "room_id": "R-137",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-138",
-      "capacity": 30
-    },
-    {
-      "room_id": "R-139",
-      "capacity": 20
-    },
-    {
-      "room_id": "R-140",
-      "capacity": 20
-    },
-    {
-      "room_id": "R-141",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-142",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-143",
-      "capacity": 15
-    },
-    {
-      "room_id": "R-144",
-      "capacity": 25
-    },
-    {
-      "room_id": "R-145",
-      "capacity": 30
-    },
-    {
-      "room_id": "R-146",
-      "capacity": 20
-    },
-    {
-      "room_id": "R-147",
-      "capacity": 20
-    },
-    {
-      "room_id": "R-148",
-      "capacity": 30
-    },
-    {
-      "room_id": "R-149",
-      "capacity": 80
     }
   ],
   "classes": [
     {
       "class_id": "C0001",
       "name": "Intro to CS (Y1)",
-      "num_students": 84,
+      "num_students": 400,
       "professor_id": "P136",
       "duration_hours": 2
     },
     {
       "class_id": "C0002",
       "name": "CS Fundamentals (Y1)",
-      "num_students": 61,
+      "num_students": 400,
       "professor_id": "P072",
       "duration_hours": 2
     },
     {
       "class_id": "C0003",
       "name": "Intro to CS (Y2)",
-      "num_students": 79,
+      "num_students": 400,
       "professor_id": "P127",
       "duration_hours": 2
     },
     {
       "class_id": "C0004",
       "name": "CS Fundamentals (Y2)",
-      "num_students": 67,
+      "num_students": 400,
       "professor_id": "P288",
       "duration_hours": 2
     },
     {
       "class_id": "C0005",
       "name": "Intro to CS (Y3)",
-      "num_students": 91,
+      "num_students": 400,
       "professor_id": "P276",
       "duration_hours": 2
     },
     {
       "class_id": "C0006",
       "name": "CS Fundamentals (Y3)",
-      "num_students": 86,
+      "num_students": 400,
       "professor_id": "P135",
       "duration_hours": 2
     },
     {
       "class_id": "C0007",
       "name": "Intro to MATH (Y1)",
-      "num_students": 118,
+      "num_students": 400,
       "professor_id": "P300",
       "duration_hours": 2
     },
     {
       "class_id": "C0008",
       "name": "MATH Fundamentals (Y1)",
-      "num_students": 65,
+      "num_students": 400,
       "professor_id": "P220",
       "duration_hours": 2
     },
     {
       "class_id": "C0009",
       "name": "Intro to MATH (Y2)",
-      "num_students": 85,
+      "num_students": 400,
       "professor_id": "P299",
       "duration_hours": 2
     },
     {
       "class_id": "C0010",
       "name": "MATH Fundamentals (Y2)",
-      "num_students": 90,
+      "num_students": 400,
       "professor_id": "P205",
       "duration_hours": 2
     },
     {
       "class_id": "C0011",
       "name": "Intro to MATH (Y3)",
-      "num_students": 184,
+      "num_students": 400,
       "professor_id": "P186",
       "duration_hours": 2
     },
     {
       "class_id": "C0012",
       "name": "MATH Fundamentals (Y3)",
-      "num_students": 75,
+      "num_students": 400,
       "professor_id": "P113",
       "duration_hours": 2
     },
@@ -626,210 +470,210 @@
       "class_id": "C0061",
       "name": "CS Seminar (Y1-A)",
       "num_students": 28,
-      "professor_id": "P030",
+      "professor_id": "P999",
       "duration_hours": 1
     },
     {
       "class_id": "C0062",
       "name": "CS Lab (Y1-A)",
       "num_students": 15,
-      "professor_id": "P124",
+      "professor_id": "P999",
       "duration_hours": 3
     },
     {
       "class_id": "C0063",
       "name": "CS Workshop (Y1-A)",
       "num_students": 27,
-      "professor_id": "P291",
+      "professor_id": "P999",
       "duration_hours": 2
     },
     {
       "class_id": "C0064",
       "name": "CS Seminar (Y1-B)",
       "num_students": 28,
-      "professor_id": "P041",
+      "professor_id": "P999",
       "duration_hours": 1
     },
     {
       "class_id": "C0065",
       "name": "CS Lab (Y1-B)",
       "num_students": 17,
-      "professor_id": "P044",
+      "professor_id": "P999",
       "duration_hours": 3
     },
     {
       "class_id": "C0066",
       "name": "CS Workshop (Y1-B)",
       "num_students": 29,
-      "professor_id": "P249",
+      "professor_id": "P999",
       "duration_hours": 2
     },
     {
       "class_id": "C0067",
       "name": "CS Seminar (Y2-A)",
       "num_students": 27,
-      "professor_id": "P036",
+      "professor_id": "P999",
       "duration_hours": 1
     },
     {
       "class_id": "C0068",
       "name": "CS Lab (Y2-A)",
       "num_students": 17,
-      "professor_id": "P273",
+      "professor_id": "P999",
       "duration_hours": 3
     },
     {
       "class_id": "C0069",
       "name": "CS Workshop (Y2-A)",
       "num_students": 17,
-      "professor_id": "P065",
+      "professor_id": "P999",
       "duration_hours": 2
     },
     {
       "class_id": "C0070",
       "name": "CS Seminar (Y2-B)",
       "num_students": 24,
-      "professor_id": "P066",
+      "professor_id": "P999",
       "duration_hours": 1
     },
     {
       "class_id": "C0071",
       "name": "CS Lab (Y2-B)",
       "num_students": 20,
-      "professor_id": "P244",
+      "professor_id": "P999",
       "duration_hours": 3
     },
     {
       "class_id": "C0072",
       "name": "CS Workshop (Y2-B)",
       "num_students": 12,
-      "professor_id": "P282",
+      "professor_id": "P999",
       "duration_hours": 2
     },
     {
       "class_id": "C0073",
       "name": "CS Seminar (Y3-A)",
       "num_students": 25,
-      "professor_id": "P085",
+      "professor_id": "P999",
       "duration_hours": 1
     },
     {
       "class_id": "C0074",
       "name": "CS Lab (Y3-A)",
       "num_students": 30,
-      "professor_id": "P136",
+      "professor_id": "P999",
       "duration_hours": 3
     },
     {
       "class_id": "C0075",
       "name": "CS Workshop (Y3-A)",
       "num_students": 14,
-      "professor_id": "P271",
+      "professor_id": "P999",
       "duration_hours": 2
     },
     {
       "class_id": "C0076",
       "name": "CS Seminar (Y3-B)",
       "num_students": 19,
-      "professor_id": "P217",
+      "professor_id": "P999",
       "duration_hours": 1
     },
     {
       "class_id": "C0077",
       "name": "CS Lab (Y3-B)",
       "num_students": 20,
-      "professor_id": "P109",
+      "professor_id": "P999",
       "duration_hours": 3
     },
     {
       "class_id": "C0078",
       "name": "CS Workshop (Y3-B)",
       "num_students": 20,
-      "professor_id": "P277",
+      "professor_id": "P999",
       "duration_hours": 2
     },
     {
       "class_id": "C0079",
       "name": "MATH Seminar (Y1-A)",
       "num_students": 21,
-      "professor_id": "P103",
+      "professor_id": "P999",
       "duration_hours": 1
     },
     {
       "class_id": "C0080",
       "name": "MATH Lab (Y1-A)",
       "num_students": 15,
-      "professor_id": "P160",
+      "professor_id": "P999",
       "duration_hours": 3
     },
     {
       "class_id": "C0081",
       "name": "MATH Workshop (Y1-A)",
       "num_students": 12,
-      "professor_id": "P205",
+      "professor_id": "P999",
       "duration_hours": 2
     },
     {
       "class_id": "C0082",
       "name": "MATH Seminar (Y1-B)",
       "num_students": 26,
-      "professor_id": "P192",
+      "professor_id": "P999",
       "duration_hours": 1
     },
     {
       "class_id": "C0083",
       "name": "MATH Lab (Y1-B)",
       "num_students": 16,
-      "professor_id": "P225",
+      "professor_id": "P999",
       "duration_hours": 3
     },
     {
       "class_id": "C0084",
       "name": "MATH Workshop (Y1-B)",
       "num_students": 24,
-      "professor_id": "P265",
+      "professor_id": "P999",
       "duration_hours": 2
     },
     {
       "class_id": "C0085",
       "name": "MATH Seminar (Y2-A)",
       "num_students": 22,
-      "professor_id": "P232",
+      "professor_id": "P999",
       "duration_hours": 1
     },
     {
       "class_id": "C0086",
       "name": "MATH Lab (Y2-A)",
       "num_students": 30,
-      "professor_id": "P062",
+      "professor_id": "P999",
       "duration_hours": 3
     },
     {
       "class_id": "C0087",
       "name": "MATH Workshop (Y2-A)",
       "num_students": 23,
-      "professor_id": "P127",
+      "professor_id": "P999",
       "duration_hours": 2
     },
     {
       "class_id": "C0088",
       "name": "MATH Seminar (Y2-B)",
       "num_students": 29,
-      "professor_id": "P116",
+      "professor_id": "P999",
       "duration_hours": 1
     },
     {
       "class_id": "C0089",
       "name": "MATH Lab (Y2-B)",
       "num_students": 19,
-      "professor_id": "P033",
+      "professor_id": "P999",
       "duration_hours": 3
     },
     {
       "class_id": "C0090",
       "name": "MATH Workshop (Y2-B)",
       "num_students": 19,
-      "professor_id": "P174",
+      "professor_id": "P999",
       "duration_hours": 2
     },
     {
