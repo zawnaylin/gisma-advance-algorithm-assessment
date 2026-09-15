@@ -1,1 +1,2248 @@
-{}
+{
+  "rooms": [
+    {
+      "room_id": "R-100",
+      "capacity": 20
+    },
+    {
+      "room_id": "R-101",
+      "capacity": 30
+    },
+    {
+      "room_id": "R-102",
+      "capacity": 30
+    },
+    {
+      "room_id": "R-103",
+      "capacity": 30
+    },
+    {
+      "room_id": "R-104",
+      "capacity": 15
+    },
+    {
+      "room_id": "R-105",
+      "capacity": 120
+    },
+    {
+      "room_id": "R-106",
+      "capacity": 25
+    },
+    {
+      "room_id": "R-107",
+      "capacity": 20
+    },
+    {
+      "room_id": "R-108",
+      "capacity": 20
+    },
+    {
+      "room_id": "R-109",
+      "capacity": 15
+    },
+    {
+      "room_id": "R-110",
+      "capacity": 30
+    },
+    {
+      "room_id": "R-111",
+      "capacity": 20
+    },
+    {
+      "room_id": "R-112",
+      "capacity": 15
+    },
+    {
+      "room_id": "R-113",
+      "capacity": 30
+    },
+    {
+      "room_id": "R-114",
+      "capacity": 30
+    },
+    {
+      "room_id": "R-115",
+      "capacity": 25
+    },
+    {
+      "room_id": "R-116",
+      "capacity": 25
+    },
+    {
+      "room_id": "R-117",
+      "capacity": 15
+    },
+    {
+      "room_id": "R-118",
+      "capacity": 30
+    },
+    {
+      "room_id": "R-119",
+      "capacity": 15
+    },
+    {
+      "room_id": "R-120",
+      "capacity": 80
+    },
+    {
+      "room_id": "R-121",
+      "capacity": 25
+    },
+    {
+      "room_id": "R-122",
+      "capacity": 20
+    },
+    {
+      "room_id": "R-123",
+      "capacity": 120
+    },
+    {
+      "room_id": "R-124",
+      "capacity": 100
+    },
+    {
+      "room_id": "R-125",
+      "capacity": 25
+    },
+    {
+      "room_id": "R-126",
+      "capacity": 15
+    },
+    {
+      "room_id": "R-127",
+      "capacity": 15
+    },
+    {
+      "room_id": "R-128",
+      "capacity": 25
+    },
+    {
+      "room_id": "R-129",
+      "capacity": 120
+    },
+    {
+      "room_id": "R-130",
+      "capacity": 80
+    },
+    {
+      "room_id": "R-131",
+      "capacity": 15
+    },
+    {
+      "room_id": "R-132",
+      "capacity": 15
+    },
+    {
+      "room_id": "R-133",
+      "capacity": 100
+    },
+    {
+      "room_id": "R-134",
+      "capacity": 20
+    },
+    {
+      "room_id": "R-135",
+      "capacity": 500
+    },
+    {
+      "room_id": "R-136",
+      "capacity": 100
+    },
+    {
+      "room_id": "R-137",
+      "capacity": 25
+    },
+    {
+      "room_id": "R-138",
+      "capacity": 30
+    },
+    {
+      "room_id": "R-139",
+      "capacity": 20
+    },
+    {
+      "room_id": "R-140",
+      "capacity": 20
+    },
+    {
+      "room_id": "R-141",
+      "capacity": 25
+    },
+    {
+      "room_id": "R-142",
+      "capacity": 25
+    },
+    {
+      "room_id": "R-143",
+      "capacity": 15
+    },
+    {
+      "room_id": "R-144",
+      "capacity": 25
+    },
+    {
+      "room_id": "R-145",
+      "capacity": 30
+    },
+    {
+      "room_id": "R-146",
+      "capacity": 20
+    },
+    {
+      "room_id": "R-147",
+      "capacity": 20
+    },
+    {
+      "room_id": "R-148",
+      "capacity": 30
+    },
+    {
+      "room_id": "R-149",
+      "capacity": 80
+    }
+  ],
+  "classes": [
+    {
+      "class_id": "C0001",
+      "name": "Intro to CS (Y1)",
+      "num_students": 165,
+      "professor_id": "P136"
+    },
+    {
+      "class_id": "C0002",
+      "name": "CS Fundamentals (Y1)",
+      "num_students": 165,
+      "professor_id": "P072"
+    },
+    {
+      "class_id": "C0003",
+      "name": "Intro to CS (Y2)",
+      "num_students": 151,
+      "professor_id": "P127"
+    },
+    {
+      "class_id": "C0004",
+      "name": "CS Fundamentals (Y2)",
+      "num_students": 151,
+      "professor_id": "P288"
+    },
+    {
+      "class_id": "C0005",
+      "name": "Intro to CS (Y3)",
+      "num_students": 179,
+      "professor_id": "P276"
+    },
+    {
+      "class_id": "C0006",
+      "name": "CS Fundamentals (Y3)",
+      "num_students": 179,
+      "professor_id": "P135"
+    },
+    {
+      "class_id": "C0007",
+      "name": "Intro to MATH (Y1)",
+      "num_students": 210,
+      "professor_id": "P300"
+    },
+    {
+      "class_id": "C0008",
+      "name": "MATH Fundamentals (Y1)",
+      "num_students": 210,
+      "professor_id": "P220"
+    },
+    {
+      "class_id": "C0009",
+      "name": "Intro to MATH (Y2)",
+      "num_students": 186,
+      "professor_id": "P299"
+    },
+    {
+      "class_id": "C0010",
+      "name": "MATH Fundamentals (Y2)",
+      "num_students": 186,
+      "professor_id": "P205"
+    },
+    {
+      "class_id": "C0011",
+      "name": "Intro to MATH (Y3)",
+      "num_students": 137,
+      "professor_id": "P186"
+    },
+    {
+      "class_id": "C0012",
+      "name": "MATH Fundamentals (Y3)",
+      "num_students": 137,
+      "professor_id": "P113"
+    },
+    {
+      "class_id": "C0013",
+      "name": "Intro to BUS (Y1)",
+      "num_students": 136,
+      "professor_id": "P071"
+    },
+    {
+      "class_id": "C0014",
+      "name": "BUS Fundamentals (Y1)",
+      "num_students": 136,
+      "professor_id": "P261"
+    },
+    {
+      "class_id": "C0015",
+      "name": "Intro to BUS (Y2)",
+      "num_students": 144,
+      "professor_id": "P253"
+    },
+    {
+      "class_id": "C0016",
+      "name": "BUS Fundamentals (Y2)",
+      "num_students": 144,
+      "professor_id": "P047"
+    },
+    {
+      "class_id": "C0017",
+      "name": "Intro to BUS (Y3)",
+      "num_students": 141,
+      "professor_id": "P025"
+    },
+    {
+      "class_id": "C0018",
+      "name": "BUS Fundamentals (Y3)",
+      "num_students": 141,
+      "professor_id": "P057"
+    },
+    {
+      "class_id": "C0019",
+      "name": "Intro to ENG (Y1)",
+      "num_students": 165,
+      "professor_id": "P079"
+    },
+    {
+      "class_id": "C0020",
+      "name": "ENG Fundamentals (Y1)",
+      "num_students": 165,
+      "professor_id": "P082"
+    },
+    {
+      "class_id": "C0021",
+      "name": "Intro to ENG (Y2)",
+      "num_students": 198,
+      "professor_id": "P217"
+    },
+    {
+      "class_id": "C0022",
+      "name": "ENG Fundamentals (Y2)",
+      "num_students": 198,
+      "professor_id": "P033"
+    },
+    {
+      "class_id": "C0023",
+      "name": "Intro to ENG (Y3)",
+      "num_students": 156,
+      "professor_id": "P198"
+    },
+    {
+      "class_id": "C0024",
+      "name": "ENG Fundamentals (Y3)",
+      "num_students": 156,
+      "professor_id": "P196"
+    },
+    {
+      "class_id": "C0025",
+      "name": "Intro to PSY (Y1)",
+      "num_students": 170,
+      "professor_id": "P240"
+    },
+    {
+      "class_id": "C0026",
+      "name": "PSY Fundamentals (Y1)",
+      "num_students": 170,
+      "professor_id": "P271"
+    },
+    {
+      "class_id": "C0027",
+      "name": "Intro to PSY (Y2)",
+      "num_students": 151,
+      "professor_id": "P129"
+    },
+    {
+      "class_id": "C0028",
+      "name": "PSY Fundamentals (Y2)",
+      "num_students": 151,
+      "professor_id": "P284"
+    },
+    {
+      "class_id": "C0029",
+      "name": "Intro to PSY (Y3)",
+      "num_students": 170,
+      "professor_id": "P006"
+    },
+    {
+      "class_id": "C0030",
+      "name": "PSY Fundamentals (Y3)",
+      "num_students": 170,
+      "professor_id": "P059"
+    },
+    {
+      "class_id": "C0031",
+      "name": "Intro to BIO (Y1)",
+      "num_students": 210,
+      "professor_id": "P275"
+    },
+    {
+      "class_id": "C0032",
+      "name": "BIO Fundamentals (Y1)",
+      "num_students": 210,
+      "professor_id": "P137"
+    },
+    {
+      "class_id": "C0033",
+      "name": "Intro to BIO (Y2)",
+      "num_students": 170,
+      "professor_id": "P175"
+    },
+    {
+      "class_id": "C0034",
+      "name": "BIO Fundamentals (Y2)",
+      "num_students": 170,
+      "professor_id": "P058"
+    },
+    {
+      "class_id": "C0035",
+      "name": "Intro to BIO (Y3)",
+      "num_students": 146,
+      "professor_id": "P151"
+    },
+    {
+      "class_id": "C0036",
+      "name": "BIO Fundamentals (Y3)",
+      "num_students": 146,
+      "professor_id": "P223"
+    },
+    {
+      "class_id": "C0037",
+      "name": "Intro to PHYS (Y1)",
+      "num_students": 179,
+      "professor_id": "P081"
+    },
+    {
+      "class_id": "C0038",
+      "name": "PHYS Fundamentals (Y1)",
+      "num_students": 179,
+      "professor_id": "P233"
+    },
+    {
+      "class_id": "C0039",
+      "name": "Intro to PHYS (Y2)",
+      "num_students": 184,
+      "professor_id": "P002"
+    },
+    {
+      "class_id": "C0040",
+      "name": "PHYS Fundamentals (Y2)",
+      "num_students": 184,
+      "professor_id": "P135"
+    },
+    {
+      "class_id": "C0041",
+      "name": "Intro to PHYS (Y3)",
+      "num_students": 174,
+      "professor_id": "P257"
+    },
+    {
+      "class_id": "C0042",
+      "name": "PHYS Fundamentals (Y3)",
+      "num_students": 174,
+      "professor_id": "P092"
+    },
+    {
+      "class_id": "C0043",
+      "name": "Intro to ART (Y1)",
+      "num_students": 144,
+      "professor_id": "P260"
+    },
+    {
+      "class_id": "C0044",
+      "name": "ART Fundamentals (Y1)",
+      "num_students": 144,
+      "professor_id": "P055"
+    },
+    {
+      "class_id": "C0045",
+      "name": "Intro to ART (Y2)",
+      "num_students": 136,
+      "professor_id": "P153"
+    },
+    {
+      "class_id": "C0046",
+      "name": "ART Fundamentals (Y2)",
+      "num_students": 136,
+      "professor_id": "P260"
+    },
+    {
+      "class_id": "C0047",
+      "name": "Intro to ART (Y3)",
+      "num_students": 170,
+      "professor_id": "P102"
+    },
+    {
+      "class_id": "C0048",
+      "name": "ART Fundamentals (Y3)",
+      "num_students": 170,
+      "professor_id": "P079"
+    },
+    {
+      "class_id": "C0049",
+      "name": "Intro to ECON (Y1)",
+      "num_students": 142,
+      "professor_id": "P192"
+    },
+    {
+      "class_id": "C0050",
+      "name": "ECON Fundamentals (Y1)",
+      "num_students": 142,
+      "professor_id": "P083"
+    },
+    {
+      "class_id": "C0051",
+      "name": "Intro to ECON (Y2)",
+      "num_students": 174,
+      "professor_id": "P277"
+    },
+    {
+      "class_id": "C0052",
+      "name": "ECON Fundamentals (Y2)",
+      "num_students": 174,
+      "professor_id": "P272"
+    },
+    {
+      "class_id": "C0053",
+      "name": "Intro to ECON (Y3)",
+      "num_students": 156,
+      "professor_id": "P001"
+    },
+    {
+      "class_id": "C0054",
+      "name": "ECON Fundamentals (Y3)",
+      "num_students": 156,
+      "professor_id": "P166"
+    },
+    {
+      "class_id": "C0055",
+      "name": "Intro to LAW (Y1)",
+      "num_students": 200,
+      "professor_id": "P251"
+    },
+    {
+      "class_id": "C0056",
+      "name": "LAW Fundamentals (Y1)",
+      "num_students": 200,
+      "professor_id": "P010"
+    },
+    {
+      "class_id": "C0057",
+      "name": "Intro to LAW (Y2)",
+      "num_students": 193,
+      "professor_id": "P058"
+    },
+    {
+      "class_id": "C0058",
+      "name": "LAW Fundamentals (Y2)",
+      "num_students": 193,
+      "professor_id": "P186"
+    },
+    {
+      "class_id": "C0059",
+      "name": "Intro to LAW (Y3)",
+      "num_students": 163,
+      "professor_id": "P158"
+    },
+    {
+      "class_id": "C0060",
+      "name": "LAW Fundamentals (Y3)",
+      "num_students": 163,
+      "professor_id": "P123"
+    },
+    {
+      "class_id": "C0061",
+      "name": "CS Seminar (Y1-A)",
+      "num_students": 99,
+      "professor_id": "P030"
+    },
+    {
+      "class_id": "C0062",
+      "name": "CS Lab (Y1-A)",
+      "num_students": 99,
+      "professor_id": "P124"
+    },
+    {
+      "class_id": "C0063",
+      "name": "CS Workshop (Y1-A)",
+      "num_students": 99,
+      "professor_id": "P291"
+    },
+    {
+      "class_id": "C0064",
+      "name": "CS Seminar (Y1-B)",
+      "num_students": 66,
+      "professor_id": "P041"
+    },
+    {
+      "class_id": "C0065",
+      "name": "CS Lab (Y1-B)",
+      "num_students": 66,
+      "professor_id": "P044"
+    },
+    {
+      "class_id": "C0066",
+      "name": "CS Workshop (Y1-B)",
+      "num_students": 66,
+      "professor_id": "P249"
+    },
+    {
+      "class_id": "C0067",
+      "name": "CS Seminar (Y2-A)",
+      "num_students": 87,
+      "professor_id": "P036"
+    },
+    {
+      "class_id": "C0068",
+      "name": "CS Lab (Y2-A)",
+      "num_students": 87,
+      "professor_id": "P273"
+    },
+    {
+      "class_id": "C0069",
+      "name": "CS Workshop (Y2-A)",
+      "num_students": 87,
+      "professor_id": "P065"
+    },
+    {
+      "class_id": "C0070",
+      "name": "CS Seminar (Y2-B)",
+      "num_students": 64,
+      "professor_id": "P066"
+    },
+    {
+      "class_id": "C0071",
+      "name": "CS Lab (Y2-B)",
+      "num_students": 64,
+      "professor_id": "P244"
+    },
+    {
+      "class_id": "C0072",
+      "name": "CS Workshop (Y2-B)",
+      "num_students": 64,
+      "professor_id": "P282"
+    },
+    {
+      "class_id": "C0073",
+      "name": "CS Seminar (Y3-A)",
+      "num_students": 99,
+      "professor_id": "P085"
+    },
+    {
+      "class_id": "C0074",
+      "name": "CS Lab (Y3-A)",
+      "num_students": 99,
+      "professor_id": "P136"
+    },
+    {
+      "class_id": "C0075",
+      "name": "CS Workshop (Y3-A)",
+      "num_students": 99,
+      "professor_id": "P271"
+    },
+    {
+      "class_id": "C0076",
+      "name": "CS Seminar (Y3-B)",
+      "num_students": 80,
+      "professor_id": "P217"
+    },
+    {
+      "class_id": "C0077",
+      "name": "CS Lab (Y3-B)",
+      "num_students": 80,
+      "professor_id": "P109"
+    },
+    {
+      "class_id": "C0078",
+      "name": "CS Workshop (Y3-B)",
+      "num_students": 80,
+      "professor_id": "P277"
+    },
+    {
+      "class_id": "C0079",
+      "name": "MATH Seminar (Y1-A)",
+      "num_students": 106,
+      "professor_id": "P103"
+    },
+    {
+      "class_id": "C0080",
+      "name": "MATH Lab (Y1-A)",
+      "num_students": 106,
+      "professor_id": "P160"
+    },
+    {
+      "class_id": "C0081",
+      "name": "MATH Workshop (Y1-A)",
+      "num_students": 106,
+      "professor_id": "P205"
+    },
+    {
+      "class_id": "C0082",
+      "name": "MATH Seminar (Y1-B)",
+      "num_students": 104,
+      "professor_id": "P192"
+    },
+    {
+      "class_id": "C0083",
+      "name": "MATH Lab (Y1-B)",
+      "num_students": 104,
+      "professor_id": "P225"
+    },
+    {
+      "class_id": "C0084",
+      "name": "MATH Workshop (Y1-B)",
+      "num_students": 104,
+      "professor_id": "P265"
+    },
+    {
+      "class_id": "C0085",
+      "name": "MATH Seminar (Y2-A)",
+      "num_students": 85,
+      "professor_id": "P232"
+    },
+    {
+      "class_id": "C0086",
+      "name": "MATH Lab (Y2-A)",
+      "num_students": 85,
+      "professor_id": "P062"
+    },
+    {
+      "class_id": "C0087",
+      "name": "MATH Workshop (Y2-A)",
+      "num_students": 85,
+      "professor_id": "P127"
+    },
+    {
+      "class_id": "C0088",
+      "name": "MATH Seminar (Y2-B)",
+      "num_students": 101,
+      "professor_id": "P116"
+    },
+    {
+      "class_id": "C0089",
+      "name": "MATH Lab (Y2-B)",
+      "num_students": 101,
+      "professor_id": "P033"
+    },
+    {
+      "class_id": "C0090",
+      "name": "MATH Workshop (Y2-B)",
+      "num_students": 101,
+      "professor_id": "P174"
+    },
+    {
+      "class_id": "C0091",
+      "name": "MATH Seminar (Y3-A)",
+      "num_students": 73,
+      "professor_id": "P011"
+    },
+    {
+      "class_id": "C0092",
+      "name": "MATH Lab (Y3-A)",
+      "num_students": 73,
+      "professor_id": "P284"
+    },
+    {
+      "class_id": "C0093",
+      "name": "MATH Workshop (Y3-A)",
+      "num_students": 73,
+      "professor_id": "P118"
+    },
+    {
+      "class_id": "C0094",
+      "name": "MATH Seminar (Y3-B)",
+      "num_students": 64,
+      "professor_id": "P113"
+    },
+    {
+      "class_id": "C0095",
+      "name": "MATH Lab (Y3-B)",
+      "num_students": 64,
+      "professor_id": "P004"
+    },
+    {
+      "class_id": "C0096",
+      "name": "MATH Workshop (Y3-B)",
+      "num_students": 64,
+      "professor_id": "P037"
+    },
+    {
+      "class_id": "C0097",
+      "name": "BUS Seminar (Y1-A)",
+      "num_students": 61,
+      "professor_id": "P031"
+    },
+    {
+      "class_id": "C0098",
+      "name": "BUS Lab (Y1-A)",
+      "num_students": 61,
+      "professor_id": "P118"
+    },
+    {
+      "class_id": "C0099",
+      "name": "BUS Workshop (Y1-A)",
+      "num_students": 61,
+      "professor_id": "P035"
+    },
+    {
+      "class_id": "C0100",
+      "name": "BUS Seminar (Y1-B)",
+      "num_students": 75,
+      "professor_id": "P017"
+    },
+    {
+      "class_id": "C0101",
+      "name": "BUS Lab (Y1-B)",
+      "num_students": 75,
+      "professor_id": "P170"
+    },
+    {
+      "class_id": "C0102",
+      "name": "BUS Workshop (Y1-B)",
+      "num_students": 75,
+      "professor_id": "P037"
+    },
+    {
+      "class_id": "C0103",
+      "name": "BUS Seminar (Y2-A)",
+      "num_students": 80,
+      "professor_id": "P264"
+    },
+    {
+      "class_id": "C0104",
+      "name": "BUS Lab (Y2-A)",
+      "num_students": 80,
+      "professor_id": "P122"
+    },
+    {
+      "class_id": "C0105",
+      "name": "BUS Workshop (Y2-A)",
+      "num_students": 80,
+      "professor_id": "P143"
+    },
+    {
+      "class_id": "C0106",
+      "name": "BUS Seminar (Y2-B)",
+      "num_students": 64,
+      "professor_id": "P249"
+    },
+    {
+      "class_id": "C0107",
+      "name": "BUS Lab (Y2-B)",
+      "num_students": 64,
+      "professor_id": "P110"
+    },
+    {
+      "class_id": "C0108",
+      "name": "BUS Workshop (Y2-B)",
+      "num_students": 64,
+      "professor_id": "P277"
+    },
+    {
+      "class_id": "C0109",
+      "name": "BUS Seminar (Y3-A)",
+      "num_students": 75,
+      "professor_id": "P068"
+    },
+    {
+      "class_id": "C0110",
+      "name": "BUS Lab (Y3-A)",
+      "num_students": 75,
+      "professor_id": "P293"
+    },
+    {
+      "class_id": "C0111",
+      "name": "BUS Workshop (Y3-A)",
+      "num_students": 75,
+      "professor_id": "P296"
+    },
+    {
+      "class_id": "C0112",
+      "name": "BUS Seminar (Y3-B)",
+      "num_students": 66,
+      "professor_id": "P243"
+    },
+    {
+      "class_id": "C0113",
+      "name": "BUS Lab (Y3-B)",
+      "num_students": 66,
+      "professor_id": "P125"
+    },
+    {
+      "class_id": "C0114",
+      "name": "BUS Workshop (Y3-B)",
+      "num_students": 66,
+      "professor_id": "P243"
+    },
+    {
+      "class_id": "C0115",
+      "name": "ENG Seminar (Y1-A)",
+      "num_students": 87,
+      "professor_id": "P209"
+    },
+    {
+      "class_id": "C0116",
+      "name": "ENG Lab (Y1-A)",
+      "num_students": 87,
+      "professor_id": "P098"
+    },
+    {
+      "class_id": "C0117",
+      "name": "ENG Workshop (Y1-A)",
+      "num_students": 87,
+      "professor_id": "P049"
+    },
+    {
+      "class_id": "C0118",
+      "name": "ENG Seminar (Y1-B)",
+      "num_students": 78,
+      "professor_id": "P050"
+    },
+    {
+      "class_id": "C0119",
+      "name": "ENG Lab (Y1-B)",
+      "num_students": 78,
+      "professor_id": "P221"
+    },
+    {
+      "class_id": "C0120",
+      "name": "ENG Workshop (Y1-B)",
+      "num_students": 78,
+      "professor_id": "P182"
+    },
+    {
+      "class_id": "C0121",
+      "name": "ENG Seminar (Y2-A)",
+      "num_students": 92,
+      "professor_id": "P217"
+    },
+    {
+      "class_id": "C0122",
+      "name": "ENG Lab (Y2-A)",
+      "num_students": 92,
+      "professor_id": "P211"
+    },
+    {
+      "class_id": "C0123",
+      "name": "ENG Workshop (Y2-A)",
+      "num_students": 92,
+      "professor_id": "P240"
+    },
+    {
+      "class_id": "C0124",
+      "name": "ENG Seminar (Y2-B)",
+      "num_students": 106,
+      "professor_id": "P028"
+    },
+    {
+      "class_id": "C0125",
+      "name": "ENG Lab (Y2-B)",
+      "num_students": 106,
+      "professor_id": "P051"
+    },
+    {
+      "class_id": "C0126",
+      "name": "ENG Workshop (Y2-B)",
+      "num_students": 106,
+      "professor_id": "P032"
+    },
+    {
+      "class_id": "C0127",
+      "name": "ENG Seminar (Y3-A)",
+      "num_students": 85,
+      "professor_id": "P207"
+    },
+    {
+      "class_id": "C0128",
+      "name": "ENG Lab (Y3-A)",
+      "num_students": 85,
+      "professor_id": "P174"
+    },
+    {
+      "class_id": "C0129",
+      "name": "ENG Workshop (Y3-A)",
+      "num_students": 85,
+      "professor_id": "P056"
+    },
+    {
+      "class_id": "C0130",
+      "name": "ENG Seminar (Y3-B)",
+      "num_students": 71,
+      "professor_id": "P128"
+    },
+    {
+      "class_id": "C0131",
+      "name": "ENG Lab (Y3-B)",
+      "num_students": 71,
+      "professor_id": "P099"
+    },
+    {
+      "class_id": "C0132",
+      "name": "ENG Workshop (Y3-B)",
+      "num_students": 71,
+      "professor_id": "P098"
+    },
+    {
+      "class_id": "C0133",
+      "name": "PSY Seminar (Y1-A)",
+      "num_students": 85,
+      "professor_id": "P275"
+    },
+    {
+      "class_id": "C0134",
+      "name": "PSY Lab (Y1-A)",
+      "num_students": 85,
+      "professor_id": "P230"
+    },
+    {
+      "class_id": "C0135",
+      "name": "PSY Workshop (Y1-A)",
+      "num_students": 85,
+      "professor_id": "P072"
+    },
+    {
+      "class_id": "C0136",
+      "name": "PSY Seminar (Y1-B)",
+      "num_students": 85,
+      "professor_id": "P217"
+    },
+    {
+      "class_id": "C0137",
+      "name": "PSY Lab (Y1-B)",
+      "num_students": 85,
+      "professor_id": "P094"
+    },
+    {
+      "class_id": "C0138",
+      "name": "PSY Workshop (Y1-B)",
+      "num_students": 85,
+      "professor_id": "P143"
+    },
+    {
+      "class_id": "C0139",
+      "name": "PSY Seminar (Y2-A)",
+      "num_students": 73,
+      "professor_id": "P237"
+    },
+    {
+      "class_id": "C0140",
+      "name": "PSY Lab (Y2-A)",
+      "num_students": 73,
+      "professor_id": "P128"
+    },
+    {
+      "class_id": "C0141",
+      "name": "PSY Workshop (Y2-A)",
+      "num_students": 73,
+      "professor_id": "P039"
+    },
+    {
+      "class_id": "C0142",
+      "name": "PSY Seminar (Y2-B)",
+      "num_students": 78,
+      "professor_id": "P227"
+    },
+    {
+      "class_id": "C0143",
+      "name": "PSY Lab (Y2-B)",
+      "num_students": 78,
+      "professor_id": "P282"
+    },
+    {
+      "class_id": "C0144",
+      "name": "PSY Workshop (Y2-B)",
+      "num_students": 78,
+      "professor_id": "P051"
+    },
+    {
+      "class_id": "C0145",
+      "name": "PSY Seminar (Y3-A)",
+      "num_students": 106,
+      "professor_id": "P026"
+    },
+    {
+      "class_id": "C0146",
+      "name": "PSY Lab (Y3-A)",
+      "num_students": 106,
+      "professor_id": "P277"
+    },
+    {
+      "class_id": "C0147",
+      "name": "PSY Workshop (Y3-A)",
+      "num_students": 106,
+      "professor_id": "P008"
+    },
+    {
+      "class_id": "C0148",
+      "name": "PSY Seminar (Y3-B)",
+      "num_students": 64,
+      "professor_id": "P048"
+    },
+    {
+      "class_id": "C0149",
+      "name": "PSY Lab (Y3-B)",
+      "num_students": 64,
+      "professor_id": "P122"
+    },
+    {
+      "class_id": "C0150",
+      "name": "PSY Workshop (Y3-B)",
+      "num_students": 64,
+      "professor_id": "P086"
+    },
+    {
+      "class_id": "C0151",
+      "name": "BIO Seminar (Y1-A)",
+      "num_students": 104,
+      "professor_id": "P209"
+    },
+    {
+      "class_id": "C0152",
+      "name": "BIO Lab (Y1-A)",
+      "num_students": 104,
+      "professor_id": "P249"
+    },
+    {
+      "class_id": "C0153",
+      "name": "BIO Workshop (Y1-A)",
+      "num_students": 104,
+      "professor_id": "P247"
+    },
+    {
+      "class_id": "C0154",
+      "name": "BIO Seminar (Y1-B)",
+      "num_students": 106,
+      "professor_id": "P110"
+    },
+    {
+      "class_id": "C0155",
+      "name": "BIO Lab (Y1-B)",
+      "num_students": 106,
+      "professor_id": "P206"
+    },
+    {
+      "class_id": "C0156",
+      "name": "BIO Workshop (Y1-B)",
+      "num_students": 106,
+      "professor_id": "P031"
+    },
+    {
+      "class_id": "C0157",
+      "name": "BIO Seminar (Y2-A)",
+      "num_students": 71,
+      "professor_id": "P085"
+    },
+    {
+      "class_id": "C0158",
+      "name": "BIO Lab (Y2-A)",
+      "num_students": 71,
+      "professor_id": "P195"
+    },
+    {
+      "class_id": "C0159",
+      "name": "BIO Workshop (Y2-A)",
+      "num_students": 71,
+      "professor_id": "P002"
+    },
+    {
+      "class_id": "C0160",
+      "name": "BIO Seminar (Y2-B)",
+      "num_students": 99,
+      "professor_id": "P200"
+    },
+    {
+      "class_id": "C0161",
+      "name": "BIO Lab (Y2-B)",
+      "num_students": 99,
+      "professor_id": "P136"
+    },
+    {
+      "class_id": "C0162",
+      "name": "BIO Workshop (Y2-B)",
+      "num_students": 99,
+      "professor_id": "P233"
+    },
+    {
+      "class_id": "C0163",
+      "name": "BIO Seminar (Y3-A)",
+      "num_students": 75,
+      "professor_id": "P147"
+    },
+    {
+      "class_id": "C0164",
+      "name": "BIO Lab (Y3-A)",
+      "num_students": 75,
+      "professor_id": "P217"
+    },
+    {
+      "class_id": "C0165",
+      "name": "BIO Workshop (Y3-A)",
+      "num_students": 75,
+      "professor_id": "P285"
+    },
+    {
+      "class_id": "C0166",
+      "name": "BIO Seminar (Y3-B)",
+      "num_students": 71,
+      "professor_id": "P250"
+    },
+    {
+      "class_id": "C0167",
+      "name": "BIO Lab (Y3-B)",
+      "num_students": 71,
+      "professor_id": "P080"
+    },
+    {
+      "class_id": "C0168",
+      "name": "BIO Workshop (Y3-B)",
+      "num_students": 71,
+      "professor_id": "P098"
+    },
+    {
+      "class_id": "C0169",
+      "name": "PHYS Seminar (Y1-A)",
+      "num_students": 92,
+      "professor_id": "P152"
+    },
+    {
+      "class_id": "C0170",
+      "name": "PHYS Lab (Y1-A)",
+      "num_students": 92,
+      "professor_id": "P112"
+    },
+    {
+      "class_id": "C0171",
+      "name": "PHYS Workshop (Y1-A)",
+      "num_students": 92,
+      "professor_id": "P030"
+    },
+    {
+      "class_id": "C0172",
+      "name": "PHYS Seminar (Y1-B)",
+      "num_students": 87,
+      "professor_id": "P297"
+    },
+    {
+      "class_id": "C0173",
+      "name": "PHYS Lab (Y1-B)",
+      "num_students": 87,
+      "professor_id": "P278"
+    },
+    {
+      "class_id": "C0174",
+      "name": "PHYS Workshop (Y1-B)",
+      "num_students": 87,
+      "professor_id": "P032"
+    },
+    {
+      "class_id": "C0175",
+      "name": "PHYS Seminar (Y2-A)",
+      "num_students": 78,
+      "professor_id": "P161"
+    },
+    {
+      "class_id": "C0176",
+      "name": "PHYS Lab (Y2-A)",
+      "num_students": 78,
+      "professor_id": "P030"
+    },
+    {
+      "class_id": "C0177",
+      "name": "PHYS Workshop (Y2-A)",
+      "num_students": 78,
+      "professor_id": "P026"
+    },
+    {
+      "class_id": "C0178",
+      "name": "PHYS Seminar (Y2-B)",
+      "num_students": 106,
+      "professor_id": "P300"
+    },
+    {
+      "class_id": "C0179",
+      "name": "PHYS Lab (Y2-B)",
+      "num_students": 106,
+      "professor_id": "P245"
+    },
+    {
+      "class_id": "C0180",
+      "name": "PHYS Workshop (Y2-B)",
+      "num_students": 106,
+      "professor_id": "P258"
+    },
+    {
+      "class_id": "C0181",
+      "name": "PHYS Seminar (Y3-A)",
+      "num_students": 99,
+      "professor_id": "P272"
+    },
+    {
+      "class_id": "C0182",
+      "name": "PHYS Lab (Y3-A)",
+      "num_students": 99,
+      "professor_id": "P081"
+    },
+    {
+      "class_id": "C0183",
+      "name": "PHYS Workshop (Y3-A)",
+      "num_students": 99,
+      "professor_id": "P030"
+    },
+    {
+      "class_id": "C0184",
+      "name": "PHYS Seminar (Y3-B)",
+      "num_students": 75,
+      "professor_id": "P261"
+    },
+    {
+      "class_id": "C0185",
+      "name": "PHYS Lab (Y3-B)",
+      "num_students": 75,
+      "professor_id": "P042"
+    },
+    {
+      "class_id": "C0186",
+      "name": "PHYS Workshop (Y3-B)",
+      "num_students": 75,
+      "professor_id": "P096"
+    },
+    {
+      "class_id": "C0187",
+      "name": "ART Seminar (Y1-A)",
+      "num_students": 83,
+      "professor_id": "P036"
+    },
+    {
+      "class_id": "C0188",
+      "name": "ART Lab (Y1-A)",
+      "num_students": 83,
+      "professor_id": "P035"
+    },
+    {
+      "class_id": "C0189",
+      "name": "ART Workshop (Y1-A)",
+      "num_students": 83,
+      "professor_id": "P121"
+    },
+    {
+      "class_id": "C0190",
+      "name": "ART Seminar (Y1-B)",
+      "num_students": 61,
+      "professor_id": "P207"
+    },
+    {
+      "class_id": "C0191",
+      "name": "ART Lab (Y1-B)",
+      "num_students": 61,
+      "professor_id": "P062"
+    },
+    {
+      "class_id": "C0192",
+      "name": "ART Workshop (Y1-B)",
+      "num_students": 61,
+      "professor_id": "P292"
+    },
+    {
+      "class_id": "C0193",
+      "name": "ART Seminar (Y2-A)",
+      "num_students": 75,
+      "professor_id": "P127"
+    },
+    {
+      "class_id": "C0194",
+      "name": "ART Lab (Y2-A)",
+      "num_students": 75,
+      "professor_id": "P297"
+    },
+    {
+      "class_id": "C0195",
+      "name": "ART Workshop (Y2-A)",
+      "num_students": 75,
+      "professor_id": "P021"
+    },
+    {
+      "class_id": "C0196",
+      "name": "ART Seminar (Y2-B)",
+      "num_students": 61,
+      "professor_id": "P042"
+    },
+    {
+      "class_id": "C0197",
+      "name": "ART Lab (Y2-B)",
+      "num_students": 61,
+      "professor_id": "P215"
+    },
+    {
+      "class_id": "C0198",
+      "name": "ART Workshop (Y2-B)",
+      "num_students": 61,
+      "professor_id": "P299"
+    },
+    {
+      "class_id": "C0199",
+      "name": "ART Seminar (Y3-A)",
+      "num_students": 83,
+      "professor_id": "P290"
+    },
+    {
+      "class_id": "C0200",
+      "name": "ART Lab (Y3-A)",
+      "num_students": 83,
+      "professor_id": "P268"
+    },
+    {
+      "class_id": "C0201",
+      "name": "ART Workshop (Y3-A)",
+      "num_students": 83,
+      "professor_id": "P162"
+    },
+    {
+      "class_id": "C0202",
+      "name": "ART Seminar (Y3-B)",
+      "num_students": 87,
+      "professor_id": "P134"
+    },
+    {
+      "class_id": "C0203",
+      "name": "ART Lab (Y3-B)",
+      "num_students": 87,
+      "professor_id": "P105"
+    },
+    {
+      "class_id": "C0204",
+      "name": "ART Workshop (Y3-B)",
+      "num_students": 87,
+      "professor_id": "P161"
+    },
+    {
+      "class_id": "C0205",
+      "name": "ECON Seminar (Y1-A)",
+      "num_students": 78,
+      "professor_id": "P123"
+    },
+    {
+      "class_id": "C0206",
+      "name": "ECON Lab (Y1-A)",
+      "num_students": 78,
+      "professor_id": "P136"
+    },
+    {
+      "class_id": "C0207",
+      "name": "ECON Workshop (Y1-A)",
+      "num_students": 78,
+      "professor_id": "P203"
+    },
+    {
+      "class_id": "C0208",
+      "name": "ECON Seminar (Y1-B)",
+      "num_students": 64,
+      "professor_id": "P068"
+    },
+    {
+      "class_id": "C0209",
+      "name": "ECON Lab (Y1-B)",
+      "num_students": 64,
+      "professor_id": "P154"
+    },
+    {
+      "class_id": "C0210",
+      "name": "ECON Workshop (Y1-B)",
+      "num_students": 64,
+      "professor_id": "P235"
+    },
+    {
+      "class_id": "C0211",
+      "name": "ECON Seminar (Y2-A)",
+      "num_students": 73,
+      "professor_id": "P162"
+    },
+    {
+      "class_id": "C0212",
+      "name": "ECON Lab (Y2-A)",
+      "num_students": 73,
+      "professor_id": "P038"
+    },
+    {
+      "class_id": "C0213",
+      "name": "ECON Workshop (Y2-A)",
+      "num_students": 73,
+      "professor_id": "P005"
+    },
+    {
+      "class_id": "C0214",
+      "name": "ECON Seminar (Y2-B)",
+      "num_students": 101,
+      "professor_id": "P235"
+    },
+    {
+      "class_id": "C0215",
+      "name": "ECON Lab (Y2-B)",
+      "num_students": 101,
+      "professor_id": "P289"
+    },
+    {
+      "class_id": "C0216",
+      "name": "ECON Workshop (Y2-B)",
+      "num_students": 101,
+      "professor_id": "P052"
+    },
+    {
+      "class_id": "C0217",
+      "name": "ECON Seminar (Y3-A)",
+      "num_students": 83,
+      "professor_id": "P038"
+    },
+    {
+      "class_id": "C0218",
+      "name": "ECON Lab (Y3-A)",
+      "num_students": 83,
+      "professor_id": "P276"
+    },
+    {
+      "class_id": "C0219",
+      "name": "ECON Workshop (Y3-A)",
+      "num_students": 83,
+      "professor_id": "P110"
+    },
+    {
+      "class_id": "C0220",
+      "name": "ECON Seminar (Y3-B)",
+      "num_students": 73,
+      "professor_id": "P260"
+    },
+    {
+      "class_id": "C0221",
+      "name": "ECON Lab (Y3-B)",
+      "num_students": 73,
+      "professor_id": "P136"
+    },
+    {
+      "class_id": "C0222",
+      "name": "ECON Workshop (Y3-B)",
+      "num_students": 73,
+      "professor_id": "P068"
+    },
+    {
+      "class_id": "C0223",
+      "name": "LAW Seminar (Y1-A)",
+      "num_students": 106,
+      "professor_id": "P179"
+    },
+    {
+      "class_id": "C0224",
+      "name": "LAW Lab (Y1-A)",
+      "num_students": 106,
+      "professor_id": "P036"
+    },
+    {
+      "class_id": "C0225",
+      "name": "LAW Workshop (Y1-A)",
+      "num_students": 106,
+      "professor_id": "P126"
+    },
+    {
+      "class_id": "C0226",
+      "name": "LAW Seminar (Y1-B)",
+      "num_students": 94,
+      "professor_id": "P190"
+    },
+    {
+      "class_id": "C0227",
+      "name": "LAW Lab (Y1-B)",
+      "num_students": 94,
+      "professor_id": "P146"
+    },
+    {
+      "class_id": "C0228",
+      "name": "LAW Workshop (Y1-B)",
+      "num_students": 94,
+      "professor_id": "P081"
+    },
+    {
+      "class_id": "C0229",
+      "name": "LAW Seminar (Y2-A)",
+      "num_students": 87,
+      "professor_id": "P225"
+    },
+    {
+      "class_id": "C0230",
+      "name": "LAW Lab (Y2-A)",
+      "num_students": 87,
+      "professor_id": "P279"
+    },
+    {
+      "class_id": "C0231",
+      "name": "LAW Workshop (Y2-A)",
+      "num_students": 87,
+      "professor_id": "P155"
+    },
+    {
+      "class_id": "C0232",
+      "name": "LAW Seminar (Y2-B)",
+      "num_students": 106,
+      "professor_id": "P271"
+    },
+    {
+      "class_id": "C0233",
+      "name": "LAW Lab (Y2-B)",
+      "num_students": 106,
+      "professor_id": "P005"
+    },
+    {
+      "class_id": "C0234",
+      "name": "LAW Workshop (Y2-B)",
+      "num_students": 106,
+      "professor_id": "P284"
+    },
+    {
+      "class_id": "C0235",
+      "name": "LAW Seminar (Y3-A)",
+      "num_students": 92,
+      "professor_id": "P154"
+    },
+    {
+      "class_id": "C0236",
+      "name": "LAW Lab (Y3-A)",
+      "num_students": 92,
+      "professor_id": "P054"
+    },
+    {
+      "class_id": "C0237",
+      "name": "LAW Workshop (Y3-A)",
+      "num_students": 92,
+      "professor_id": "P069"
+    },
+    {
+      "class_id": "C0238",
+      "name": "LAW Seminar (Y3-B)",
+      "num_students": 71,
+      "professor_id": "P136"
+    },
+    {
+      "class_id": "C0239",
+      "name": "LAW Lab (Y3-B)",
+      "num_students": 71,
+      "professor_id": "P060"
+    },
+    {
+      "class_id": "C0240",
+      "name": "LAW Workshop (Y3-B)",
+      "num_students": 71,
+      "professor_id": "P055"
+    }
+  ],
+  "student_groups": [
+    {
+      "group_id": "G-CS-Y1-A",
+      "classes": [
+        "C0001",
+        "C0002",
+        "C0061",
+        "C0062",
+        "C0063"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y1-B",
+      "classes": [
+        "C0001",
+        "C0002",
+        "C0064",
+        "C0065",
+        "C0066"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y2-A",
+      "classes": [
+        "C0003",
+        "C0004",
+        "C0067",
+        "C0068",
+        "C0069"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y2-B",
+      "classes": [
+        "C0003",
+        "C0004",
+        "C0070",
+        "C0071",
+        "C0072"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y3-A",
+      "classes": [
+        "C0005",
+        "C0006",
+        "C0073",
+        "C0074",
+        "C0075"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y3-B",
+      "classes": [
+        "C0005",
+        "C0006",
+        "C0076",
+        "C0077",
+        "C0078"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y1-A",
+      "classes": [
+        "C0007",
+        "C0008",
+        "C0079",
+        "C0080",
+        "C0081"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y1-B",
+      "classes": [
+        "C0007",
+        "C0008",
+        "C0082",
+        "C0083",
+        "C0084"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y2-A",
+      "classes": [
+        "C0009",
+        "C0010",
+        "C0085",
+        "C0086",
+        "C0087"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y2-B",
+      "classes": [
+        "C0009",
+        "C0010",
+        "C0088",
+        "C0089",
+        "C0090"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y3-A",
+      "classes": [
+        "C0011",
+        "C0012",
+        "C0091",
+        "C0092",
+        "C0093"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y3-B",
+      "classes": [
+        "C0011",
+        "C0012",
+        "C0094",
+        "C0095",
+        "C0096"
+      ]
+    },
+    {
+      "group_id": "G-BUS-Y1-A",
+      "classes": [
+        "C0013",
+        "C0014",
+        "C0097",
+        "C0098",
+        "C0099"
+      ]
+    },
+    {
+      "group_id": "G-BUS-Y1-B",
+      "classes": [
+        "C0013",
+        "C0014",
+        "C0100",
+        "C0101",
+        "C0102"
+      ]
+    },
+    {
+      "group_id": "G-BUS-Y2-A",
+      "classes": [
+        "C0015",
+        "C0016",
+        "C0103",
+        "C0104",
+        "C0105"
+      ]
+    },
+    {
+      "group_id": "G-BUS-Y2-B",
+      "classes": [
+        "C0015",
+        "C0016",
+        "C0106",
+        "C0107",
+        "C0108"
+      ]
+    },
+    {
+      "group_id": "G-BUS-Y3-A",
+      "classes": [
+        "C0017",
+        "C0018",
+        "C0109",
+        "C0110",
+        "C0111"
+      ]
+    },
+    {
+      "group_id": "G-BUS-Y3-B",
+      "classes": [
+        "C0017",
+        "C0018",
+        "C0112",
+        "C0113",
+        "C0114"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y1-A",
+      "classes": [
+        "C0019",
+        "C0020",
+        "C0115",
+        "C0116",
+        "C0117"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y1-B",
+      "classes": [
+        "C0019",
+        "C0020",
+        "C0118",
+        "C0119",
+        "C0120"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y2-A",
+      "classes": [
+        "C0021",
+        "C0022",
+        "C0121",
+        "C0122",
+        "C0123"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y2-B",
+      "classes": [
+        "C0021",
+        "C0022",
+        "C0124",
+        "C0125",
+        "C0126"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y3-A",
+      "classes": [
+        "C0023",
+        "C0024",
+        "C0127",
+        "C0128",
+        "C0129"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y3-B",
+      "classes": [
+        "C0023",
+        "C0024",
+        "C0130",
+        "C0131",
+        "C0132"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y1-A",
+      "classes": [
+        "C0025",
+        "C0026",
+        "C0133",
+        "C0134",
+        "C0135"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y1-B",
+      "classes": [
+        "C0025",
+        "C0026",
+        "C0136",
+        "C0137",
+        "C0138"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y2-A",
+      "classes": [
+        "C0027",
+        "C0028",
+        "C0139",
+        "C0140",
+        "C0141"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y2-B",
+      "classes": [
+        "C0027",
+        "C0028",
+        "C0142",
+        "C0143",
+        "C0144"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y3-A",
+      "classes": [
+        "C0029",
+        "C0030",
+        "C0145",
+        "C0146",
+        "C0147"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y3-B",
+      "classes": [
+        "C0029",
+        "C0030",
+        "C0148",
+        "C0149",
+        "C0150"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y1-A",
+      "classes": [
+        "C0031",
+        "C0032",
+        "C0151",
+        "C0152",
+        "C0153"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y1-B",
+      "classes": [
+        "C0031",
+        "C0032",
+        "C0154",
+        "C0155",
+        "C0156"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y2-A",
+      "classes": [
+        "C0033",
+        "C0034",
+        "C0157",
+        "C0158",
+        "C0159"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y2-B",
+      "classes": [
+        "C0033",
+        "C0034",
+        "C0160",
+        "C0161",
+        "C0162"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y3-A",
+      "classes": [
+        "C0035",
+        "C0036",
+        "C0163",
+        "C0164",
+        "C0165"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y3-B",
+      "classes": [
+        "C0035",
+        "C0036",
+        "C0166",
+        "C0167",
+        "C0168"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y1-A",
+      "classes": [
+        "C0037",
+        "C0038",
+        "C0169",
+        "C0170",
+        "C0171"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y1-B",
+      "classes": [
+        "C0037",
+        "C0038",
+        "C0172",
+        "C0173",
+        "C0174"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y2-A",
+      "classes": [
+        "C0039",
+        "C0040",
+        "C0175",
+        "C0176",
+        "C0177"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y2-B",
+      "classes": [
+        "C0039",
+        "C0040",
+        "C0178",
+        "C0179",
+        "C0180"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y3-A",
+      "classes": [
+        "C0041",
+        "C0042",
+        "C0181",
+        "C0182",
+        "C0183"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y3-B",
+      "classes": [
+        "C0041",
+        "C0042",
+        "C0184",
+        "C0185",
+        "C0186"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y1-A",
+      "classes": [
+        "C0043",
+        "C0044",
+        "C0187",
+        "C0188",
+        "C0189"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y1-B",
+      "classes": [
+        "C0043",
+        "C0044",
+        "C0190",
+        "C0191",
+        "C0192"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y2-A",
+      "classes": [
+        "C0045",
+        "C0046",
+        "C0193",
+        "C0194",
+        "C0195"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y2-B",
+      "classes": [
+        "C0045",
+        "C0046",
+        "C0196",
+        "C0197",
+        "C0198"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y3-A",
+      "classes": [
+        "C0047",
+        "C0048",
+        "C0199",
+        "C0200",
+        "C0201"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y3-B",
+      "classes": [
+        "C0047",
+        "C0048",
+        "C0202",
+        "C0203",
+        "C0204"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y1-A",
+      "classes": [
+        "C0049",
+        "C0050",
+        "C0205",
+        "C0206",
+        "C0207"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y1-B",
+      "classes": [
+        "C0049",
+        "C0050",
+        "C0208",
+        "C0209",
+        "C0210"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y2-A",
+      "classes": [
+        "C0051",
+        "C0052",
+        "C0211",
+        "C0212",
+        "C0213"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y2-B",
+      "classes": [
+        "C0051",
+        "C0052",
+        "C0214",
+        "C0215",
+        "C0216"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y3-A",
+      "classes": [
+        "C0053",
+        "C0054",
+        "C0217",
+        "C0218",
+        "C0219"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y3-B",
+      "classes": [
+        "C0053",
+        "C0054",
+        "C0220",
+        "C0221",
+        "C0222"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y1-A",
+      "classes": [
+        "C0055",
+        "C0056",
+        "C0223",
+        "C0224",
+        "C0225"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y1-B",
+      "classes": [
+        "C0055",
+        "C0056",
+        "C0226",
+        "C0227",
+        "C0228"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y2-A",
+      "classes": [
+        "C0057",
+        "C0058",
+        "C0229",
+        "C0230",
+        "C0231"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y2-B",
+      "classes": [
+        "C0057",
+        "C0058",
+        "C0232",
+        "C0233",
+        "C0234"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y3-A",
+      "classes": [
+        "C0059",
+        "C0060",
+        "C0235",
+        "C0236",
+        "C0237"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y3-B",
+      "classes": [
+        "C0059",
+        "C0060",
+        "C0238",
+        "C0239",
+        "C0240"
+      ]
+    }
+  ]
+}
