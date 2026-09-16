@@ -18,7 +18,7 @@ from algorithms.solver import (
     CapacityDeficit,
     Conflict,
 )
-from data.constraints import AVAILABLE_DAY, END_TIME, START_TIME
+from domains.constraints import AVAILABLE_DAY, END_TIME, START_TIME
 from domains.class_information import ClassInformation
 from domains.professor import Professor
 from domains.room import Room

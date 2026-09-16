@@ -1,6 +1,6 @@
 import pytest
 
-from data.constraints import MAX_CLASS_DURATION
+from domains.constraints import MAX_CLASS_DURATION
 from domains.class_information import ClassInformation
 from domains.room import Room
 

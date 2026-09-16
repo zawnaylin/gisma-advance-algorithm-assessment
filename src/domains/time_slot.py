@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from data.constraints import AVAILABLE_DAY, START_TIME, END_TIME
+from domains.constraints import AVAILABLE_DAY, START_TIME, END_TIME
 
 
 @dataclass(frozen=True, slots=True)

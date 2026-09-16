@@ -2,7 +2,7 @@ from calendar import MONDAY, SATURDAY, TUESDAY
 
 import pytest
 
-from data.constraints import END_TIME, START_TIME
+from domains.constraints import END_TIME, START_TIME
 from domains.time_slot import TimeSlot
 
 

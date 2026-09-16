@@ -1,7 +1,7 @@
 # Scenarios
 
 Each file is one complete instance: rooms, classes and student groups. They are
-derived from the baseline (`../constraints.json`) by changing one pressure at a
+derived from the baseline (`baseline.json`) by changing one pressure at a
 time, so a difference in the result points at a single cause. The teaching load
 is always 480 hours across 240 classes; only the resources and the cohort
 structure change.

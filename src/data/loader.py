@@ -15,9 +15,7 @@ from domains.professor import Professor
 from domains.room import Room
 from domains.student_group import StudentGroup
 
-DATA_DIR = Path(__file__).parent
-BASELINE_FILE = DATA_DIR / "constraints.json"
-SCENARIO_DIR = DATA_DIR / "scenarios"
+SCENARIO_DIR = Path(__file__).parents[2] / "scenarios"
 
 
 @dataclass(frozen=True)
@@ -37,12 +35,11 @@ class Scenario:
 
 
 def available_scenarios() -> List[str]:
-    names = [p.stem for p in SCENARIO_DIR.glob("*.json")] if SCENARIO_DIR.is_dir() else []
-    return sorted(["baseline", *names])
+    return sorted(p.stem for p in SCENARIO_DIR.glob("*.json")) if SCENARIO_DIR.is_dir() else []
 
 
 def load_scenario(name: str = "baseline") -> Scenario:
-    path = BASELINE_FILE if name == "baseline" else SCENARIO_DIR / f"{name}.json"
+    path = SCENARIO_DIR / f"{name}.json"
     if not path.is_file():
         raise FileNotFoundError(f"Unknown scenario {name!r}; expected one of {available_scenarios()}.")
     return load_file(path, name=name)

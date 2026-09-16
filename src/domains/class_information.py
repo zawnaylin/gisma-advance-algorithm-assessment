@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from data.constraints import MAX_CLASS_DURATION
+from domains.constraints import MAX_CLASS_DURATION
 from domains.room import Room
 
 
