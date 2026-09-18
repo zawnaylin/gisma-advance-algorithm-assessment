@@ -1,4 +1,4 @@
-"""Backtracking search with ejection.
+"""Stage 4 - backtracking and the "best effort" strategy.
 
 The greedy solver takes the first window that fits and never looks back. This
 one starts from that schedule and then retreats: for each class greedy could
@@ -15,6 +15,22 @@ the classes that actually failed is what makes the retreat pay.
 
 `Schedule.unassign` is what makes this affordable: a retreat touches one object,
 so an attempt can be unwound exactly rather than by rebuilding the timetable.
+
+Pruning - what the search never looks at:
+
+* rooms too small for the class, and windows outside the teaching day, are
+  never generated (`Instance.candidate_rooms` / `candidate_slots`);
+* a class no room can hold is ruled out before the search starts;
+* a free placement is always tried before anything is ejected;
+* a placement is skipped when more than `max_ejections` classes block it, and
+  ejection chains stop at `depth` levels;
+* the whole search stops after `step_budget` validity checks.
+
+Best effort: a repair is only committed when every class it disturbed found a
+new home, so the number of unplaced classes never rises. Whenever the search
+stops - solved, out of ideas, or out of budget - the schedule it holds is the
+fewest-conflict state it reached, and every class still unplaced is flagged for
+manual intervention with its cause.
 """
 
 from typing import List, Optional, Set
@@ -123,6 +139,7 @@ class BacktrackingSolver:
             capacity_deficits=instance.capacity_deficits(),
             stats={
                 "steps": self._steps,
+                "unplaced_after_first_pass": len(ruled_out) + len(unplaced) + len(recovered),
                 "recovered_by_ejection": len(recovered),
                 "budget_exhausted": self._steps >= self.step_budget,
             },
@@ -188,7 +205,8 @@ class BacktrackingSolver:
                     continue
 
                 mark = transaction.savepoint()
-                ejected = [transaction.remove(class_id) for class_id in blockers]
+                # Sorted so that a run is reproducible; set order changes per process.
+                ejected = [transaction.remove(class_id) for class_id in sorted(blockers)]
                 transaction.place(class_info, room, professor, time_slot)
 
                 if all(

@@ -1,4 +1,4 @@
-"""Greedy timetabling.
+"""Stage 1 - the greedy baseline (the "quick start").
 
 Walks the classes once, most constrained first, and gives each one the first
 (time slot, room) pair that breaks no constraint. It never revisits a decision,

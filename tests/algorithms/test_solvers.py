@@ -1,4 +1,4 @@
-"""The four algorithms are interchangeable, so most of this runs them all."""
+"""The four stages are interchangeable solvers, so most of this runs them all."""
 
 import pytest
 
@@ -6,14 +6,14 @@ from algorithms.backtracker import BacktrackingSolver
 from algorithms.graph_engine import GraphColouringSolver
 from algorithms.greedy_solver import GreedySolver
 from algorithms.instance import Instance
-from algorithms.optimizer import Optimizer
+from algorithms.room_allocator import RoomAllocator
 from algorithms.solver import SolveResult, Solver
 from domains.class_information import ClassInformation
 from domains.professor import Professor
 from domains.room import Room
 from domains.student_group import StudentGroup
 
-SOLVERS = (GreedySolver, BacktrackingSolver, GraphColouringSolver, Optimizer)
+SOLVERS = (GreedySolver, GraphColouringSolver, RoomAllocator, BacktrackingSolver)
 
 
 def make_class(class_id="C0001", students=18, professor_id="P001", duration=1):
@@ -108,35 +108,27 @@ def test_graph_never_links_a_class_to_itself():
     assert graph["C0001"] == set()
 
 
-def test_optimizer_prefers_the_snugger_room():
-    instance = build([make_class(students=18)], [Room("R-huge", 400), Room("R-snug", 20)])
-    result = Optimizer(instance).solve()
+def test_backtracking_flags_what_it_cannot_place_for_manual_intervention():
+    classes = [make_class("C0001", students=900), make_class("C0002", professor_id="P002")]
+    result = BacktrackingSolver(build(classes, [Room("R-1", 20)])).solve()
 
-    assert result.assignments[0].room.id == "R-snug"
-    assert result.stats["cost_after"] <= result.stats["cost_before"]
-
-
-def test_optimizer_never_loses_a_placement():
-    classes = [make_class(f"C{i:04d}", professor_id=f"P{i:03d}", duration=2) for i in range(12)]
-    instance = build(classes, [Room("R-1", 20), Room("R-2", 25)])
-
-    seeded = GreedySolver(instance).solve()
-    improved = Optimizer(instance, seed=GreedySolver(instance)).solve()
-
-    assert len(improved.assignments) >= len(seeded.assignments)
-    assert improved.stats["cost_after"] <= improved.stats["cost_before"]
+    flagged = result.flagged_for_manual_intervention
+    assert [c.class_info.id for c in flagged] == ["C0001"]
+    report = result.manual_intervention_report()
+    assert "FLAGGED FOR MANUAL INTERVENTION: 1 class(es)" in report
+    assert "C0001" in report and "split the class" in report
 
 
-def test_optimizer_reports_which_solver_seeded_it():
-    result = Optimizer(simple_instance(), seed=GreedySolver(simple_instance())).solve()
+def test_backtracking_never_ends_with_more_conflicts_than_its_first_pass():
+    classes = [make_class("C-long", professor_id="P-long", duration=3)]
+    classes += [make_class(f"C{i:04d}", professor_id=f"P{i:03d}", duration=1) for i in range(45)]
+    result = BacktrackingSolver(build(classes, [Room("R-1", 20)])).solve()
 
-    assert result.stats["seeded_by"] == "greedy"
+    assert len(result.conflicts) <= result.stats["unplaced_after_first_pass"]
 
 
-def test_optimizer_can_improve_an_existing_result():
-    instance = build([make_class(students=18)], [Room("R-huge", 400), Room("R-snug", 20)])
-    optimizer = Optimizer(instance)
+def test_nothing_flagged_when_everything_is_placed():
+    result = BacktrackingSolver(simple_instance()).solve()
 
-    improved = optimizer.improve(GreedySolver(instance).solve())
-
-    assert improved.assignments[0].room.id == "R-snug"
+    assert result.flagged_for_manual_intervention == []
+    assert "nothing flagged" in result.manual_intervention_report()
