@@ -18,7 +18,7 @@ from algorithms.solver import (
     CapacityDeficit,
     Conflict,
 )
-from domains.constraints import AVAILABLE_DAY, END_TIME, START_TIME
+from domains.constraints import AVAILABLE_DAY, END_TIME, OVERSIZE_FACTOR, START_TIME
 from domains.class_information import ClassInformation
 from domains.professor import Professor
 from domains.room import Room
@@ -27,6 +27,11 @@ from domains.student_group import StudentGroup
 from domains.time_slot import TimeSlot
 
 TEACHABLE_HOURS_PER_WEEK = len(AVAILABLE_DAY) * (END_TIME - START_TIME)
+
+
+def is_oversized(class_info: ClassInformation, room: Room) -> bool:
+    """Goal 4: more than OVERSIZE_FACTOR seats per student is wasted heating."""
+    return room.capacity > OVERSIZE_FACTOR * max(class_info.number_of_students, 1)
 
 
 class Instance:
@@ -53,6 +58,7 @@ class Instance:
         self._rooms_by_size: Dict[int, List[Room]] = {}
         self._peers_by_class_id: Dict[str, frozenset] = {}
         self._slots_by_duration: Dict[int, List[TimeSlot]] = {}
+        self._placements: Dict[Tuple[int, int, bool], List[Tuple[TimeSlot, Room]]] = {}
 
         self._professor_hours: Counter = Counter()
         for class_info in self.classes:
@@ -109,9 +115,32 @@ class Instance:
             self._slots_by_duration[duration] = slots
         return self._slots_by_duration[duration]
 
-    def placements(self, class_info: ClassInformation) -> List[Tuple[TimeSlot, Room]]:
-        return [(slot, room) for slot in self.candidate_slots(class_info)
-                for room in self.candidate_rooms(class_info)]
+    def placements(
+        self, class_info: ClassInformation, avoid_oversized: bool = False
+    ) -> List[Tuple[TimeSlot, Room]]:
+        """Every (time slot, room) a class may take, in the order to try them.
+
+        By default: chronological, then smallest room first - the first
+        available slot and room, as the greedy baseline takes them.
+
+        With `avoid_oversized`, goal 4 orders the search rather than filtering
+        it, since it is soft: every right-sized room at every time comes first,
+        and an oversized room only after none of those is free. A small seminar
+        therefore moves to a later day before it moves into the auditorium - but
+        still gets the auditorium if that is the only way to hold it at all.
+        """
+        key = (class_info.number_of_students, class_info.duration_hours, avoid_oversized)
+        if key not in self._placements:
+            slots = self.candidate_slots(class_info)
+            rooms = self.candidate_rooms(class_info)
+            if avoid_oversized:
+                right_sized = [r for r in rooms if not is_oversized(class_info, r)]
+                oversized = [r for r in rooms if is_oversized(class_info, r)]
+                tiers = [right_sized, oversized]
+            else:
+                tiers = [rooms]
+            self._placements[key] = [(s, r) for tier in tiers for s in slots for r in tier]
+        return self._placements[key]
 
     # --- ordering ---------------------------------------------------------
 

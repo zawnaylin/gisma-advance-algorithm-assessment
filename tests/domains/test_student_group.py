@@ -27,3 +27,12 @@ def test_classes_cannot_be_mutated_from_outside():
 
     original.append(make_class("C0003"))
     assert group.class_ids() == ["C0001"]
+
+
+def test_size_defaults_to_unknown():
+    assert StudentGroup("G-1", [make_class()]).size == 0
+
+
+def test_rejects_negative_size():
+    with pytest.raises(ValueError):
+        StudentGroup("G-1", [make_class()], size=-1)

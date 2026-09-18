@@ -4,6 +4,8 @@ Stage 1  greedy baseline
 Stage 2  graph colouring (Welsh-Powell) and the safe/unsafe slot map
 Stage 3  dynamic-programming room allocation on the Stage 2 time slots
 Stage 4  backtracking, best effort, and the manual-intervention list
+
+Every final schedule is also audited against the four goals in domains/constraints.py.
 """
 
 import sys
@@ -14,6 +16,7 @@ from pathlib import Path
 # installed package.
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
+from algorithms.audit import audit
 from algorithms.backtracker import BacktrackingSolver
 from algorithms.graph_engine import GraphColouringSolver
 from algorithms.greedy_solver import GreedySolver
@@ -32,11 +35,13 @@ def timed(run):
 
 def run_scenario(instance):
     colouring = GraphColouringSolver(instance)
+    coloured = timed(colouring.solve)
     runs = {
         "greedy": timed(GreedySolver(instance).solve),
-        "graph-welsh-powell": timed(colouring.solve),
-        "dp-rooms": timed(lambda: RoomAllocator(instance).allocate(runs["graph-welsh-powell"][0])),
-        "backtracking": timed(BacktrackingSolver(instance).solve)
+        "graph-welsh-powell": coloured,
+        # Stage 3 fixes the Stage 2 time slots and only redoes the rooms.
+        "dp-rooms": timed(lambda: RoomAllocator(instance).allocate(coloured[0])),
+        "backtracking": timed(BacktrackingSolver(instance).solve),
     }
     return runs, colouring.slot_map
 
@@ -48,9 +53,22 @@ def heading(text):
 def main() -> None:
     results = {}
     slot_maps = {}
+    instances = {}
+    heading("Scenarios")
     for name in available_scenarios():
-        instance = Instance.from_scenario(load_scenario(name))
+        scenario = load_scenario(name)
+        instance = instances[name] = Instance.from_scenario(scenario)
         results[name], slot_maps[name] = run_scenario(instance)
+        students = f"{scenario.students:,} students" if scenario.students else "students n/a"
+        print(f"{name:<12}{students:>16}, {len(scenario.professors):>3} professors, "
+              f"{len(scenario.rooms):>2} rooms, {len(scenario.classes):>3} classes, "
+              f"{len(scenario.groups):>3} student groups")
+
+    heading("Constraint audit - every final schedule checked against goals 1-4")
+    for name, runs in results.items():
+        print(f"\n{name}")
+        for column in COLUMNS:
+            print(f"  {column:<20} {audit(runs[column][0].assignments, instances[name]).summary()}")
 
     heading("Coverage - share of the classes placed (time in seconds)")
     print(f"{'scenario':<12}" + "".join(f"{c:>20}" for c in COLUMNS))

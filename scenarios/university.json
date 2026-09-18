@@ -1,0 +1,4999 @@
+{
+  "rooms": [
+    {
+      "room_id": "AUD-01",
+      "capacity": 500
+    },
+    {
+      "room_id": "H200-01",
+      "capacity": 200
+    },
+    {
+      "room_id": "H200-02",
+      "capacity": 200
+    },
+    {
+      "room_id": "H200-03",
+      "capacity": 200
+    },
+    {
+      "room_id": "H200-04",
+      "capacity": 200
+    },
+    {
+      "room_id": "H200-05",
+      "capacity": 200
+    },
+    {
+      "room_id": "H200-06",
+      "capacity": 200
+    },
+    {
+      "room_id": "H100-01",
+      "capacity": 100
+    },
+    {
+      "room_id": "H100-02",
+      "capacity": 100
+    },
+    {
+      "room_id": "H100-03",
+      "capacity": 100
+    },
+    {
+      "room_id": "H100-04",
+      "capacity": 100
+    },
+    {
+      "room_id": "R40-01",
+      "capacity": 40
+    },
+    {
+      "room_id": "R40-02",
+      "capacity": 40
+    },
+    {
+      "room_id": "R40-03",
+      "capacity": 40
+    },
+    {
+      "room_id": "R40-04",
+      "capacity": 40
+    },
+    {
+      "room_id": "R40-05",
+      "capacity": 40
+    },
+    {
+      "room_id": "R40-06",
+      "capacity": 40
+    },
+    {
+      "room_id": "R40-07",
+      "capacity": 40
+    },
+    {
+      "room_id": "R40-08",
+      "capacity": 40
+    },
+    {
+      "room_id": "R40-09",
+      "capacity": 40
+    },
+    {
+      "room_id": "R40-10",
+      "capacity": 40
+    },
+    {
+      "room_id": "R40-11",
+      "capacity": 40
+    },
+    {
+      "room_id": "R40-12",
+      "capacity": 40
+    },
+    {
+      "room_id": "R40-13",
+      "capacity": 40
+    },
+    {
+      "room_id": "R40-14",
+      "capacity": 40
+    },
+    {
+      "room_id": "R40-15",
+      "capacity": 40
+    },
+    {
+      "room_id": "R40-16",
+      "capacity": 40
+    },
+    {
+      "room_id": "R40-17",
+      "capacity": 40
+    },
+    {
+      "room_id": "R40-18",
+      "capacity": 40
+    },
+    {
+      "room_id": "R40-19",
+      "capacity": 40
+    },
+    {
+      "room_id": "R40-20",
+      "capacity": 40
+    },
+    {
+      "room_id": "R25-01",
+      "capacity": 25
+    },
+    {
+      "room_id": "R25-02",
+      "capacity": 25
+    },
+    {
+      "room_id": "R25-03",
+      "capacity": 25
+    },
+    {
+      "room_id": "R25-04",
+      "capacity": 25
+    },
+    {
+      "room_id": "R25-05",
+      "capacity": 25
+    },
+    {
+      "room_id": "R25-06",
+      "capacity": 25
+    },
+    {
+      "room_id": "R25-07",
+      "capacity": 25
+    },
+    {
+      "room_id": "R25-08",
+      "capacity": 25
+    },
+    {
+      "room_id": "R25-09",
+      "capacity": 25
+    },
+    {
+      "room_id": "R25-10",
+      "capacity": 25
+    },
+    {
+      "room_id": "R15-01",
+      "capacity": 15
+    },
+    {
+      "room_id": "R15-02",
+      "capacity": 15
+    },
+    {
+      "room_id": "R15-03",
+      "capacity": 15
+    },
+    {
+      "room_id": "R15-04",
+      "capacity": 15
+    },
+    {
+      "room_id": "R15-05",
+      "capacity": 15
+    },
+    {
+      "room_id": "R15-06",
+      "capacity": 15
+    },
+    {
+      "room_id": "R15-07",
+      "capacity": 15
+    },
+    {
+      "room_id": "R15-08",
+      "capacity": 15
+    },
+    {
+      "room_id": "R15-09",
+      "capacity": 15
+    }
+  ],
+  "classes": [
+    {
+      "class_id": "C0001",
+      "name": "Intro to Programming (CS Y1)",
+      "num_students": 164,
+      "professor_id": "P001",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0002",
+      "name": "Computer Systems (CS Y1)",
+      "num_students": 164,
+      "professor_id": "P002",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0003",
+      "name": "Discrete Structures (CS Y1)",
+      "num_students": 164,
+      "professor_id": "P003",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0004",
+      "name": "CS Y1 Seminar (A)",
+      "num_students": 33,
+      "professor_id": "P004",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0005",
+      "name": "CS Y1 Lab (A)",
+      "num_students": 33,
+      "professor_id": "P005",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0006",
+      "name": "CS Y1 Seminar (B)",
+      "num_students": 33,
+      "professor_id": "P006",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0007",
+      "name": "CS Y1 Lab (B)",
+      "num_students": 33,
+      "professor_id": "P007",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0008",
+      "name": "CS Y1 Seminar (C)",
+      "num_students": 33,
+      "professor_id": "P008",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0009",
+      "name": "CS Y1 Lab (C)",
+      "num_students": 33,
+      "professor_id": "P009",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0010",
+      "name": "CS Y1 Seminar (D)",
+      "num_students": 33,
+      "professor_id": "P010",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0011",
+      "name": "CS Y1 Lab (D)",
+      "num_students": 33,
+      "professor_id": "P011",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0012",
+      "name": "CS Y1 Seminar (E)",
+      "num_students": 32,
+      "professor_id": "P012",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0013",
+      "name": "CS Y1 Lab (E)",
+      "num_students": 32,
+      "professor_id": "P013",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0014",
+      "name": "Computer Science Methods II (CS Y2)",
+      "num_students": 149,
+      "professor_id": "P014",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0015",
+      "name": "Topics in Computer Science (CS Y2)",
+      "num_students": 149,
+      "professor_id": "P015",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0016",
+      "name": "Computer Science Theory (CS Y2)",
+      "num_students": 149,
+      "professor_id": "P016",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0017",
+      "name": "CS Y2 Seminar (A)",
+      "num_students": 30,
+      "professor_id": "P017",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0018",
+      "name": "CS Y2 Lab (A)",
+      "num_students": 30,
+      "professor_id": "P018",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0019",
+      "name": "CS Y2 Seminar (B)",
+      "num_students": 30,
+      "professor_id": "P019",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0020",
+      "name": "CS Y2 Lab (B)",
+      "num_students": 30,
+      "professor_id": "P020",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0021",
+      "name": "CS Y2 Seminar (C)",
+      "num_students": 30,
+      "professor_id": "P021",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0022",
+      "name": "CS Y2 Lab (C)",
+      "num_students": 30,
+      "professor_id": "P022",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0023",
+      "name": "CS Y2 Seminar (D)",
+      "num_students": 30,
+      "professor_id": "P023",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0024",
+      "name": "CS Y2 Lab (D)",
+      "num_students": 30,
+      "professor_id": "P024",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0025",
+      "name": "CS Y2 Seminar (E)",
+      "num_students": 29,
+      "professor_id": "P025",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0026",
+      "name": "CS Y2 Lab (E)",
+      "num_students": 29,
+      "professor_id": "P026",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0027",
+      "name": "Advanced Computer Science (CS Y3)",
+      "num_students": 183,
+      "professor_id": "P027",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0028",
+      "name": "Contemporary Computer Science (CS Y3)",
+      "num_students": 183,
+      "professor_id": "P028",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0029",
+      "name": "Computer Science Research Methods (CS Y3)",
+      "num_students": 183,
+      "professor_id": "P029",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0030",
+      "name": "Quantum Computing Seminar (CS Y3)",
+      "num_students": 12,
+      "professor_id": "P030",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0031",
+      "name": "CS Y3 Seminar (A)",
+      "num_students": 29,
+      "professor_id": "P001",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0032",
+      "name": "CS Y3 Lab (A)",
+      "num_students": 29,
+      "professor_id": "P002",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0033",
+      "name": "CS Y3 Seminar (B)",
+      "num_students": 29,
+      "professor_id": "P003",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0034",
+      "name": "CS Y3 Lab (B)",
+      "num_students": 29,
+      "professor_id": "P004",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0035",
+      "name": "CS Y3 Seminar (C)",
+      "num_students": 29,
+      "professor_id": "P005",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0036",
+      "name": "CS Y3 Lab (C)",
+      "num_students": 29,
+      "professor_id": "P006",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0037",
+      "name": "CS Y3 Seminar (D)",
+      "num_students": 28,
+      "professor_id": "P007",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0038",
+      "name": "CS Y3 Lab (D)",
+      "num_students": 28,
+      "professor_id": "P008",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0039",
+      "name": "CS Y3 Seminar (E)",
+      "num_students": 28,
+      "professor_id": "P009",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0040",
+      "name": "CS Y3 Lab (E)",
+      "num_students": 28,
+      "professor_id": "P010",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0041",
+      "name": "CS Y3 Seminar (F)",
+      "num_students": 28,
+      "professor_id": "P011",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0042",
+      "name": "CS Y3 Lab (F)",
+      "num_students": 28,
+      "professor_id": "P012",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0043",
+      "name": "Foundations of Mathematics (MATH Y1)",
+      "num_students": 187,
+      "professor_id": "P031",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0044",
+      "name": "Mathematics Methods I (MATH Y1)",
+      "num_students": 187,
+      "professor_id": "P032",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0045",
+      "name": "Introduction to Mathematics Practice (MATH Y1)",
+      "num_students": 187,
+      "professor_id": "P033",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0046",
+      "name": "MATH Y1 Seminar (A)",
+      "num_students": 32,
+      "professor_id": "P034",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0047",
+      "name": "MATH Y1 Workshop (A)",
+      "num_students": 32,
+      "professor_id": "P035",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0048",
+      "name": "MATH Y1 Seminar (B)",
+      "num_students": 31,
+      "professor_id": "P036",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0049",
+      "name": "MATH Y1 Workshop (B)",
+      "num_students": 31,
+      "professor_id": "P037",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0050",
+      "name": "MATH Y1 Seminar (C)",
+      "num_students": 31,
+      "professor_id": "P038",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0051",
+      "name": "MATH Y1 Workshop (C)",
+      "num_students": 31,
+      "professor_id": "P039",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0052",
+      "name": "MATH Y1 Seminar (D)",
+      "num_students": 31,
+      "professor_id": "P040",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0053",
+      "name": "MATH Y1 Workshop (D)",
+      "num_students": 31,
+      "professor_id": "P041",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0054",
+      "name": "MATH Y1 Seminar (E)",
+      "num_students": 31,
+      "professor_id": "P042",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0055",
+      "name": "MATH Y1 Workshop (E)",
+      "num_students": 31,
+      "professor_id": "P043",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0056",
+      "name": "MATH Y1 Seminar (F)",
+      "num_students": 31,
+      "professor_id": "P044",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0057",
+      "name": "MATH Y1 Workshop (F)",
+      "num_students": 31,
+      "professor_id": "P045",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0058",
+      "name": "Mathematics Methods II (MATH Y2)",
+      "num_students": 148,
+      "professor_id": "P046",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0059",
+      "name": "Topics in Mathematics (MATH Y2)",
+      "num_students": 148,
+      "professor_id": "P047",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0060",
+      "name": "Mathematics Theory (MATH Y2)",
+      "num_students": 148,
+      "professor_id": "P048",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0061",
+      "name": "MATH Y2 Seminar (A)",
+      "num_students": 30,
+      "professor_id": "P049",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0062",
+      "name": "MATH Y2 Workshop (A)",
+      "num_students": 30,
+      "professor_id": "P050",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0063",
+      "name": "MATH Y2 Seminar (B)",
+      "num_students": 30,
+      "professor_id": "P051",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0064",
+      "name": "MATH Y2 Workshop (B)",
+      "num_students": 30,
+      "professor_id": "P052",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0065",
+      "name": "MATH Y2 Seminar (C)",
+      "num_students": 30,
+      "professor_id": "P053",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0066",
+      "name": "MATH Y2 Workshop (C)",
+      "num_students": 30,
+      "professor_id": "P054",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0067",
+      "name": "MATH Y2 Seminar (D)",
+      "num_students": 29,
+      "professor_id": "P055",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0068",
+      "name": "MATH Y2 Workshop (D)",
+      "num_students": 29,
+      "professor_id": "P056",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0069",
+      "name": "MATH Y2 Seminar (E)",
+      "num_students": 29,
+      "professor_id": "P057",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0070",
+      "name": "MATH Y2 Workshop (E)",
+      "num_students": 29,
+      "professor_id": "P058",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0071",
+      "name": "Advanced Mathematics (MATH Y3)",
+      "num_students": 164,
+      "professor_id": "P059",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0072",
+      "name": "Contemporary Mathematics (MATH Y3)",
+      "num_students": 164,
+      "professor_id": "P060",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0073",
+      "name": "Mathematics Research Methods (MATH Y3)",
+      "num_students": 164,
+      "professor_id": "P031",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0074",
+      "name": "MATH Y3 Seminar (A)",
+      "num_students": 33,
+      "professor_id": "P032",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0075",
+      "name": "MATH Y3 Workshop (A)",
+      "num_students": 33,
+      "professor_id": "P033",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0076",
+      "name": "MATH Y3 Seminar (B)",
+      "num_students": 33,
+      "professor_id": "P034",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0077",
+      "name": "MATH Y3 Workshop (B)",
+      "num_students": 33,
+      "professor_id": "P035",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0078",
+      "name": "MATH Y3 Seminar (C)",
+      "num_students": 33,
+      "professor_id": "P036",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0079",
+      "name": "MATH Y3 Workshop (C)",
+      "num_students": 33,
+      "professor_id": "P037",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0080",
+      "name": "MATH Y3 Seminar (D)",
+      "num_students": 33,
+      "professor_id": "P038",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0081",
+      "name": "MATH Y3 Workshop (D)",
+      "num_students": 33,
+      "professor_id": "P039",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0082",
+      "name": "MATH Y3 Seminar (E)",
+      "num_students": 32,
+      "professor_id": "P040",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0083",
+      "name": "MATH Y3 Workshop (E)",
+      "num_students": 32,
+      "professor_id": "P041",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0084",
+      "name": "Foundations of Physics (PHYS Y1)",
+      "num_students": 179,
+      "professor_id": "P061",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0085",
+      "name": "Physics Methods I (PHYS Y1)",
+      "num_students": 179,
+      "professor_id": "P062",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0086",
+      "name": "Introduction to Physics Practice (PHYS Y1)",
+      "num_students": 179,
+      "professor_id": "P063",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0087",
+      "name": "PHYS Y1 Seminar (A)",
+      "num_students": 30,
+      "professor_id": "P064",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0088",
+      "name": "PHYS Y1 Lab (A)",
+      "num_students": 30,
+      "professor_id": "P065",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0089",
+      "name": "PHYS Y1 Seminar (B)",
+      "num_students": 30,
+      "professor_id": "P066",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0090",
+      "name": "PHYS Y1 Lab (B)",
+      "num_students": 30,
+      "professor_id": "P067",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0091",
+      "name": "PHYS Y1 Seminar (C)",
+      "num_students": 30,
+      "professor_id": "P068",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0092",
+      "name": "PHYS Y1 Lab (C)",
+      "num_students": 30,
+      "professor_id": "P069",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0093",
+      "name": "PHYS Y1 Seminar (D)",
+      "num_students": 30,
+      "professor_id": "P070",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0094",
+      "name": "PHYS Y1 Lab (D)",
+      "num_students": 30,
+      "professor_id": "P071",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0095",
+      "name": "PHYS Y1 Seminar (E)",
+      "num_students": 30,
+      "professor_id": "P072",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0096",
+      "name": "PHYS Y1 Lab (E)",
+      "num_students": 30,
+      "professor_id": "P073",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0097",
+      "name": "PHYS Y1 Seminar (F)",
+      "num_students": 29,
+      "professor_id": "P074",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0098",
+      "name": "PHYS Y1 Lab (F)",
+      "num_students": 29,
+      "professor_id": "P075",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0099",
+      "name": "Physics Methods II (PHYS Y2)",
+      "num_students": 183,
+      "professor_id": "P076",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0100",
+      "name": "Topics in Physics (PHYS Y2)",
+      "num_students": 183,
+      "professor_id": "P077",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0101",
+      "name": "Physics Theory (PHYS Y2)",
+      "num_students": 183,
+      "professor_id": "P078",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0102",
+      "name": "PHYS Y2 Seminar (A)",
+      "num_students": 31,
+      "professor_id": "P079",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0103",
+      "name": "PHYS Y2 Lab (A)",
+      "num_students": 31,
+      "professor_id": "P080",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0104",
+      "name": "PHYS Y2 Seminar (B)",
+      "num_students": 31,
+      "professor_id": "P081",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0105",
+      "name": "PHYS Y2 Lab (B)",
+      "num_students": 31,
+      "professor_id": "P082",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0106",
+      "name": "PHYS Y2 Seminar (C)",
+      "num_students": 31,
+      "professor_id": "P083",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0107",
+      "name": "PHYS Y2 Lab (C)",
+      "num_students": 31,
+      "professor_id": "P084",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0108",
+      "name": "PHYS Y2 Seminar (D)",
+      "num_students": 30,
+      "professor_id": "P085",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0109",
+      "name": "PHYS Y2 Lab (D)",
+      "num_students": 30,
+      "professor_id": "P086",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0110",
+      "name": "PHYS Y2 Seminar (E)",
+      "num_students": 30,
+      "professor_id": "P087",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0111",
+      "name": "PHYS Y2 Lab (E)",
+      "num_students": 30,
+      "professor_id": "P088",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0112",
+      "name": "PHYS Y2 Seminar (F)",
+      "num_students": 30,
+      "professor_id": "P089",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0113",
+      "name": "PHYS Y2 Lab (F)",
+      "num_students": 30,
+      "professor_id": "P090",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0114",
+      "name": "Advanced Physics (PHYS Y3)",
+      "num_students": 186,
+      "professor_id": "P061",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0115",
+      "name": "Contemporary Physics (PHYS Y3)",
+      "num_students": 186,
+      "professor_id": "P062",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0116",
+      "name": "Physics Research Methods (PHYS Y3)",
+      "num_students": 186,
+      "professor_id": "P063",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0117",
+      "name": "PHYS Y3 Seminar (A)",
+      "num_students": 31,
+      "professor_id": "P064",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0118",
+      "name": "PHYS Y3 Lab (A)",
+      "num_students": 31,
+      "professor_id": "P065",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0119",
+      "name": "PHYS Y3 Seminar (B)",
+      "num_students": 31,
+      "professor_id": "P066",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0120",
+      "name": "PHYS Y3 Lab (B)",
+      "num_students": 31,
+      "professor_id": "P067",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0121",
+      "name": "PHYS Y3 Seminar (C)",
+      "num_students": 31,
+      "professor_id": "P068",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0122",
+      "name": "PHYS Y3 Lab (C)",
+      "num_students": 31,
+      "professor_id": "P069",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0123",
+      "name": "PHYS Y3 Seminar (D)",
+      "num_students": 31,
+      "professor_id": "P070",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0124",
+      "name": "PHYS Y3 Lab (D)",
+      "num_students": 31,
+      "professor_id": "P071",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0125",
+      "name": "PHYS Y3 Seminar (E)",
+      "num_students": 31,
+      "professor_id": "P072",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0126",
+      "name": "PHYS Y3 Lab (E)",
+      "num_students": 31,
+      "professor_id": "P073",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0127",
+      "name": "PHYS Y3 Seminar (F)",
+      "num_students": 31,
+      "professor_id": "P074",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0128",
+      "name": "PHYS Y3 Lab (F)",
+      "num_students": 31,
+      "professor_id": "P075",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0129",
+      "name": "Foundations of Chemistry (CHEM Y1)",
+      "num_students": 151,
+      "professor_id": "P091",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0130",
+      "name": "Chemistry Methods I (CHEM Y1)",
+      "num_students": 151,
+      "professor_id": "P092",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0131",
+      "name": "Introduction to Chemistry Practice (CHEM Y1)",
+      "num_students": 151,
+      "professor_id": "P093",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0132",
+      "name": "CHEM Y1 Seminar (A)",
+      "num_students": 31,
+      "professor_id": "P094",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0133",
+      "name": "CHEM Y1 Lab (A)",
+      "num_students": 31,
+      "professor_id": "P095",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0134",
+      "name": "CHEM Y1 Seminar (B)",
+      "num_students": 30,
+      "professor_id": "P096",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0135",
+      "name": "CHEM Y1 Lab (B)",
+      "num_students": 30,
+      "professor_id": "P097",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0136",
+      "name": "CHEM Y1 Seminar (C)",
+      "num_students": 30,
+      "professor_id": "P098",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0137",
+      "name": "CHEM Y1 Lab (C)",
+      "num_students": 30,
+      "professor_id": "P099",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0138",
+      "name": "CHEM Y1 Seminar (D)",
+      "num_students": 30,
+      "professor_id": "P100",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0139",
+      "name": "CHEM Y1 Lab (D)",
+      "num_students": 30,
+      "professor_id": "P101",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0140",
+      "name": "CHEM Y1 Seminar (E)",
+      "num_students": 30,
+      "professor_id": "P102",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0141",
+      "name": "CHEM Y1 Lab (E)",
+      "num_students": 30,
+      "professor_id": "P103",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0142",
+      "name": "Chemistry Methods II (CHEM Y2)",
+      "num_students": 174,
+      "professor_id": "P104",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0143",
+      "name": "Topics in Chemistry (CHEM Y2)",
+      "num_students": 174,
+      "professor_id": "P105",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0144",
+      "name": "Chemistry Theory (CHEM Y2)",
+      "num_students": 174,
+      "professor_id": "P106",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0145",
+      "name": "CHEM Y2 Seminar (A)",
+      "num_students": 29,
+      "professor_id": "P107",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0146",
+      "name": "CHEM Y2 Lab (A)",
+      "num_students": 29,
+      "professor_id": "P108",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0147",
+      "name": "CHEM Y2 Seminar (B)",
+      "num_students": 29,
+      "professor_id": "P109",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0148",
+      "name": "CHEM Y2 Lab (B)",
+      "num_students": 29,
+      "professor_id": "P110",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0149",
+      "name": "CHEM Y2 Seminar (C)",
+      "num_students": 29,
+      "professor_id": "P111",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0150",
+      "name": "CHEM Y2 Lab (C)",
+      "num_students": 29,
+      "professor_id": "P112",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0151",
+      "name": "CHEM Y2 Seminar (D)",
+      "num_students": 29,
+      "professor_id": "P113",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0152",
+      "name": "CHEM Y2 Lab (D)",
+      "num_students": 29,
+      "professor_id": "P114",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0153",
+      "name": "CHEM Y2 Seminar (E)",
+      "num_students": 29,
+      "professor_id": "P115",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0154",
+      "name": "CHEM Y2 Lab (E)",
+      "num_students": 29,
+      "professor_id": "P116",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0155",
+      "name": "CHEM Y2 Seminar (F)",
+      "num_students": 29,
+      "professor_id": "P117",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0156",
+      "name": "CHEM Y2 Lab (F)",
+      "num_students": 29,
+      "professor_id": "P118",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0157",
+      "name": "Advanced Chemistry (CHEM Y3)",
+      "num_students": 191,
+      "professor_id": "P119",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0158",
+      "name": "Contemporary Chemistry (CHEM Y3)",
+      "num_students": 191,
+      "professor_id": "P120",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0159",
+      "name": "Chemistry Research Methods (CHEM Y3)",
+      "num_students": 191,
+      "professor_id": "P091",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0160",
+      "name": "CHEM Y3 Seminar (A)",
+      "num_students": 32,
+      "professor_id": "P092",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0161",
+      "name": "CHEM Y3 Lab (A)",
+      "num_students": 32,
+      "professor_id": "P093",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0162",
+      "name": "CHEM Y3 Seminar (B)",
+      "num_students": 32,
+      "professor_id": "P094",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0163",
+      "name": "CHEM Y3 Lab (B)",
+      "num_students": 32,
+      "professor_id": "P095",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0164",
+      "name": "CHEM Y3 Seminar (C)",
+      "num_students": 32,
+      "professor_id": "P096",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0165",
+      "name": "CHEM Y3 Lab (C)",
+      "num_students": 32,
+      "professor_id": "P097",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0166",
+      "name": "CHEM Y3 Seminar (D)",
+      "num_students": 32,
+      "professor_id": "P098",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0167",
+      "name": "CHEM Y3 Lab (D)",
+      "num_students": 32,
+      "professor_id": "P099",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0168",
+      "name": "CHEM Y3 Seminar (E)",
+      "num_students": 32,
+      "professor_id": "P100",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0169",
+      "name": "CHEM Y3 Lab (E)",
+      "num_students": 32,
+      "professor_id": "P101",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0170",
+      "name": "CHEM Y3 Seminar (F)",
+      "num_students": 31,
+      "professor_id": "P102",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0171",
+      "name": "CHEM Y3 Lab (F)",
+      "num_students": 31,
+      "professor_id": "P103",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0172",
+      "name": "Foundations of Biology (BIO Y1)",
+      "num_students": 170,
+      "professor_id": "P121",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0173",
+      "name": "Biology Methods I (BIO Y1)",
+      "num_students": 170,
+      "professor_id": "P122",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0174",
+      "name": "Introduction to Biology Practice (BIO Y1)",
+      "num_students": 170,
+      "professor_id": "P123",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0175",
+      "name": "BIO Y1 Seminar (A)",
+      "num_students": 34,
+      "professor_id": "P124",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0176",
+      "name": "BIO Y1 Lab (A)",
+      "num_students": 34,
+      "professor_id": "P125",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0177",
+      "name": "BIO Y1 Seminar (B)",
+      "num_students": 34,
+      "professor_id": "P126",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0178",
+      "name": "BIO Y1 Lab (B)",
+      "num_students": 34,
+      "professor_id": "P127",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0179",
+      "name": "BIO Y1 Seminar (C)",
+      "num_students": 34,
+      "professor_id": "P128",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0180",
+      "name": "BIO Y1 Lab (C)",
+      "num_students": 34,
+      "professor_id": "P129",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0181",
+      "name": "BIO Y1 Seminar (D)",
+      "num_students": 34,
+      "professor_id": "P130",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0182",
+      "name": "BIO Y1 Lab (D)",
+      "num_students": 34,
+      "professor_id": "P131",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0183",
+      "name": "BIO Y1 Seminar (E)",
+      "num_students": 34,
+      "professor_id": "P132",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0184",
+      "name": "BIO Y1 Lab (E)",
+      "num_students": 34,
+      "professor_id": "P133",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0185",
+      "name": "Biology Methods II (BIO Y2)",
+      "num_students": 160,
+      "professor_id": "P134",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0186",
+      "name": "Topics in Biology (BIO Y2)",
+      "num_students": 160,
+      "professor_id": "P135",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0187",
+      "name": "Biology Theory (BIO Y2)",
+      "num_students": 160,
+      "professor_id": "P136",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0188",
+      "name": "BIO Y2 Seminar (A)",
+      "num_students": 32,
+      "professor_id": "P137",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0189",
+      "name": "BIO Y2 Lab (A)",
+      "num_students": 32,
+      "professor_id": "P138",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0190",
+      "name": "BIO Y2 Seminar (B)",
+      "num_students": 32,
+      "professor_id": "P139",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0191",
+      "name": "BIO Y2 Lab (B)",
+      "num_students": 32,
+      "professor_id": "P140",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0192",
+      "name": "BIO Y2 Seminar (C)",
+      "num_students": 32,
+      "professor_id": "P141",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0193",
+      "name": "BIO Y2 Lab (C)",
+      "num_students": 32,
+      "professor_id": "P142",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0194",
+      "name": "BIO Y2 Seminar (D)",
+      "num_students": 32,
+      "professor_id": "P143",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0195",
+      "name": "BIO Y2 Lab (D)",
+      "num_students": 32,
+      "professor_id": "P144",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0196",
+      "name": "BIO Y2 Seminar (E)",
+      "num_students": 32,
+      "professor_id": "P145",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0197",
+      "name": "BIO Y2 Lab (E)",
+      "num_students": 32,
+      "professor_id": "P146",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0198",
+      "name": "Advanced Biology (BIO Y3)",
+      "num_students": 153,
+      "professor_id": "P147",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0199",
+      "name": "Contemporary Biology (BIO Y3)",
+      "num_students": 153,
+      "professor_id": "P148",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0200",
+      "name": "Biology Research Methods (BIO Y3)",
+      "num_students": 153,
+      "professor_id": "P149",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0201",
+      "name": "BIO Y3 Seminar (A)",
+      "num_students": 31,
+      "professor_id": "P150",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0202",
+      "name": "BIO Y3 Lab (A)",
+      "num_students": 31,
+      "professor_id": "P121",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0203",
+      "name": "BIO Y3 Seminar (B)",
+      "num_students": 31,
+      "professor_id": "P122",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0204",
+      "name": "BIO Y3 Lab (B)",
+      "num_students": 31,
+      "professor_id": "P123",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0205",
+      "name": "BIO Y3 Seminar (C)",
+      "num_students": 31,
+      "professor_id": "P124",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0206",
+      "name": "BIO Y3 Lab (C)",
+      "num_students": 31,
+      "professor_id": "P125",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0207",
+      "name": "BIO Y3 Seminar (D)",
+      "num_students": 30,
+      "professor_id": "P126",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0208",
+      "name": "BIO Y3 Lab (D)",
+      "num_students": 30,
+      "professor_id": "P127",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0209",
+      "name": "BIO Y3 Seminar (E)",
+      "num_students": 30,
+      "professor_id": "P128",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0210",
+      "name": "BIO Y3 Lab (E)",
+      "num_students": 30,
+      "professor_id": "P129",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0211",
+      "name": "Foundations of Economics (ECON Y1)",
+      "num_students": 141,
+      "professor_id": "P151",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0212",
+      "name": "Economics Methods I (ECON Y1)",
+      "num_students": 141,
+      "professor_id": "P152",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0213",
+      "name": "Introduction to Economics Practice (ECON Y1)",
+      "num_students": 141,
+      "professor_id": "P153",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0214",
+      "name": "ECON Y1 Seminar (A)",
+      "num_students": 29,
+      "professor_id": "P154",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0215",
+      "name": "ECON Y1 Workshop (A)",
+      "num_students": 29,
+      "professor_id": "P155",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0216",
+      "name": "ECON Y1 Seminar (B)",
+      "num_students": 28,
+      "professor_id": "P156",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0217",
+      "name": "ECON Y1 Workshop (B)",
+      "num_students": 28,
+      "professor_id": "P157",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0218",
+      "name": "ECON Y1 Seminar (C)",
+      "num_students": 28,
+      "professor_id": "P158",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0219",
+      "name": "ECON Y1 Workshop (C)",
+      "num_students": 28,
+      "professor_id": "P159",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0220",
+      "name": "ECON Y1 Seminar (D)",
+      "num_students": 28,
+      "professor_id": "P160",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0221",
+      "name": "ECON Y1 Workshop (D)",
+      "num_students": 28,
+      "professor_id": "P161",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0222",
+      "name": "ECON Y1 Seminar (E)",
+      "num_students": 28,
+      "professor_id": "P162",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0223",
+      "name": "ECON Y1 Workshop (E)",
+      "num_students": 28,
+      "professor_id": "P163",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0224",
+      "name": "Economics Methods II (ECON Y2)",
+      "num_students": 148,
+      "professor_id": "P164",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0225",
+      "name": "Topics in Economics (ECON Y2)",
+      "num_students": 148,
+      "professor_id": "P165",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0226",
+      "name": "Economics Theory (ECON Y2)",
+      "num_students": 148,
+      "professor_id": "P166",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0227",
+      "name": "ECON Y2 Seminar (A)",
+      "num_students": 30,
+      "professor_id": "P167",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0228",
+      "name": "ECON Y2 Workshop (A)",
+      "num_students": 30,
+      "professor_id": "P168",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0229",
+      "name": "ECON Y2 Seminar (B)",
+      "num_students": 30,
+      "professor_id": "P169",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0230",
+      "name": "ECON Y2 Workshop (B)",
+      "num_students": 30,
+      "professor_id": "P170",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0231",
+      "name": "ECON Y2 Seminar (C)",
+      "num_students": 30,
+      "professor_id": "P171",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0232",
+      "name": "ECON Y2 Workshop (C)",
+      "num_students": 30,
+      "professor_id": "P172",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0233",
+      "name": "ECON Y2 Seminar (D)",
+      "num_students": 29,
+      "professor_id": "P173",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0234",
+      "name": "ECON Y2 Workshop (D)",
+      "num_students": 29,
+      "professor_id": "P174",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0235",
+      "name": "ECON Y2 Seminar (E)",
+      "num_students": 29,
+      "professor_id": "P175",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0236",
+      "name": "ECON Y2 Workshop (E)",
+      "num_students": 29,
+      "professor_id": "P176",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0237",
+      "name": "Advanced Economics (ECON Y3)",
+      "num_students": 147,
+      "professor_id": "P177",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0238",
+      "name": "Contemporary Economics (ECON Y3)",
+      "num_students": 147,
+      "professor_id": "P178",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0239",
+      "name": "Economics Research Methods (ECON Y3)",
+      "num_students": 147,
+      "professor_id": "P179",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0240",
+      "name": "ECON Y3 Seminar (A)",
+      "num_students": 30,
+      "professor_id": "P180",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0241",
+      "name": "ECON Y3 Workshop (A)",
+      "num_students": 30,
+      "professor_id": "P151",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0242",
+      "name": "ECON Y3 Seminar (B)",
+      "num_students": 30,
+      "professor_id": "P152",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0243",
+      "name": "ECON Y3 Workshop (B)",
+      "num_students": 30,
+      "professor_id": "P153",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0244",
+      "name": "ECON Y3 Seminar (C)",
+      "num_students": 29,
+      "professor_id": "P154",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0245",
+      "name": "ECON Y3 Workshop (C)",
+      "num_students": 29,
+      "professor_id": "P155",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0246",
+      "name": "ECON Y3 Seminar (D)",
+      "num_students": 29,
+      "professor_id": "P156",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0247",
+      "name": "ECON Y3 Workshop (D)",
+      "num_students": 29,
+      "professor_id": "P157",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0248",
+      "name": "ECON Y3 Seminar (E)",
+      "num_students": 29,
+      "professor_id": "P158",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0249",
+      "name": "ECON Y3 Workshop (E)",
+      "num_students": 29,
+      "professor_id": "P159",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0250",
+      "name": "Foundations of Psychology (PSY Y1)",
+      "num_students": 157,
+      "professor_id": "P181",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0251",
+      "name": "Psychology Methods I (PSY Y1)",
+      "num_students": 157,
+      "professor_id": "P182",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0252",
+      "name": "Introduction to Psychology Practice (PSY Y1)",
+      "num_students": 157,
+      "professor_id": "P183",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0253",
+      "name": "PSY Y1 Seminar (A)",
+      "num_students": 32,
+      "professor_id": "P184",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0254",
+      "name": "PSY Y1 Lab (A)",
+      "num_students": 32,
+      "professor_id": "P185",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0255",
+      "name": "PSY Y1 Seminar (B)",
+      "num_students": 32,
+      "professor_id": "P186",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0256",
+      "name": "PSY Y1 Lab (B)",
+      "num_students": 32,
+      "professor_id": "P187",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0257",
+      "name": "PSY Y1 Seminar (C)",
+      "num_students": 31,
+      "professor_id": "P188",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0258",
+      "name": "PSY Y1 Lab (C)",
+      "num_students": 31,
+      "professor_id": "P189",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0259",
+      "name": "PSY Y1 Seminar (D)",
+      "num_students": 31,
+      "professor_id": "P190",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0260",
+      "name": "PSY Y1 Lab (D)",
+      "num_students": 31,
+      "professor_id": "P191",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0261",
+      "name": "PSY Y1 Seminar (E)",
+      "num_students": 31,
+      "professor_id": "P192",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0262",
+      "name": "PSY Y1 Lab (E)",
+      "num_students": 31,
+      "professor_id": "P193",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0263",
+      "name": "Psychology Methods II (PSY Y2)",
+      "num_students": 177,
+      "professor_id": "P194",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0264",
+      "name": "Topics in Psychology (PSY Y2)",
+      "num_students": 177,
+      "professor_id": "P195",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0265",
+      "name": "Psychology Theory (PSY Y2)",
+      "num_students": 177,
+      "professor_id": "P196",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0266",
+      "name": "PSY Y2 Seminar (A)",
+      "num_students": 30,
+      "professor_id": "P197",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0267",
+      "name": "PSY Y2 Lab (A)",
+      "num_students": 30,
+      "professor_id": "P198",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0268",
+      "name": "PSY Y2 Seminar (B)",
+      "num_students": 30,
+      "professor_id": "P199",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0269",
+      "name": "PSY Y2 Lab (B)",
+      "num_students": 30,
+      "professor_id": "P200",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0270",
+      "name": "PSY Y2 Seminar (C)",
+      "num_students": 30,
+      "professor_id": "P201",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0271",
+      "name": "PSY Y2 Lab (C)",
+      "num_students": 30,
+      "professor_id": "P202",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0272",
+      "name": "PSY Y2 Seminar (D)",
+      "num_students": 29,
+      "professor_id": "P203",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0273",
+      "name": "PSY Y2 Lab (D)",
+      "num_students": 29,
+      "professor_id": "P204",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0274",
+      "name": "PSY Y2 Seminar (E)",
+      "num_students": 29,
+      "professor_id": "P205",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0275",
+      "name": "PSY Y2 Lab (E)",
+      "num_students": 29,
+      "professor_id": "P206",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0276",
+      "name": "PSY Y2 Seminar (F)",
+      "num_students": 29,
+      "professor_id": "P207",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0277",
+      "name": "PSY Y2 Lab (F)",
+      "num_students": 29,
+      "professor_id": "P208",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0278",
+      "name": "Advanced Psychology (PSY Y3)",
+      "num_students": 150,
+      "professor_id": "P209",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0279",
+      "name": "Contemporary Psychology (PSY Y3)",
+      "num_students": 150,
+      "professor_id": "P210",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0280",
+      "name": "Psychology Research Methods (PSY Y3)",
+      "num_students": 150,
+      "professor_id": "P181",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0281",
+      "name": "PSY Y3 Seminar (A)",
+      "num_students": 30,
+      "professor_id": "P182",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0282",
+      "name": "PSY Y3 Lab (A)",
+      "num_students": 30,
+      "professor_id": "P183",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0283",
+      "name": "PSY Y3 Seminar (B)",
+      "num_students": 30,
+      "professor_id": "P184",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0284",
+      "name": "PSY Y3 Lab (B)",
+      "num_students": 30,
+      "professor_id": "P185",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0285",
+      "name": "PSY Y3 Seminar (C)",
+      "num_students": 30,
+      "professor_id": "P186",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0286",
+      "name": "PSY Y3 Lab (C)",
+      "num_students": 30,
+      "professor_id": "P187",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0287",
+      "name": "PSY Y3 Seminar (D)",
+      "num_students": 30,
+      "professor_id": "P188",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0288",
+      "name": "PSY Y3 Lab (D)",
+      "num_students": 30,
+      "professor_id": "P189",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0289",
+      "name": "PSY Y3 Seminar (E)",
+      "num_students": 30,
+      "professor_id": "P190",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0290",
+      "name": "PSY Y3 Lab (E)",
+      "num_students": 30,
+      "professor_id": "P191",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0291",
+      "name": "Foundations of English Literature (ENG Y1)",
+      "num_students": 170,
+      "professor_id": "P211",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0292",
+      "name": "English Literature Methods I (ENG Y1)",
+      "num_students": 170,
+      "professor_id": "P212",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0293",
+      "name": "Introduction to English Literature Practice (ENG Y1)",
+      "num_students": 170,
+      "professor_id": "P213",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0294",
+      "name": "ENG Y1 Seminar (A)",
+      "num_students": 34,
+      "professor_id": "P214",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0295",
+      "name": "ENG Y1 Workshop (A)",
+      "num_students": 34,
+      "professor_id": "P215",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0296",
+      "name": "ENG Y1 Seminar (B)",
+      "num_students": 34,
+      "professor_id": "P216",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0297",
+      "name": "ENG Y1 Workshop (B)",
+      "num_students": 34,
+      "professor_id": "P217",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0298",
+      "name": "ENG Y1 Seminar (C)",
+      "num_students": 34,
+      "professor_id": "P218",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0299",
+      "name": "ENG Y1 Workshop (C)",
+      "num_students": 34,
+      "professor_id": "P219",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0300",
+      "name": "ENG Y1 Seminar (D)",
+      "num_students": 34,
+      "professor_id": "P220",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0301",
+      "name": "ENG Y1 Workshop (D)",
+      "num_students": 34,
+      "professor_id": "P221",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0302",
+      "name": "ENG Y1 Seminar (E)",
+      "num_students": 34,
+      "professor_id": "P222",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0303",
+      "name": "ENG Y1 Workshop (E)",
+      "num_students": 34,
+      "professor_id": "P223",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0304",
+      "name": "English Literature Methods II (ENG Y2)",
+      "num_students": 151,
+      "professor_id": "P224",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0305",
+      "name": "Topics in English Literature (ENG Y2)",
+      "num_students": 151,
+      "professor_id": "P225",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0306",
+      "name": "English Literature Theory (ENG Y2)",
+      "num_students": 151,
+      "professor_id": "P226",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0307",
+      "name": "ENG Y2 Seminar (A)",
+      "num_students": 31,
+      "professor_id": "P227",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0308",
+      "name": "ENG Y2 Workshop (A)",
+      "num_students": 31,
+      "professor_id": "P228",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0309",
+      "name": "ENG Y2 Seminar (B)",
+      "num_students": 30,
+      "professor_id": "P229",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0310",
+      "name": "ENG Y2 Workshop (B)",
+      "num_students": 30,
+      "professor_id": "P230",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0311",
+      "name": "ENG Y2 Seminar (C)",
+      "num_students": 30,
+      "professor_id": "P231",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0312",
+      "name": "ENG Y2 Workshop (C)",
+      "num_students": 30,
+      "professor_id": "P232",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0313",
+      "name": "ENG Y2 Seminar (D)",
+      "num_students": 30,
+      "professor_id": "P233",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0314",
+      "name": "ENG Y2 Workshop (D)",
+      "num_students": 30,
+      "professor_id": "P234",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0315",
+      "name": "ENG Y2 Seminar (E)",
+      "num_students": 30,
+      "professor_id": "P235",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0316",
+      "name": "ENG Y2 Workshop (E)",
+      "num_students": 30,
+      "professor_id": "P236",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0317",
+      "name": "Advanced English Literature (ENG Y3)",
+      "num_students": 186,
+      "professor_id": "P237",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0318",
+      "name": "Contemporary English Literature (ENG Y3)",
+      "num_students": 186,
+      "professor_id": "P238",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0319",
+      "name": "English Literature Research Methods (ENG Y3)",
+      "num_students": 186,
+      "professor_id": "P239",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0320",
+      "name": "Poetry Seminar (ENG Y3)",
+      "num_students": 10,
+      "professor_id": "P240",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0321",
+      "name": "ENG Y3 Seminar (A)",
+      "num_students": 30,
+      "professor_id": "P211",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0322",
+      "name": "ENG Y3 Workshop (A)",
+      "num_students": 30,
+      "professor_id": "P212",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0323",
+      "name": "ENG Y3 Seminar (B)",
+      "num_students": 30,
+      "professor_id": "P213",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0324",
+      "name": "ENG Y3 Workshop (B)",
+      "num_students": 30,
+      "professor_id": "P214",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0325",
+      "name": "ENG Y3 Seminar (C)",
+      "num_students": 29,
+      "professor_id": "P215",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0326",
+      "name": "ENG Y3 Workshop (C)",
+      "num_students": 29,
+      "professor_id": "P216",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0327",
+      "name": "ENG Y3 Seminar (D)",
+      "num_students": 29,
+      "professor_id": "P217",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0328",
+      "name": "ENG Y3 Workshop (D)",
+      "num_students": 29,
+      "professor_id": "P218",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0329",
+      "name": "ENG Y3 Seminar (E)",
+      "num_students": 29,
+      "professor_id": "P219",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0330",
+      "name": "ENG Y3 Workshop (E)",
+      "num_students": 29,
+      "professor_id": "P220",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0331",
+      "name": "ENG Y3 Seminar (F)",
+      "num_students": 29,
+      "professor_id": "P221",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0332",
+      "name": "ENG Y3 Workshop (F)",
+      "num_students": 29,
+      "professor_id": "P222",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0333",
+      "name": "Foundations of Art and Design (ART Y1)",
+      "num_students": 184,
+      "professor_id": "P241",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0334",
+      "name": "Art and Design Methods I (ART Y1)",
+      "num_students": 184,
+      "professor_id": "P242",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0335",
+      "name": "Introduction to Art and Design Practice (ART Y1)",
+      "num_students": 184,
+      "professor_id": "P243",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0336",
+      "name": "ART Y1 Seminar (A)",
+      "num_students": 31,
+      "professor_id": "P244",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0337",
+      "name": "ART Y1 Workshop (A)",
+      "num_students": 31,
+      "professor_id": "P245",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0338",
+      "name": "ART Y1 Seminar (B)",
+      "num_students": 31,
+      "professor_id": "P246",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0339",
+      "name": "ART Y1 Workshop (B)",
+      "num_students": 31,
+      "professor_id": "P247",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0340",
+      "name": "ART Y1 Seminar (C)",
+      "num_students": 31,
+      "professor_id": "P248",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0341",
+      "name": "ART Y1 Workshop (C)",
+      "num_students": 31,
+      "professor_id": "P249",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0342",
+      "name": "ART Y1 Seminar (D)",
+      "num_students": 31,
+      "professor_id": "P250",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0343",
+      "name": "ART Y1 Workshop (D)",
+      "num_students": 31,
+      "professor_id": "P251",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0344",
+      "name": "ART Y1 Seminar (E)",
+      "num_students": 30,
+      "professor_id": "P252",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0345",
+      "name": "ART Y1 Workshop (E)",
+      "num_students": 30,
+      "professor_id": "P253",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0346",
+      "name": "ART Y1 Seminar (F)",
+      "num_students": 30,
+      "professor_id": "P254",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0347",
+      "name": "ART Y1 Workshop (F)",
+      "num_students": 30,
+      "professor_id": "P255",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0348",
+      "name": "Art and Design Methods II (ART Y2)",
+      "num_students": 183,
+      "professor_id": "P256",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0349",
+      "name": "Topics in Art and Design (ART Y2)",
+      "num_students": 183,
+      "professor_id": "P257",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0350",
+      "name": "Art and Design Theory (ART Y2)",
+      "num_students": 183,
+      "professor_id": "P258",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0351",
+      "name": "ART Y2 Seminar (A)",
+      "num_students": 31,
+      "professor_id": "P259",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0352",
+      "name": "ART Y2 Workshop (A)",
+      "num_students": 31,
+      "professor_id": "P260",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0353",
+      "name": "ART Y2 Seminar (B)",
+      "num_students": 31,
+      "professor_id": "P261",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0354",
+      "name": "ART Y2 Workshop (B)",
+      "num_students": 31,
+      "professor_id": "P262",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0355",
+      "name": "ART Y2 Seminar (C)",
+      "num_students": 31,
+      "professor_id": "P263",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0356",
+      "name": "ART Y2 Workshop (C)",
+      "num_students": 31,
+      "professor_id": "P264",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0357",
+      "name": "ART Y2 Seminar (D)",
+      "num_students": 30,
+      "professor_id": "P265",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0358",
+      "name": "ART Y2 Workshop (D)",
+      "num_students": 30,
+      "professor_id": "P266",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0359",
+      "name": "ART Y2 Seminar (E)",
+      "num_students": 30,
+      "professor_id": "P267",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0360",
+      "name": "ART Y2 Workshop (E)",
+      "num_students": 30,
+      "professor_id": "P268",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0361",
+      "name": "ART Y2 Seminar (F)",
+      "num_students": 30,
+      "professor_id": "P269",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0362",
+      "name": "ART Y2 Workshop (F)",
+      "num_students": 30,
+      "professor_id": "P270",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0363",
+      "name": "Advanced Art and Design (ART Y3)",
+      "num_students": 189,
+      "professor_id": "P241",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0364",
+      "name": "Contemporary Art and Design (ART Y3)",
+      "num_students": 189,
+      "professor_id": "P242",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0365",
+      "name": "Art and Design Research Methods (ART Y3)",
+      "num_students": 189,
+      "professor_id": "P243",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0366",
+      "name": "ART Y3 Seminar (A)",
+      "num_students": 32,
+      "professor_id": "P244",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0367",
+      "name": "ART Y3 Workshop (A)",
+      "num_students": 32,
+      "professor_id": "P245",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0368",
+      "name": "ART Y3 Seminar (B)",
+      "num_students": 32,
+      "professor_id": "P246",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0369",
+      "name": "ART Y3 Workshop (B)",
+      "num_students": 32,
+      "professor_id": "P247",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0370",
+      "name": "ART Y3 Seminar (C)",
+      "num_students": 32,
+      "professor_id": "P248",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0371",
+      "name": "ART Y3 Workshop (C)",
+      "num_students": 32,
+      "professor_id": "P249",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0372",
+      "name": "ART Y3 Seminar (D)",
+      "num_students": 31,
+      "professor_id": "P250",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0373",
+      "name": "ART Y3 Workshop (D)",
+      "num_students": 31,
+      "professor_id": "P251",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0374",
+      "name": "ART Y3 Seminar (E)",
+      "num_students": 31,
+      "professor_id": "P252",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0375",
+      "name": "ART Y3 Workshop (E)",
+      "num_students": 31,
+      "professor_id": "P253",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0376",
+      "name": "ART Y3 Seminar (F)",
+      "num_students": 31,
+      "professor_id": "P254",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0377",
+      "name": "ART Y3 Workshop (F)",
+      "num_students": 31,
+      "professor_id": "P255",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0378",
+      "name": "Foundations of Law (LAW Y1)",
+      "num_students": 148,
+      "professor_id": "P271",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0379",
+      "name": "Law Methods I (LAW Y1)",
+      "num_students": 148,
+      "professor_id": "P272",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0380",
+      "name": "Introduction to Law Practice (LAW Y1)",
+      "num_students": 148,
+      "professor_id": "P273",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0381",
+      "name": "LAW Y1 Seminar (A)",
+      "num_students": 30,
+      "professor_id": "P274",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0382",
+      "name": "LAW Y1 Workshop (A)",
+      "num_students": 30,
+      "professor_id": "P275",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0383",
+      "name": "LAW Y1 Seminar (B)",
+      "num_students": 30,
+      "professor_id": "P276",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0384",
+      "name": "LAW Y1 Workshop (B)",
+      "num_students": 30,
+      "professor_id": "P277",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0385",
+      "name": "LAW Y1 Seminar (C)",
+      "num_students": 30,
+      "professor_id": "P278",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0386",
+      "name": "LAW Y1 Workshop (C)",
+      "num_students": 30,
+      "professor_id": "P279",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0387",
+      "name": "LAW Y1 Seminar (D)",
+      "num_students": 29,
+      "professor_id": "P280",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0388",
+      "name": "LAW Y1 Workshop (D)",
+      "num_students": 29,
+      "professor_id": "P281",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0389",
+      "name": "LAW Y1 Seminar (E)",
+      "num_students": 29,
+      "professor_id": "P282",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0390",
+      "name": "LAW Y1 Workshop (E)",
+      "num_students": 29,
+      "professor_id": "P283",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0391",
+      "name": "Law Methods II (LAW Y2)",
+      "num_students": 143,
+      "professor_id": "P284",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0392",
+      "name": "Topics in Law (LAW Y2)",
+      "num_students": 143,
+      "professor_id": "P285",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0393",
+      "name": "Law Theory (LAW Y2)",
+      "num_students": 143,
+      "professor_id": "P286",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0394",
+      "name": "LAW Y2 Seminar (A)",
+      "num_students": 29,
+      "professor_id": "P287",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0395",
+      "name": "LAW Y2 Workshop (A)",
+      "num_students": 29,
+      "professor_id": "P288",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0396",
+      "name": "LAW Y2 Seminar (B)",
+      "num_students": 29,
+      "professor_id": "P289",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0397",
+      "name": "LAW Y2 Workshop (B)",
+      "num_students": 29,
+      "professor_id": "P290",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0398",
+      "name": "LAW Y2 Seminar (C)",
+      "num_students": 29,
+      "professor_id": "P291",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0399",
+      "name": "LAW Y2 Workshop (C)",
+      "num_students": 29,
+      "professor_id": "P292",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0400",
+      "name": "LAW Y2 Seminar (D)",
+      "num_students": 28,
+      "professor_id": "P293",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0401",
+      "name": "LAW Y2 Workshop (D)",
+      "num_students": 28,
+      "professor_id": "P294",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0402",
+      "name": "LAW Y2 Seminar (E)",
+      "num_students": 28,
+      "professor_id": "P295",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0403",
+      "name": "LAW Y2 Workshop (E)",
+      "num_students": 28,
+      "professor_id": "P296",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0404",
+      "name": "Advanced Law (LAW Y3)",
+      "num_students": 184,
+      "professor_id": "P297",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0405",
+      "name": "Contemporary Law (LAW Y3)",
+      "num_students": 184,
+      "professor_id": "P298",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0406",
+      "name": "Law Research Methods (LAW Y3)",
+      "num_students": 184,
+      "professor_id": "P299",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0407",
+      "name": "Moot Court Seminar (LAW Y3)",
+      "num_students": 11,
+      "professor_id": "P300",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0408",
+      "name": "LAW Y3 Seminar (A)",
+      "num_students": 29,
+      "professor_id": "P271",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0409",
+      "name": "LAW Y3 Workshop (A)",
+      "num_students": 29,
+      "professor_id": "P272",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0410",
+      "name": "LAW Y3 Seminar (B)",
+      "num_students": 29,
+      "professor_id": "P273",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0411",
+      "name": "LAW Y3 Workshop (B)",
+      "num_students": 29,
+      "professor_id": "P274",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0412",
+      "name": "LAW Y3 Seminar (C)",
+      "num_students": 29,
+      "professor_id": "P275",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0413",
+      "name": "LAW Y3 Workshop (C)",
+      "num_students": 29,
+      "professor_id": "P276",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0414",
+      "name": "LAW Y3 Seminar (D)",
+      "num_students": 29,
+      "professor_id": "P277",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0415",
+      "name": "LAW Y3 Workshop (D)",
+      "num_students": 29,
+      "professor_id": "P278",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0416",
+      "name": "LAW Y3 Seminar (E)",
+      "num_students": 29,
+      "professor_id": "P279",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0417",
+      "name": "LAW Y3 Workshop (E)",
+      "num_students": 29,
+      "professor_id": "P280",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0418",
+      "name": "LAW Y3 Seminar (F)",
+      "num_students": 28,
+      "professor_id": "P281",
+      "duration_hours": 1
+    },
+    {
+      "class_id": "C0419",
+      "name": "LAW Y3 Workshop (F)",
+      "num_students": 28,
+      "professor_id": "P282",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0420",
+      "name": "Intro to Math (CS Y1 + PHYS Y1)",
+      "num_students": 343,
+      "professor_id": "P042",
+      "duration_hours": 2
+    },
+    {
+      "class_id": "C0421",
+      "name": "Intro to Statistics (ECON Y1 + PSY Y1)",
+      "num_students": 298,
+      "professor_id": "P043",
+      "duration_hours": 2
+    }
+  ],
+  "student_groups": [
+    {
+      "group_id": "G-CS-Y1-A",
+      "size": 33,
+      "classes": [
+        "C0001",
+        "C0002",
+        "C0003",
+        "C0004",
+        "C0005",
+        "C0420"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y1-B",
+      "size": 33,
+      "classes": [
+        "C0001",
+        "C0002",
+        "C0003",
+        "C0006",
+        "C0007",
+        "C0420"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y1-C",
+      "size": 33,
+      "classes": [
+        "C0001",
+        "C0002",
+        "C0003",
+        "C0008",
+        "C0009",
+        "C0420"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y1-D",
+      "size": 33,
+      "classes": [
+        "C0001",
+        "C0002",
+        "C0003",
+        "C0010",
+        "C0011",
+        "C0420"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y1-E",
+      "size": 32,
+      "classes": [
+        "C0001",
+        "C0002",
+        "C0003",
+        "C0012",
+        "C0013",
+        "C0420"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y2-A",
+      "size": 30,
+      "classes": [
+        "C0014",
+        "C0015",
+        "C0016",
+        "C0017",
+        "C0018"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y2-B",
+      "size": 30,
+      "classes": [
+        "C0014",
+        "C0015",
+        "C0016",
+        "C0019",
+        "C0020"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y2-C",
+      "size": 30,
+      "classes": [
+        "C0014",
+        "C0015",
+        "C0016",
+        "C0021",
+        "C0022"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y2-D",
+      "size": 30,
+      "classes": [
+        "C0014",
+        "C0015",
+        "C0016",
+        "C0023",
+        "C0024"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y2-E",
+      "size": 29,
+      "classes": [
+        "C0014",
+        "C0015",
+        "C0016",
+        "C0025",
+        "C0026"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y3-HON",
+      "size": 12,
+      "classes": [
+        "C0027",
+        "C0028",
+        "C0029",
+        "C0030"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y3-A",
+      "size": 29,
+      "classes": [
+        "C0027",
+        "C0028",
+        "C0029",
+        "C0031",
+        "C0032"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y3-B",
+      "size": 29,
+      "classes": [
+        "C0027",
+        "C0028",
+        "C0029",
+        "C0033",
+        "C0034"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y3-C",
+      "size": 29,
+      "classes": [
+        "C0027",
+        "C0028",
+        "C0029",
+        "C0035",
+        "C0036"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y3-D",
+      "size": 28,
+      "classes": [
+        "C0027",
+        "C0028",
+        "C0029",
+        "C0037",
+        "C0038"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y3-E",
+      "size": 28,
+      "classes": [
+        "C0027",
+        "C0028",
+        "C0029",
+        "C0039",
+        "C0040"
+      ]
+    },
+    {
+      "group_id": "G-CS-Y3-F",
+      "size": 28,
+      "classes": [
+        "C0027",
+        "C0028",
+        "C0029",
+        "C0041",
+        "C0042"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y1-A",
+      "size": 32,
+      "classes": [
+        "C0043",
+        "C0044",
+        "C0045",
+        "C0046",
+        "C0047"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y1-B",
+      "size": 31,
+      "classes": [
+        "C0043",
+        "C0044",
+        "C0045",
+        "C0048",
+        "C0049"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y1-C",
+      "size": 31,
+      "classes": [
+        "C0043",
+        "C0044",
+        "C0045",
+        "C0050",
+        "C0051"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y1-D",
+      "size": 31,
+      "classes": [
+        "C0043",
+        "C0044",
+        "C0045",
+        "C0052",
+        "C0053"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y1-E",
+      "size": 31,
+      "classes": [
+        "C0043",
+        "C0044",
+        "C0045",
+        "C0054",
+        "C0055"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y1-F",
+      "size": 31,
+      "classes": [
+        "C0043",
+        "C0044",
+        "C0045",
+        "C0056",
+        "C0057"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y2-A",
+      "size": 30,
+      "classes": [
+        "C0058",
+        "C0059",
+        "C0060",
+        "C0061",
+        "C0062"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y2-B",
+      "size": 30,
+      "classes": [
+        "C0058",
+        "C0059",
+        "C0060",
+        "C0063",
+        "C0064"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y2-C",
+      "size": 30,
+      "classes": [
+        "C0058",
+        "C0059",
+        "C0060",
+        "C0065",
+        "C0066"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y2-D",
+      "size": 29,
+      "classes": [
+        "C0058",
+        "C0059",
+        "C0060",
+        "C0067",
+        "C0068"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y2-E",
+      "size": 29,
+      "classes": [
+        "C0058",
+        "C0059",
+        "C0060",
+        "C0069",
+        "C0070"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y3-A",
+      "size": 33,
+      "classes": [
+        "C0071",
+        "C0072",
+        "C0073",
+        "C0074",
+        "C0075"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y3-B",
+      "size": 33,
+      "classes": [
+        "C0071",
+        "C0072",
+        "C0073",
+        "C0076",
+        "C0077"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y3-C",
+      "size": 33,
+      "classes": [
+        "C0071",
+        "C0072",
+        "C0073",
+        "C0078",
+        "C0079"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y3-D",
+      "size": 33,
+      "classes": [
+        "C0071",
+        "C0072",
+        "C0073",
+        "C0080",
+        "C0081"
+      ]
+    },
+    {
+      "group_id": "G-MATH-Y3-E",
+      "size": 32,
+      "classes": [
+        "C0071",
+        "C0072",
+        "C0073",
+        "C0082",
+        "C0083"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y1-A",
+      "size": 30,
+      "classes": [
+        "C0084",
+        "C0085",
+        "C0086",
+        "C0087",
+        "C0088",
+        "C0420"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y1-B",
+      "size": 30,
+      "classes": [
+        "C0084",
+        "C0085",
+        "C0086",
+        "C0089",
+        "C0090",
+        "C0420"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y1-C",
+      "size": 30,
+      "classes": [
+        "C0084",
+        "C0085",
+        "C0086",
+        "C0091",
+        "C0092",
+        "C0420"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y1-D",
+      "size": 30,
+      "classes": [
+        "C0084",
+        "C0085",
+        "C0086",
+        "C0093",
+        "C0094",
+        "C0420"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y1-E",
+      "size": 30,
+      "classes": [
+        "C0084",
+        "C0085",
+        "C0086",
+        "C0095",
+        "C0096",
+        "C0420"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y1-F",
+      "size": 29,
+      "classes": [
+        "C0084",
+        "C0085",
+        "C0086",
+        "C0097",
+        "C0098",
+        "C0420"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y2-A",
+      "size": 31,
+      "classes": [
+        "C0099",
+        "C0100",
+        "C0101",
+        "C0102",
+        "C0103"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y2-B",
+      "size": 31,
+      "classes": [
+        "C0099",
+        "C0100",
+        "C0101",
+        "C0104",
+        "C0105"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y2-C",
+      "size": 31,
+      "classes": [
+        "C0099",
+        "C0100",
+        "C0101",
+        "C0106",
+        "C0107"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y2-D",
+      "size": 30,
+      "classes": [
+        "C0099",
+        "C0100",
+        "C0101",
+        "C0108",
+        "C0109"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y2-E",
+      "size": 30,
+      "classes": [
+        "C0099",
+        "C0100",
+        "C0101",
+        "C0110",
+        "C0111"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y2-F",
+      "size": 30,
+      "classes": [
+        "C0099",
+        "C0100",
+        "C0101",
+        "C0112",
+        "C0113"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y3-A",
+      "size": 31,
+      "classes": [
+        "C0114",
+        "C0115",
+        "C0116",
+        "C0117",
+        "C0118"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y3-B",
+      "size": 31,
+      "classes": [
+        "C0114",
+        "C0115",
+        "C0116",
+        "C0119",
+        "C0120"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y3-C",
+      "size": 31,
+      "classes": [
+        "C0114",
+        "C0115",
+        "C0116",
+        "C0121",
+        "C0122"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y3-D",
+      "size": 31,
+      "classes": [
+        "C0114",
+        "C0115",
+        "C0116",
+        "C0123",
+        "C0124"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y3-E",
+      "size": 31,
+      "classes": [
+        "C0114",
+        "C0115",
+        "C0116",
+        "C0125",
+        "C0126"
+      ]
+    },
+    {
+      "group_id": "G-PHYS-Y3-F",
+      "size": 31,
+      "classes": [
+        "C0114",
+        "C0115",
+        "C0116",
+        "C0127",
+        "C0128"
+      ]
+    },
+    {
+      "group_id": "G-CHEM-Y1-A",
+      "size": 31,
+      "classes": [
+        "C0129",
+        "C0130",
+        "C0131",
+        "C0132",
+        "C0133"
+      ]
+    },
+    {
+      "group_id": "G-CHEM-Y1-B",
+      "size": 30,
+      "classes": [
+        "C0129",
+        "C0130",
+        "C0131",
+        "C0134",
+        "C0135"
+      ]
+    },
+    {
+      "group_id": "G-CHEM-Y1-C",
+      "size": 30,
+      "classes": [
+        "C0129",
+        "C0130",
+        "C0131",
+        "C0136",
+        "C0137"
+      ]
+    },
+    {
+      "group_id": "G-CHEM-Y1-D",
+      "size": 30,
+      "classes": [
+        "C0129",
+        "C0130",
+        "C0131",
+        "C0138",
+        "C0139"
+      ]
+    },
+    {
+      "group_id": "G-CHEM-Y1-E",
+      "size": 30,
+      "classes": [
+        "C0129",
+        "C0130",
+        "C0131",
+        "C0140",
+        "C0141"
+      ]
+    },
+    {
+      "group_id": "G-CHEM-Y2-A",
+      "size": 29,
+      "classes": [
+        "C0142",
+        "C0143",
+        "C0144",
+        "C0145",
+        "C0146"
+      ]
+    },
+    {
+      "group_id": "G-CHEM-Y2-B",
+      "size": 29,
+      "classes": [
+        "C0142",
+        "C0143",
+        "C0144",
+        "C0147",
+        "C0148"
+      ]
+    },
+    {
+      "group_id": "G-CHEM-Y2-C",
+      "size": 29,
+      "classes": [
+        "C0142",
+        "C0143",
+        "C0144",
+        "C0149",
+        "C0150"
+      ]
+    },
+    {
+      "group_id": "G-CHEM-Y2-D",
+      "size": 29,
+      "classes": [
+        "C0142",
+        "C0143",
+        "C0144",
+        "C0151",
+        "C0152"
+      ]
+    },
+    {
+      "group_id": "G-CHEM-Y2-E",
+      "size": 29,
+      "classes": [
+        "C0142",
+        "C0143",
+        "C0144",
+        "C0153",
+        "C0154"
+      ]
+    },
+    {
+      "group_id": "G-CHEM-Y2-F",
+      "size": 29,
+      "classes": [
+        "C0142",
+        "C0143",
+        "C0144",
+        "C0155",
+        "C0156"
+      ]
+    },
+    {
+      "group_id": "G-CHEM-Y3-A",
+      "size": 32,
+      "classes": [
+        "C0157",
+        "C0158",
+        "C0159",
+        "C0160",
+        "C0161"
+      ]
+    },
+    {
+      "group_id": "G-CHEM-Y3-B",
+      "size": 32,
+      "classes": [
+        "C0157",
+        "C0158",
+        "C0159",
+        "C0162",
+        "C0163"
+      ]
+    },
+    {
+      "group_id": "G-CHEM-Y3-C",
+      "size": 32,
+      "classes": [
+        "C0157",
+        "C0158",
+        "C0159",
+        "C0164",
+        "C0165"
+      ]
+    },
+    {
+      "group_id": "G-CHEM-Y3-D",
+      "size": 32,
+      "classes": [
+        "C0157",
+        "C0158",
+        "C0159",
+        "C0166",
+        "C0167"
+      ]
+    },
+    {
+      "group_id": "G-CHEM-Y3-E",
+      "size": 32,
+      "classes": [
+        "C0157",
+        "C0158",
+        "C0159",
+        "C0168",
+        "C0169"
+      ]
+    },
+    {
+      "group_id": "G-CHEM-Y3-F",
+      "size": 31,
+      "classes": [
+        "C0157",
+        "C0158",
+        "C0159",
+        "C0170",
+        "C0171"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y1-A",
+      "size": 34,
+      "classes": [
+        "C0172",
+        "C0173",
+        "C0174",
+        "C0175",
+        "C0176"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y1-B",
+      "size": 34,
+      "classes": [
+        "C0172",
+        "C0173",
+        "C0174",
+        "C0177",
+        "C0178"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y1-C",
+      "size": 34,
+      "classes": [
+        "C0172",
+        "C0173",
+        "C0174",
+        "C0179",
+        "C0180"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y1-D",
+      "size": 34,
+      "classes": [
+        "C0172",
+        "C0173",
+        "C0174",
+        "C0181",
+        "C0182"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y1-E",
+      "size": 34,
+      "classes": [
+        "C0172",
+        "C0173",
+        "C0174",
+        "C0183",
+        "C0184"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y2-A",
+      "size": 32,
+      "classes": [
+        "C0185",
+        "C0186",
+        "C0187",
+        "C0188",
+        "C0189"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y2-B",
+      "size": 32,
+      "classes": [
+        "C0185",
+        "C0186",
+        "C0187",
+        "C0190",
+        "C0191"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y2-C",
+      "size": 32,
+      "classes": [
+        "C0185",
+        "C0186",
+        "C0187",
+        "C0192",
+        "C0193"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y2-D",
+      "size": 32,
+      "classes": [
+        "C0185",
+        "C0186",
+        "C0187",
+        "C0194",
+        "C0195"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y2-E",
+      "size": 32,
+      "classes": [
+        "C0185",
+        "C0186",
+        "C0187",
+        "C0196",
+        "C0197"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y3-A",
+      "size": 31,
+      "classes": [
+        "C0198",
+        "C0199",
+        "C0200",
+        "C0201",
+        "C0202"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y3-B",
+      "size": 31,
+      "classes": [
+        "C0198",
+        "C0199",
+        "C0200",
+        "C0203",
+        "C0204"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y3-C",
+      "size": 31,
+      "classes": [
+        "C0198",
+        "C0199",
+        "C0200",
+        "C0205",
+        "C0206"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y3-D",
+      "size": 30,
+      "classes": [
+        "C0198",
+        "C0199",
+        "C0200",
+        "C0207",
+        "C0208"
+      ]
+    },
+    {
+      "group_id": "G-BIO-Y3-E",
+      "size": 30,
+      "classes": [
+        "C0198",
+        "C0199",
+        "C0200",
+        "C0209",
+        "C0210"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y1-A",
+      "size": 29,
+      "classes": [
+        "C0211",
+        "C0212",
+        "C0213",
+        "C0214",
+        "C0215",
+        "C0421"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y1-B",
+      "size": 28,
+      "classes": [
+        "C0211",
+        "C0212",
+        "C0213",
+        "C0216",
+        "C0217",
+        "C0421"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y1-C",
+      "size": 28,
+      "classes": [
+        "C0211",
+        "C0212",
+        "C0213",
+        "C0218",
+        "C0219",
+        "C0421"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y1-D",
+      "size": 28,
+      "classes": [
+        "C0211",
+        "C0212",
+        "C0213",
+        "C0220",
+        "C0221",
+        "C0421"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y1-E",
+      "size": 28,
+      "classes": [
+        "C0211",
+        "C0212",
+        "C0213",
+        "C0222",
+        "C0223",
+        "C0421"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y2-A",
+      "size": 30,
+      "classes": [
+        "C0224",
+        "C0225",
+        "C0226",
+        "C0227",
+        "C0228"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y2-B",
+      "size": 30,
+      "classes": [
+        "C0224",
+        "C0225",
+        "C0226",
+        "C0229",
+        "C0230"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y2-C",
+      "size": 30,
+      "classes": [
+        "C0224",
+        "C0225",
+        "C0226",
+        "C0231",
+        "C0232"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y2-D",
+      "size": 29,
+      "classes": [
+        "C0224",
+        "C0225",
+        "C0226",
+        "C0233",
+        "C0234"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y2-E",
+      "size": 29,
+      "classes": [
+        "C0224",
+        "C0225",
+        "C0226",
+        "C0235",
+        "C0236"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y3-A",
+      "size": 30,
+      "classes": [
+        "C0237",
+        "C0238",
+        "C0239",
+        "C0240",
+        "C0241"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y3-B",
+      "size": 30,
+      "classes": [
+        "C0237",
+        "C0238",
+        "C0239",
+        "C0242",
+        "C0243"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y3-C",
+      "size": 29,
+      "classes": [
+        "C0237",
+        "C0238",
+        "C0239",
+        "C0244",
+        "C0245"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y3-D",
+      "size": 29,
+      "classes": [
+        "C0237",
+        "C0238",
+        "C0239",
+        "C0246",
+        "C0247"
+      ]
+    },
+    {
+      "group_id": "G-ECON-Y3-E",
+      "size": 29,
+      "classes": [
+        "C0237",
+        "C0238",
+        "C0239",
+        "C0248",
+        "C0249"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y1-A",
+      "size": 32,
+      "classes": [
+        "C0250",
+        "C0251",
+        "C0252",
+        "C0253",
+        "C0254",
+        "C0421"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y1-B",
+      "size": 32,
+      "classes": [
+        "C0250",
+        "C0251",
+        "C0252",
+        "C0255",
+        "C0256",
+        "C0421"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y1-C",
+      "size": 31,
+      "classes": [
+        "C0250",
+        "C0251",
+        "C0252",
+        "C0257",
+        "C0258",
+        "C0421"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y1-D",
+      "size": 31,
+      "classes": [
+        "C0250",
+        "C0251",
+        "C0252",
+        "C0259",
+        "C0260",
+        "C0421"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y1-E",
+      "size": 31,
+      "classes": [
+        "C0250",
+        "C0251",
+        "C0252",
+        "C0261",
+        "C0262",
+        "C0421"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y2-A",
+      "size": 30,
+      "classes": [
+        "C0263",
+        "C0264",
+        "C0265",
+        "C0266",
+        "C0267"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y2-B",
+      "size": 30,
+      "classes": [
+        "C0263",
+        "C0264",
+        "C0265",
+        "C0268",
+        "C0269"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y2-C",
+      "size": 30,
+      "classes": [
+        "C0263",
+        "C0264",
+        "C0265",
+        "C0270",
+        "C0271"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y2-D",
+      "size": 29,
+      "classes": [
+        "C0263",
+        "C0264",
+        "C0265",
+        "C0272",
+        "C0273"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y2-E",
+      "size": 29,
+      "classes": [
+        "C0263",
+        "C0264",
+        "C0265",
+        "C0274",
+        "C0275"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y2-F",
+      "size": 29,
+      "classes": [
+        "C0263",
+        "C0264",
+        "C0265",
+        "C0276",
+        "C0277"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y3-A",
+      "size": 30,
+      "classes": [
+        "C0278",
+        "C0279",
+        "C0280",
+        "C0281",
+        "C0282"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y3-B",
+      "size": 30,
+      "classes": [
+        "C0278",
+        "C0279",
+        "C0280",
+        "C0283",
+        "C0284"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y3-C",
+      "size": 30,
+      "classes": [
+        "C0278",
+        "C0279",
+        "C0280",
+        "C0285",
+        "C0286"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y3-D",
+      "size": 30,
+      "classes": [
+        "C0278",
+        "C0279",
+        "C0280",
+        "C0287",
+        "C0288"
+      ]
+    },
+    {
+      "group_id": "G-PSY-Y3-E",
+      "size": 30,
+      "classes": [
+        "C0278",
+        "C0279",
+        "C0280",
+        "C0289",
+        "C0290"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y1-A",
+      "size": 34,
+      "classes": [
+        "C0291",
+        "C0292",
+        "C0293",
+        "C0294",
+        "C0295"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y1-B",
+      "size": 34,
+      "classes": [
+        "C0291",
+        "C0292",
+        "C0293",
+        "C0296",
+        "C0297"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y1-C",
+      "size": 34,
+      "classes": [
+        "C0291",
+        "C0292",
+        "C0293",
+        "C0298",
+        "C0299"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y1-D",
+      "size": 34,
+      "classes": [
+        "C0291",
+        "C0292",
+        "C0293",
+        "C0300",
+        "C0301"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y1-E",
+      "size": 34,
+      "classes": [
+        "C0291",
+        "C0292",
+        "C0293",
+        "C0302",
+        "C0303"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y2-A",
+      "size": 31,
+      "classes": [
+        "C0304",
+        "C0305",
+        "C0306",
+        "C0307",
+        "C0308"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y2-B",
+      "size": 30,
+      "classes": [
+        "C0304",
+        "C0305",
+        "C0306",
+        "C0309",
+        "C0310"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y2-C",
+      "size": 30,
+      "classes": [
+        "C0304",
+        "C0305",
+        "C0306",
+        "C0311",
+        "C0312"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y2-D",
+      "size": 30,
+      "classes": [
+        "C0304",
+        "C0305",
+        "C0306",
+        "C0313",
+        "C0314"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y2-E",
+      "size": 30,
+      "classes": [
+        "C0304",
+        "C0305",
+        "C0306",
+        "C0315",
+        "C0316"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y3-HON",
+      "size": 10,
+      "classes": [
+        "C0317",
+        "C0318",
+        "C0319",
+        "C0320"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y3-A",
+      "size": 30,
+      "classes": [
+        "C0317",
+        "C0318",
+        "C0319",
+        "C0321",
+        "C0322"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y3-B",
+      "size": 30,
+      "classes": [
+        "C0317",
+        "C0318",
+        "C0319",
+        "C0323",
+        "C0324"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y3-C",
+      "size": 29,
+      "classes": [
+        "C0317",
+        "C0318",
+        "C0319",
+        "C0325",
+        "C0326"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y3-D",
+      "size": 29,
+      "classes": [
+        "C0317",
+        "C0318",
+        "C0319",
+        "C0327",
+        "C0328"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y3-E",
+      "size": 29,
+      "classes": [
+        "C0317",
+        "C0318",
+        "C0319",
+        "C0329",
+        "C0330"
+      ]
+    },
+    {
+      "group_id": "G-ENG-Y3-F",
+      "size": 29,
+      "classes": [
+        "C0317",
+        "C0318",
+        "C0319",
+        "C0331",
+        "C0332"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y1-A",
+      "size": 31,
+      "classes": [
+        "C0333",
+        "C0334",
+        "C0335",
+        "C0336",
+        "C0337"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y1-B",
+      "size": 31,
+      "classes": [
+        "C0333",
+        "C0334",
+        "C0335",
+        "C0338",
+        "C0339"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y1-C",
+      "size": 31,
+      "classes": [
+        "C0333",
+        "C0334",
+        "C0335",
+        "C0340",
+        "C0341"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y1-D",
+      "size": 31,
+      "classes": [
+        "C0333",
+        "C0334",
+        "C0335",
+        "C0342",
+        "C0343"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y1-E",
+      "size": 30,
+      "classes": [
+        "C0333",
+        "C0334",
+        "C0335",
+        "C0344",
+        "C0345"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y1-F",
+      "size": 30,
+      "classes": [
+        "C0333",
+        "C0334",
+        "C0335",
+        "C0346",
+        "C0347"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y2-A",
+      "size": 31,
+      "classes": [
+        "C0348",
+        "C0349",
+        "C0350",
+        "C0351",
+        "C0352"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y2-B",
+      "size": 31,
+      "classes": [
+        "C0348",
+        "C0349",
+        "C0350",
+        "C0353",
+        "C0354"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y2-C",
+      "size": 31,
+      "classes": [
+        "C0348",
+        "C0349",
+        "C0350",
+        "C0355",
+        "C0356"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y2-D",
+      "size": 30,
+      "classes": [
+        "C0348",
+        "C0349",
+        "C0350",
+        "C0357",
+        "C0358"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y2-E",
+      "size": 30,
+      "classes": [
+        "C0348",
+        "C0349",
+        "C0350",
+        "C0359",
+        "C0360"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y2-F",
+      "size": 30,
+      "classes": [
+        "C0348",
+        "C0349",
+        "C0350",
+        "C0361",
+        "C0362"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y3-A",
+      "size": 32,
+      "classes": [
+        "C0363",
+        "C0364",
+        "C0365",
+        "C0366",
+        "C0367"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y3-B",
+      "size": 32,
+      "classes": [
+        "C0363",
+        "C0364",
+        "C0365",
+        "C0368",
+        "C0369"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y3-C",
+      "size": 32,
+      "classes": [
+        "C0363",
+        "C0364",
+        "C0365",
+        "C0370",
+        "C0371"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y3-D",
+      "size": 31,
+      "classes": [
+        "C0363",
+        "C0364",
+        "C0365",
+        "C0372",
+        "C0373"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y3-E",
+      "size": 31,
+      "classes": [
+        "C0363",
+        "C0364",
+        "C0365",
+        "C0374",
+        "C0375"
+      ]
+    },
+    {
+      "group_id": "G-ART-Y3-F",
+      "size": 31,
+      "classes": [
+        "C0363",
+        "C0364",
+        "C0365",
+        "C0376",
+        "C0377"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y1-A",
+      "size": 30,
+      "classes": [
+        "C0378",
+        "C0379",
+        "C0380",
+        "C0381",
+        "C0382"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y1-B",
+      "size": 30,
+      "classes": [
+        "C0378",
+        "C0379",
+        "C0380",
+        "C0383",
+        "C0384"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y1-C",
+      "size": 30,
+      "classes": [
+        "C0378",
+        "C0379",
+        "C0380",
+        "C0385",
+        "C0386"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y1-D",
+      "size": 29,
+      "classes": [
+        "C0378",
+        "C0379",
+        "C0380",
+        "C0387",
+        "C0388"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y1-E",
+      "size": 29,
+      "classes": [
+        "C0378",
+        "C0379",
+        "C0380",
+        "C0389",
+        "C0390"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y2-A",
+      "size": 29,
+      "classes": [
+        "C0391",
+        "C0392",
+        "C0393",
+        "C0394",
+        "C0395"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y2-B",
+      "size": 29,
+      "classes": [
+        "C0391",
+        "C0392",
+        "C0393",
+        "C0396",
+        "C0397"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y2-C",
+      "size": 29,
+      "classes": [
+        "C0391",
+        "C0392",
+        "C0393",
+        "C0398",
+        "C0399"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y2-D",
+      "size": 28,
+      "classes": [
+        "C0391",
+        "C0392",
+        "C0393",
+        "C0400",
+        "C0401"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y2-E",
+      "size": 28,
+      "classes": [
+        "C0391",
+        "C0392",
+        "C0393",
+        "C0402",
+        "C0403"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y3-HON",
+      "size": 11,
+      "classes": [
+        "C0404",
+        "C0405",
+        "C0406",
+        "C0407"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y3-A",
+      "size": 29,
+      "classes": [
+        "C0404",
+        "C0405",
+        "C0406",
+        "C0408",
+        "C0409"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y3-B",
+      "size": 29,
+      "classes": [
+        "C0404",
+        "C0405",
+        "C0406",
+        "C0410",
+        "C0411"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y3-C",
+      "size": 29,
+      "classes": [
+        "C0404",
+        "C0405",
+        "C0406",
+        "C0412",
+        "C0413"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y3-D",
+      "size": 29,
+      "classes": [
+        "C0404",
+        "C0405",
+        "C0406",
+        "C0414",
+        "C0415"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y3-E",
+      "size": 29,
+      "classes": [
+        "C0404",
+        "C0405",
+        "C0406",
+        "C0416",
+        "C0417"
+      ]
+    },
+    {
+      "group_id": "G-LAW-Y3-F",
+      "size": 28,
+      "classes": [
+        "C0404",
+        "C0405",
+        "C0406",
+        "C0418",
+        "C0419"
+      ]
+    }
+  ]
+}

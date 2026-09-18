@@ -172,12 +172,13 @@ class GraphColouringSolver:
         professor = self.instance.professor_for(class_info)
         groups = self.instance.groups_for(class_info)
 
-        for time_slot in self.instance.candidate_slots(class_info):
-            for room in self.instance.candidate_rooms(class_info):
-                if schedule.validate(class_info, room, professor, time_slot, groups):
-                    continue
-                schedule.add_assignment(class_info, room, professor, time_slot, groups)
-                return time_slot
+        # Goal 4 is weighed here, where the time slot is chosen: a right-sized
+        # room at a later time beats an oversized room now.
+        for time_slot, room in self.instance.placements(class_info, avoid_oversized=True):
+            if schedule.validate(class_info, room, professor, time_slot, groups):
+                continue
+            schedule.add_assignment(class_info, room, professor, time_slot, groups)
+            return time_slot
         return None
 
     def _build_slot_map(

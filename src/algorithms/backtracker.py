@@ -156,13 +156,12 @@ class BacktrackingSolver:
         professor = self.instance.professor_for(class_info)
         groups = self.instance.groups_for(class_info)
 
-        for time_slot in self.instance.candidate_slots(class_info):
-            for room in self.instance.candidate_rooms(class_info):
-                self._steps += 1
-                if schedule.validate(class_info, room, professor, time_slot, groups):
-                    continue
-                schedule.add_assignment(class_info, room, professor, time_slot, groups)
-                return True
+        for time_slot, room in self.instance.placements(class_info):
+            self._steps += 1
+            if schedule.validate(class_info, room, professor, time_slot, groups):
+                continue
+            schedule.add_assignment(class_info, room, professor, time_slot, groups)
+            return True
         return False
 
     def _place_by_ejection(self, schedule: Schedule, class_info: ClassInformation, depth: int) -> bool:
@@ -184,38 +183,36 @@ class BacktrackingSolver:
         groups = self.instance.groups_for(class_info)
 
         # Somewhere free is always better than displacing somebody.
-        for time_slot in self.instance.candidate_slots(class_info):
-            for room in self.instance.candidate_rooms(class_info):
-                self._steps += 1
-                if not schedule.validate(class_info, room, professor, time_slot, groups):
-                    transaction.place(class_info, room, professor, time_slot)
-                    return True
+        for time_slot, room in self.instance.placements(class_info):
+            self._steps += 1
+            if not schedule.validate(class_info, room, professor, time_slot, groups):
+                transaction.place(class_info, room, professor, time_slot)
+                return True
 
         if depth <= 0:
             return False
 
-        for time_slot in self.instance.candidate_slots(class_info):
-            for room in self.instance.candidate_rooms(class_info):
-                if self._steps >= self.step_budget:
-                    return False
-                self._steps += 1
+        for time_slot, room in self.instance.placements(class_info):
+            if self._steps >= self.step_budget:
+                return False
+            self._steps += 1
 
-                blockers = self._blockers(schedule, class_info, room, time_slot)
-                if blockers is None or len(blockers) > self.max_ejections:
-                    continue
+            blockers = self._blockers(schedule, class_info, room, time_slot)
+            if blockers is None or len(blockers) > self.max_ejections:
+                continue
 
-                mark = transaction.savepoint()
-                # Sorted so that a run is reproducible; set order changes per process.
-                ejected = [transaction.remove(class_id) for class_id in sorted(blockers)]
-                transaction.place(class_info, room, professor, time_slot)
+            mark = transaction.savepoint()
+            # Sorted so that a run is reproducible; set order changes per process.
+            ejected = [transaction.remove(class_id) for class_id in sorted(blockers)]
+            transaction.place(class_info, room, professor, time_slot)
 
-                if all(
-                    self._attempt(schedule, a.class_info, depth - 1, transaction)
-                    for a in ejected
-                    if a is not None
-                ):
-                    return True
-                transaction.rollback(mark)
+            if all(
+                self._attempt(schedule, a.class_info, depth - 1, transaction)
+                for a in ejected
+                if a is not None
+            ):
+                return True
+            transaction.rollback(mark)
         return False
 
     def _blockers(

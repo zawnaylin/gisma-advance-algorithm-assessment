@@ -41,10 +41,9 @@ class GreedySolver:
         professor = self.instance.professor_for(class_info)
         groups = self.instance.groups_for(class_info)
 
-        for time_slot in self.instance.candidate_slots(class_info):
-            for room in self.instance.candidate_rooms(class_info):
-                if schedule.validate(class_info, room, professor, time_slot, groups):
-                    continue
-                return schedule.add_assignment(class_info, room, professor, time_slot, groups)
+        for time_slot, room in self.instance.placements(class_info):
+            if schedule.validate(class_info, room, professor, time_slot, groups):
+                continue
+            return schedule.add_assignment(class_info, room, professor, time_slot, groups)
 
         return None

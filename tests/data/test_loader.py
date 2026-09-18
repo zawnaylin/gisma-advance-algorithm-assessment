@@ -52,3 +52,21 @@ def test_duration_defaults_to_one_hour_when_absent(tmp_path):
 
     assert scenario.classes[0].duration_hours == 1
     assert scenario.name == "legacy"
+
+
+def test_group_sizes_are_read_and_counted(tmp_path):
+    raw = {
+        "rooms": [{"room_id": "R-1", "capacity": 40}],
+        "classes": [{"class_id": "C1", "name": "Intro", "num_students": 55, "professor_id": "P1"}],
+        "student_groups": [
+            {"group_id": "G-A", "size": 30, "classes": ["C1"]},
+            {"group_id": "G-B", "size": 25, "classes": ["C1"]},
+        ],
+    }
+    path = tmp_path / "sized.json"
+    path.write_text(json.dumps(raw))
+
+    scenario = load_file(path)
+
+    assert [g.size for g in scenario.groups] == [30, 25]
+    assert scenario.students == 55

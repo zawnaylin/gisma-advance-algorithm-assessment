@@ -1,20 +1,50 @@
 # Scenarios
 
-Each file is one complete instance: rooms, classes and student groups. They are
-derived from the baseline (`baseline.json`) by changing one pressure at a
-time, so a difference in the result points at a single cause. The teaching load
-is always 480 hours across 240 classes; only the resources and the cohort
-structure change.
+Each file is one complete instance: rooms, classes and student groups.
+
+`university.json` is the instance from the assessment brief, at full scale. The
+other four are derived from the baseline (`baseline.json`) by changing one
+pressure at a time, so a difference in the result points at a single cause.
+Their teaching load is always 480 hours across 240 classes; only the resources
+and the cohort structure change.
 
 Load one with `data.loader.load_scenario(name)`, or run `python main.py` to see
-all four reported.
+them all reported.
 
 | scenario | what it stresses | greedy | dominant conflict |
 |---|---|---|---|
+| `university` | the brief: 5,000 students, 300 professors, 50 halls | 100.0% | none (67 oversized rooms) |
 | `baseline` | nothing - comfortable estate | 100.0% | none |
 | `tight` | rooms: 13 rooms, 92% of their hours needed | 97.1% | `room_contention` (7) |
 | `cohorts` | cohorts: 60 groups carrying ~30h each | 87.1% | `group_contention` (31) |
 | `infeasible` | three impossibilities at once | 83.8% | structural (32) + contention (7) |
+
+## university
+
+The university from the brief: **5,000 students, 300 professors, 50 lecture
+halls**. It is built by `generate_university.py` (fixed seed, so it can be
+rebuilt identically: `python scenarios/generate_university.py`).
+
+- 10 departments × 3 years = 30 year groups. Each is split into cohorts of at
+  most 34 students, 166 cohorts in total. Every student belongs to exactly one
+  cohort, and each group records its `size`.
+- Each year group attends 3 two-hour lectures together (about 170 students).
+  Each cohort also has its own 1-hour seminar and 2-hour lab or workshop.
+- Three small honours cohorts in Year 3 have their own seminars. One of them is
+  the brief's 10-person **Poetry Seminar**.
+- Two service lectures cross departments. This is the brief's student group
+  example: Year 1 CS takes **Intro to Math**, taught by a Mathematics
+  professor, alongside **Intro to Programming**, taught by a CS professor.
+  Nobody teaches both, but the shared students connect them.
+- The 50 halls: one 500-seat auditorium, 6 × 200, 4 × 100, 20 × 40, 10 × 25
+  and 9 × 15.
+- Each class's `num_students` is the sum of the cohorts attending it, so the
+  head counts are consistent with the 5,000 students.
+
+The instance can be fully solved (679 teaching hours against 2,000 room-hours).
+Its difficulty is goal 4. Placed greedily, 67 classes end up in rooms more than
+twice their size, for example cohorts in 100-seat halls and lectures in the
+auditorium. The goal-4-aware Stage 2 brings that down to 0.
 
 ## baseline
 

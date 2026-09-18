@@ -1,9 +1,11 @@
 # Campus Puzzle — University Timetabling
 
-This project assigns a university's classes to **rooms** and **time slots** for a
-five-day week (Monday–Friday, 09:00–17:00) without breaking any hard
-constraint. It is built in four stages, each one handling a part of the problem
-the previous stage left open:
+This project builds the semester schedule for a large university: 5,000
+students, 300 professors and 50 lecture halls. Every class needs a **room** and
+a **time slot** in a five-day week (Monday–Friday, 09:00–17:00), and the
+schedule must not break any of the brief's rules (see [The problem](#the-problem)).
+It is built in four stages, each one handling a part of the problem the previous
+stage left open:
 
 | Stage | Engine | File | Answers |
 |---|---|---|---|
@@ -23,15 +25,16 @@ uv run pytest              # test suite
 ## Project structure
 
 ```
-main.py                       runs Stages 1-4 on every scenario and prints each report's figures
+main.py                       runs Stages 1-4 on every scenario, audits them, prints each report's figures
 scenarios/                    problem instances (JSON) - see scenarios/README.md
+└── generate_university.py    builds university.json (5,000 students, 300 professors, 50 halls)
 src/
 ├── domains/                  the problem vocabulary
-│   ├── constraints.py        school day (9-17), teaching days (Mon-Fri), max class length
+│   ├── constraints.py        the four goals, school day (9-17), teaching days (Mon-Fri), oversize rule
 │   ├── class_information.py  a class: size, duration, professor
 │   ├── room.py               a room and its capacity
 │   ├── professor.py
-│   ├── student_group.py      a cohort: classes its students all attend
+│   ├── student_group.py      a cohort: its size and the classes its students all attend
 │   ├── time_slot.py          day + start/end hour, with an overlap test
 │   └── schedule.py           the timetable: validate / add_assignment / unassign
 ├── data/
@@ -40,6 +43,7 @@ src/
 └── algorithms/
     ├── solver.py             Solver protocol, SolveResult, Conflict, manual-intervention report
     ├── instance.py           shared lookups, difficulty ordering, failure diagnosis
+    ├── audit.py              independent check of a finished schedule against goals 1-4
     ├── greedy_solver.py      Stage 1
     ├── graph_engine.py       Stage 2 (Welsh-Powell colouring, SlotMap)
     ├── room_allocator.py     Stage 3
@@ -49,16 +53,39 @@ tests/                        unit tests mirroring src/
 
 ## The problem
 
-A class is placed in one **(time slot, room)** pair. `Schedule.validate` checks
-every hard constraint:
+The brief asks for a master schedule where:
 
-| Constraint | Rule |
-|---|---|
-| Capacity | the room has at least as many seats as the class has students |
-| Room clash | a room hosts at most one class at a time |
-| Professor clash | a professor teaches at most one class at a time |
-| Cohort clash | two classes that share a student group cannot overlap |
-| Working hours | a class runs Mon–Fri, starting at 09:00 or later and ending by 17:00 |
+| # | Goal | Kind | How it is enforced |
+|---|---|---|---|
+| 1 | No person (student or teacher) is in two classes at the same time | hard | a professor teaches one class at a time; a **student group** attends one class at a time |
+| 2 | No room is double-booked | hard | a room hosts one class at a time |
+| 3 | Every class fits inside its room | hard | room capacity ≥ class size |
+| 4 | No wasted resources (no heating a 500-seat auditorium for a 10-person seminar) | soft | a room with more than 2 seats per student (`OVERSIZE_FACTOR`) counts as oversized. Stage 2 avoids those rooms, Stage 3 minimises empty seats, and the audit reports them |
+
+Every class must also run Monday to Friday, starting at 09:00 or later and
+ending by 17:00. The rules are written out in `src/domains/constraints.py`.
+
+**Student group conflicts.** A `StudentGroup` is a cohort of students who all
+take the same classes, for example Year 1 Computer Science, group A (33
+students). Two classes that share a group are **connected** even when different
+professors teach them. If Year 1 CS takes both *Intro to Math* (taught by a
+mathematician) and *Intro to Programming* (taught by a computer scientist),
+the two can't overlap, or those 33 students would be in two places at once. The
+cohort check is part of `Schedule.validate`, so every stage enforces it on
+every placement. Stage 2 also puts these connections into the conflict graph as
+edges.
+
+Goals 1–3 are hard, so goal 4 is never traded against them. A class goes into
+an oversized room only if no right-sized room is free at any time it could
+run.
+
+**Independent audit.** Goals 1–3 are checked by `Schedule.validate` before
+every placement. As a separate check, `algorithms/audit.py` takes each finished
+schedule and checks all four goals again from scratch, pair by pair, without
+using the `Schedule` object. It reports every clash, the number of students
+double-booked, every double-booked room, every class over capacity, and every
+oversized room. `main.py` prints this audit for every stage on every scenario.
+**Every schedule produced passes goals 1–3 with zero violations.**
 
 Every stage returns the same `SolveResult`. A class that can't be placed is
 never dropped silently. `Instance.diagnose` gives it a cause, which is one of two
@@ -76,8 +103,20 @@ need rooms of a given size than those rooms can supply in a week. That shortfall
 is impossible to schedule even though each class on its own has a room that
 fits.
 
-The scenarios (`baseline`, `tight`, `cohorts`, `infeasible`) each change one
-pressure at a time. They are described in [`scenarios/README.md`](scenarios/README.md).
+**Scenarios** (details in [`scenarios/README.md`](scenarios/README.md)):
+
+| scenario | students | professors | halls | classes | purpose |
+|---|---|---|---|---|---|
+| `university` | **5,000** | **300** | **50** | 421 | the brief's university, at full scale |
+| `baseline` | – | 159 | 50 | 240 | a comfortable control instance |
+| `tight` | – | 159 | 13 | 240 | too few rooms |
+| `cohorts` | – | 159 | 50 | 240 | heavily overlapping student groups |
+| `infeasible` | – | 146 | 11 | 240 | impossible to solve in three different ways |
+
+In `university`, each class's head count is the sum of the cohorts attending
+it, so the 5,000 students add up throughout. The four smaller scenarios predate
+group sizes and give no student total. They each change one pressure at a time,
+which makes each algorithm's weak points easy to see.
 
 ---
 
@@ -114,8 +153,12 @@ that only big classes can use.
 The flexible classes (short, small, in one cohort) are placed last, when they
 can still use whatever space is left.
 
-**Result.** 100% coverage on `baseline`. On `tight`, `cohorts` and `infeasible`
-the schedule is incomplete: 7, 31 and 39 classes are left unplaced.
+**Result.** 100% coverage on `baseline` and `university`. On `tight`,
+`cohorts` and `infeasible` the schedule is incomplete: 7, 31 and 39 classes are
+left unplaced. Greedy takes the first available room at the earliest time, so
+it breaks goal 4 often. On `university` it puts 67 classes in oversized rooms,
+for example 30-student seminars in 100-seat halls, because the right-sized
+rooms are already busy in the early slots.
 
 ---
 
@@ -138,7 +181,12 @@ the schedule is incomplete: 7, 31 and 39 classes are left unplaced.
    The textbook version goes colour by colour, sweeping the sorted list. It
    produces the same colouring as this node-by-node first fit.
 3. A colour is only useful if some room is free in it, so each class also gets a
-   provisional room. Stage 3 keeps the time slots and redoes the rooms.
+   provisional room. **Goal 4 is weighed here**, because this is where the time
+   slot is chosen. The class first tries every right-sized room at every time.
+   It falls back to an oversized room only if none of those is free
+   (`Instance.placements(avoid_oversized=True)`). A seminar therefore moves to
+   a later slot instead of into the auditorium. Stage 3 keeps the time slots
+   and redoes the rooms.
 4. **Slot map.** After colouring, `SlotMap` labels every candidate window of
    every class as **safe** (no neighbour in an overlapping slot) or **unsafe**,
    and records which neighbours make it unsafe. `main.py` prints a summary for
@@ -152,13 +200,15 @@ don't overlap".
 
 | scenario | Stage 1 greedy | Stage 2 Welsh–Powell | safe class-windows (slot map) |
 |---|---|---|---|
-| `baseline` | 0 | 0 | 73.7% |
-| `tight` | 7 | **0** | 64.6% |
-| `infeasible` | 39 | **32** | 58.8% |
+| `university` | 0 | 0 | 74.7% |
+| `baseline` | 0 | 0 | 73.6% |
+| `tight` | 7 | **0** | 64.7% |
+| `infeasible` | 39 | **32** | 59.0% |
 | `cohorts` | **31** | 34 | 7.1% (34 classes with no safe window) |
 
-*Did graph colouring prevent more conflicts?* On three of the four scenarios,
-yes:
+*Did graph colouring prevent more conflicts?* On `university` and `baseline`
+both place everything. Of the three hard scenarios, graph colouring does better
+on two:
 
 - **`tight`**: every class is placed (0 unplaced against 7).
 - **`infeasible`**: all 7 room-contention failures are recovered. The 32 that
@@ -167,7 +217,8 @@ yes:
   the large lectures come early and fill the same early hours, competing for
   the few big rooms. Welsh–Powell orders them by how many classes they collide
   with. That mixes large and small classes, and seems to spread the load on
-  the big rooms across the week.
+  the big rooms across the week. Keeping small classes out of big rooms
+  (goal 4) also leaves the big rooms free for the classes that need them.
 - **`cohorts`** is the exception (34 against 31). Each cohort carries about 30
   hours, and only 7.1% of all windows are safe. Welsh–Powell fixes its order
   once, from the degrees at the start. It can't react when a low-degree class
@@ -223,25 +274,28 @@ compared with the rooms it came in with and kept only if it wastes no more.
 Stage 3 therefore never makes a schedule worse. The final schedule is rebuilt
 through `Schedule.add_assignment`, which checks every hard constraint again.
 
-**Result: wasted seats** (empty seats summed over all placements):
+**Result: wasted seats** (empty seats summed over all placements) and oversized
+rooms (goal 4):
 
-| scenario | Stage 1 greedy | Stage 2 provisional rooms | Stage 3 DP | DP vs greedy |
-|---|---|---|---|---|
-| `baseline` | 4,787 | 3,242 | 3,237 | **−32.4%** |
-| `cohorts` | 2,965 | 2,509 | 2,509 | **−15.4%** |
-| `infeasible` | 2,136 | 1,893 | 1,893 | **−11.4%** |
-| `tight` | 9,575 | 9,342 | 9,342 | **−2.4%** |
+| scenario | Stage 1 greedy | Stage 2 provisional rooms | Stage 3 DP | DP vs greedy | oversized rooms, greedy → final |
+|---|---|---|---|---|---|
+| `university` | 12,897 | 6,477 | 6,477 | **−49.8%** | 67 → **0** |
+| `baseline` | 4,787 | 3,237 | 3,237 | **−32.4%** | 22 → 6 |
+| `cohorts` | 2,965 | 2,509 | 2,509 | **−15.4%** | 7 → 5 |
+| `infeasible` | 2,136 | 2,058 | 1,898 | **−11.1%** | 21 → 12 |
+| `tight` | 9,575 | 4,822 | 4,822 | **−49.6%** | 43 → 9 |
 
 How to read these figures:
 
 - The final schedule wastes fewer seats than the greedy baseline on every
-  scenario.
-- Most of that saving comes from the time slots Stage 2 chose. Spreading the
-  large classes over the week means fewer small classes end up in large rooms
-  because every snug room is busy.
-- The DP itself changes little: 5 seats on `baseline`, nothing elsewhere. The DP
-  is exact for each slot, so this shows that the best-fit provisional rooms
-  were already optimal slot by slot.
+  scenario. For the brief's university, it wastes half as many, and no class is
+  left heating a room more than twice its size.
+- Most of that saving comes from the time slots Stage 2 chose. Stage 2 would
+  rather move a class to a later time than put it in a room far too big for it.
+- The DP itself changes the result only on `infeasible` (−7.8% against its
+  input). Elsewhere, the provisional rooms from Stage 2 were already the best
+  choice for each slot. The DP is exact for each slot, so an unchanged result
+  shows that no better room allocation exists for those time slots.
 - The remaining waste comes from the timetable itself. In a busy hour, small
   classes have to use large rooms, and no room allocation can fix that once the
   time slots are fixed.
@@ -311,6 +365,7 @@ every room, with every order of trying them) is cut down in these ways:
 
 | scenario | Stage 1 greedy | Stage 4 backtracking | notes |
 |---|---|---|---|
+| `university` | 100% | 100% | nothing to repair |
 | `baseline` | 100% | 100% | nothing to repair |
 | `tight` | 97.1% | **100%** | all 7 stranded classes placed by moving other classes |
 | `infeasible` | 83.8% | **85.8%** | 5 placed after moving others; 32 structural + 2 flagged |

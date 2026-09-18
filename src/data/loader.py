@@ -26,6 +26,11 @@ class Scenario:
     professors: List[Professor]
     groups: List[StudentGroup]
 
+    @property
+    def students(self) -> int:
+        """Head count across all cohorts; 0 when the file gives no group sizes."""
+        return sum(group.size for group in self.groups)
+
     def __repr__(self) -> str:
         return (
             f"Scenario(name={self.name!r}, rooms={len(self.rooms)}, "
@@ -63,7 +68,7 @@ def load_file(path: Path, name: str | None = None) -> Scenario:
     classes_by_id = {c.id: c for c in classes}
     professors = [Professor(pid) for pid in sorted({c.professor_id for c in classes})]
     groups = [
-        StudentGroup(g["group_id"], [classes_by_id[cid] for cid in g["classes"]])
+        StudentGroup(g["group_id"], [classes_by_id[cid] for cid in g["classes"]], g.get("size", 0))
         for g in raw.get("student_groups", [])
     ]
 
