@@ -1,10 +1,4 @@
-"""One problem instance, with the lookups and analysis every solver needs.
-
-The four algorithms differ in how they search, not in what they are searching.
-Room candidates, legal time windows, why a class failed and which capacity tier
-is oversubscribed are all the same questions whoever is asking, so they live
-here once and each solver composes an Instance rather than inheriting from it.
-"""
+"""A problem instance with the lookups and failure analysis every solver shares."""
 
 from collections import Counter
 from typing import Dict, List, Sequence, Tuple
@@ -30,11 +24,13 @@ TEACHABLE_HOURS_PER_WEEK = len(AVAILABLE_DAY) * (END_TIME - START_TIME)
 
 
 def is_oversized(class_info: ClassInformation, room: Room) -> bool:
-    """Goal 4: more than OVERSIZE_FACTOR seats per student is wasted heating."""
+    """True when the room has more than OVERSIZE_FACTOR seats per student (goal 4)."""
     return room.capacity > OVERSIZE_FACTOR * max(class_info.number_of_students, 1)
 
 
 class Instance:
+    """The classes, rooms, professors and student groups of one timetabling problem."""
+
     def __init__(
         self,
         classes: Sequence[ClassInformation],
@@ -66,6 +62,7 @@ class Instance:
 
     @classmethod
     def from_scenario(cls, scenario) -> "Instance":
+        """Build an instance from a loaded `Scenario`."""
         return cls(
             scenario.classes, scenario.rooms, scenario.professors, scenario.groups, scenario.name
         )
@@ -79,6 +76,11 @@ class Instance:
     # --- lookups ----------------------------------------------------------
 
     def professor_for(self, class_info: ClassInformation) -> Professor:
+        """The professor who teaches the class.
+
+        Raises:
+            ValueError: if the class names a professor the instance does not have.
+        """
         professor = self._professors_by_id.get(class_info.professor_id)
         if professor is None:
             raise ValueError(
@@ -87,13 +89,11 @@ class Instance:
         return professor
 
     def groups_for(self, class_info: ClassInformation) -> List[StudentGroup]:
+        """The student groups that attend the class."""
         return self._groups_by_class_id.get(class_info.id, [])
 
     def candidate_rooms(self, class_info: ClassInformation) -> List[Room]:
-        """Best fit: the smallest room that still holds the class, so the large
-        rooms stay free for the classes that have no alternative. Cached per
-        class size, since only the head count decides the answer.
-        """
+        """Rooms large enough for the class, smallest first."""
         size = class_info.number_of_students
         if size not in self._rooms_by_size:
             self._rooms_by_size[size] = sorted(
@@ -103,9 +103,7 @@ class Instance:
         return self._rooms_by_size[size]
 
     def candidate_slots(self, class_info: ClassInformation) -> List[TimeSlot]:
-        """Every legal window for a class of this length, in chronological
-        order. A longer class has fewer of them.
-        """
+        """Every legal time slot for the class's duration, in chronological order."""
         duration = class_info.duration_hours
         if duration not in self._slots_by_duration:
             slots = []
@@ -118,16 +116,15 @@ class Instance:
     def placements(
         self, class_info: ClassInformation, avoid_oversized: bool = False
     ) -> List[Tuple[TimeSlot, Room]]:
-        """Every (time slot, room) a class may take, in the order to try them.
+        """Every (time slot, room) pair the class may take, in the order to try them.
 
-        By default: chronological, then smallest room first - the first
-        available slot and room, as the greedy baseline takes them.
+        Args:
+            class_info: the class to place.
+            avoid_oversized: if True, list all right-sized rooms at every time
+                before any oversized room; otherwise order by time, then room size.
 
-        With `avoid_oversized`, goal 4 orders the search rather than filtering
-        it, since it is soft: every right-sized room at every time comes first,
-        and an oversized room only after none of those is free. A small seminar
-        therefore moves to a later day before it moves into the auditorium - but
-        still gets the auditorium if that is the only way to hold it at all.
+        Returns:
+            The candidate pairs, in trial order.
         """
         key = (class_info.number_of_students, class_info.duration_hours, avoid_oversized)
         if key not in self._placements:
@@ -145,11 +142,8 @@ class Instance:
     # --- ordering ---------------------------------------------------------
 
     def most_constrained_first(self) -> List[ClassInformation]:
-        """A long class has the fewest legal start hours, a big one fits in the
-        fewest rooms, and a class shared by many cohorts collides with the most
-        timetables. Placing those first leaves the flexible ones to absorb what
-        is left.
-        """
+        """Classes sorted by duration, then head count, then number of groups,
+        all descending."""
         return sorted(
             self.classes,
             key=lambda c: (c.duration_hours, c.number_of_students, len(self.groups_for(c))),
@@ -157,18 +151,11 @@ class Instance:
         )
 
     def is_placeable(self, class_info: ClassInformation) -> bool:
-        """False only when no room in the estate could ever hold this class.
-
-        Professor overload deliberately does not count here. A professor booked
-        for 60h still teaches 40 of them, so the classes are placed until the
-        week runs out and only the excess is reported - skipping all of them
-        would lose placements a greedy pass would have made.
-        """
+        """True when at least one room is large enough for the class."""
         return bool(self.candidate_rooms(class_info))
 
     def peers(self, class_info: ClassInformation) -> frozenset:
-        """Ids of the classes sharing at least one cohort with this one, and so
-        unable to run at the same time as it."""
+        """Ids of the classes that share at least one student group with this one."""
         if class_info.id not in self._peers_by_class_id:
             peers = set()
             for group in self.groups_for(class_info):
@@ -180,10 +167,9 @@ class Instance:
     # --- analysis ---------------------------------------------------------
 
     def capacity_deficits(self) -> List[CapacityDeficit]:
-        """Room-hours promised against room-hours owned, at every capacity tier.
+        """Capacity tiers whose classes need more hours than their rooms offer.
 
-        Classes that fit nowhere are left out; they are already reported one by
-        one as NO_ROOM_LARGE_ENOUGH.
+        Classes that fit in no room are excluded.
         """
         capacities = sorted({room.capacity for room in self.rooms})
         smallest_fit = {}
@@ -206,10 +192,14 @@ class Instance:
         return deficits
 
     def diagnose(self, schedule: Schedule, class_info: ClassInformation) -> Conflict:
-        """Name the reason this class found no home.
+        """Explain why the class could not be placed in the schedule.
 
-        Structural causes are checked first because they hold regardless of what
-        the search did; only then is the blocked-window tally worth reading.
+        Args:
+            schedule: the schedule the class failed to fit into.
+            class_info: the unplaced class.
+
+        Returns:
+            A `Conflict` with the most likely cause and a readable detail.
         """
         fitting_rooms = self.candidate_rooms(class_info)
         if not fitting_rooms:

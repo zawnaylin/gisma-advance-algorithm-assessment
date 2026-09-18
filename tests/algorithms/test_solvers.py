@@ -6,7 +6,7 @@ from algorithms.backtracker import BacktrackingSolver
 from algorithms.graph_engine import GraphColouringSolver
 from algorithms.greedy_solver import GreedySolver
 from algorithms.instance import Instance
-from algorithms.room_allocator import RoomAllocator
+from algorithms.optimizer import RoomAllocator
 from algorithms.solver import SolveResult, Solver
 from domains.class_information import ClassInformation
 from domains.professor import Professor

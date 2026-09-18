@@ -11,7 +11,7 @@ stage left open:
 |---|---|---|---|
 | 1 | Greedy baseline | `greedy_solver.py` | a decent schedule, instantly |
 | 2 | Graph colouring | `graph_engine.py` | which time slots are safe from collisions |
-| 3 | Dynamic programming | `room_allocator.py` | which room, with the least wasted capacity |
+| 3 | Dynamic programming | `optimizer.py` | which room, with the least wasted capacity |
 | 4 | Backtracking + best effort | `backtracker.py` | what to do when nothing above is complete |
 
 ## Running
@@ -21,6 +21,11 @@ uv sync
 uv run python main.py      # all four stages on every scenario, with the report figures
 uv run pytest              # test suite
 ```
+
+`main.py` also writes the full conflict report to `reports/conflict_report.txt`.
+For each scenario it contains the Stage 4 (best-effort) result, the constraint
+audit, every class that could not be placed with its cause (the console shows
+only the first 3 per cause), and the manual-intervention list.
 
 ## Project structure
 
@@ -46,7 +51,7 @@ src/
     ├── audit.py              independent check of a finished schedule against goals 1-4
     ├── greedy_solver.py      Stage 1
     ├── graph_engine.py       Stage 2 (Welsh-Powell colouring, SlotMap)
-    ├── room_allocator.py     Stage 3
+    ├── optimizer.py          Stage 3 (DP room allocation)
     └── backtracker.py        Stage 4
 tests/                        unit tests mirroring src/
 ```
@@ -238,7 +243,7 @@ plus a map of safe and unsafe time slots for each class (`SlotMap`).
 **Mission.** Assign rooms so that wasted capacity is as small as possible,
 keeping the time slots from Stage 2 fixed.
 
-**Logic** (`room_allocator.py`). The allocator goes through each day hour by
+**Logic** (`optimizer.py`). The allocator goes through each day hour by
 hour, handling one time slot at a time. At each hour it gives rooms to the
 classes that start then, choosing from the rooms not still occupied by a class
 that started earlier. Each of these per-slot problems is a minimum-waste

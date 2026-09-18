@@ -1,28 +1,4 @@
-"""Stage 2 - graph colouring, the "collision" engine.
-
-Two classes cannot run at the same time when they share a professor or a
-cohort. Draw a node per class and an edge for every such pair, and the
-timetable becomes a colouring problem: neighbours need different colours, and
-the colours are time slots. Collisions are ruled out before they happen,
-because a class is only ever offered the slots its neighbours have left free.
-
-The colouring is Welsh-Powell: sort the classes once by degree, highest first -
-the class that collides with the most others is the hardest to fit - and give
-each the first colour none of its neighbours is using. (Walking colour by colour
-and sweeping the sorted list, as the textbook states it, yields the same
-colouring as this vertex-by-vertex first fit.)
-
-Durations make this colouring by analogy rather than by the letter: slots have
-different lengths, so two neighbours can clash without sharing a slot exactly.
-"Different colour" is read as "non-overlapping slot".
-
-A colour is only useful if a room is free in it, so each class is also given a
-provisional room here. Stage 3 keeps the time slots fixed and redoes the rooms.
-
-The by-product is a `SlotMap`: for every class, which of its candidate windows
-are safe (no neighbour there) and which are unsafe, and which neighbours make
-them so.
-"""
+"""Stage 2: Welsh-Powell graph colouring and the safe/unsafe slot map."""
 
 from dataclasses import dataclass, field
 from typing import Dict, List, Set
@@ -39,11 +15,12 @@ DAY_NAMES = {day: name for day, name in zip(AVAILABLE_DAY, ("Mon", "Tue", "Wed",
 
 @dataclass
 class SlotMap:
-    """Safe versus unsafe time slots, per class, after colouring.
+    """For each class, which candidate time slots are safe and which clash with a neighbour.
 
-    A window is unsafe for a class when a neighbour in the conflict graph
-    (same professor or shared cohort) was placed in an overlapping window.
-    Rooms play no part here: this is purely the collision structure.
+    Attributes:
+        assigned: the slot each placed class received.
+        safe: candidate slots with no neighbour in an overlapping slot.
+        unsafe: candidate slots that clash, with the ids of the clashing neighbours.
     """
 
     assigned: Dict[str, TimeSlot] = field(default_factory=dict)
@@ -51,16 +28,19 @@ class SlotMap:
     unsafe: Dict[str, Dict[TimeSlot, Set[str]]] = field(default_factory=dict)
 
     def safe_count(self, class_id: str) -> int:
+        """Number of safe slots for the class."""
         return len(self.safe.get(class_id, ()))
 
     def unsafe_count(self, class_id: str) -> int:
+        """Number of unsafe slots for the class."""
         return len(self.unsafe.get(class_id, {}))
 
     def without_safe_slot(self) -> List[str]:
-        """Classes every one of whose windows collides with a neighbour."""
+        """Ids of the classes with no safe slot."""
         return sorted(cid for cid in self.safe if not self.safe[cid])
 
     def summary(self) -> str:
+        """One line: share of safe slots, and how many classes have none."""
         total_safe = sum(len(s) for s in self.safe.values())
         total_unsafe = sum(len(u) for u in self.unsafe.values())
         windows = total_safe + total_unsafe
@@ -72,9 +52,9 @@ class SlotMap:
         )
 
     def render(self, class_id: str) -> str:
-        """The week as a grid of start hours for one class.
+        """Render the class's week as a grid of start hours.
 
-        `#` its own slot, `.` safe, `x` unsafe (a neighbour is there).
+        `#` marks its own slot, `.` a safe slot and `x` an unsafe one.
         """
         assigned = self.assigned.get(class_id)
         by_start: Dict[tuple, str] = {}
@@ -94,6 +74,11 @@ class SlotMap:
 
 
 class GraphColouringSolver:
+    """Colours the conflict graph with time slots in Welsh-Powell order.
+
+    After `solve()`, `slot_map` holds the safe/unsafe map for every class.
+    """
+
     name = "graph-welsh-powell"
 
     def __init__(self, instance: Instance):
@@ -101,7 +86,8 @@ class GraphColouringSolver:
         self.slot_map = SlotMap()
 
     def build_graph(self) -> Dict[str, Set[str]]:
-        """Adjacency by class id. An edge means 'cannot share a time slot'."""
+        """Conflict graph as adjacency sets: an edge joins two classes that share
+        a professor or a student group."""
         instance = self.instance
         adjacency: Dict[str, Set[str]] = {c.id: set() for c in instance.classes}
 
@@ -120,6 +106,7 @@ class GraphColouringSolver:
         return adjacency
 
     def solve(self) -> SolveResult:
+        """Give each class, highest degree first, the first time slot free of its neighbours."""
         instance = self.instance
         adjacency = self.build_graph()
         schedule = Schedule()
@@ -128,8 +115,7 @@ class GraphColouringSolver:
         placed_slots: Dict[str, TimeSlot] = {}
         conflicts_pending = []
 
-        # Welsh-Powell order: highest degree first. Duration and head count
-        # break ties, and the id last makes the order the same on every run.
+        # Highest degree first; ties by duration, head count, then id.
         order = sorted(
             by_id,
             key=lambda cid: (
@@ -169,11 +155,11 @@ class GraphColouringSolver:
         return result
 
     def _place(self, schedule: Schedule, class_info):
+        """Book the first valid placement, preferring right-sized rooms; returns
+        the chosen slot, or None."""
         professor = self.instance.professor_for(class_info)
         groups = self.instance.groups_for(class_info)
 
-        # Goal 4 is weighed here, where the time slot is chosen: a right-sized
-        # room at a later time beats an oversized room now.
         for time_slot, room in self.instance.placements(class_info, avoid_oversized=True):
             if schedule.validate(class_info, room, professor, time_slot, groups):
                 continue
@@ -184,6 +170,7 @@ class GraphColouringSolver:
     def _build_slot_map(
         self, adjacency: Dict[str, Set[str]], placed_slots: Dict[str, TimeSlot]
     ) -> SlotMap:
+        """Classify every candidate slot of every class as safe or unsafe."""
         slot_map = SlotMap(assigned=dict(placed_slots))
         for class_info in self.instance.classes:
             neighbour_slots = [

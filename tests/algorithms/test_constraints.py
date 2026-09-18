@@ -7,7 +7,7 @@ from algorithms.backtracker import BacktrackingSolver
 from algorithms.graph_engine import GraphColouringSolver
 from algorithms.greedy_solver import GreedySolver
 from algorithms.instance import Instance, is_oversized
-from algorithms.room_allocator import RoomAllocator
+from algorithms.optimizer import RoomAllocator
 from data.assignment import ClassAssignment
 from data.loader import load_scenario
 from domains.class_information import ClassInformation

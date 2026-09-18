@@ -1,16 +1,4 @@
-"""The contract every algorithm in this package satisfies.
-
-`Solver` is a Protocol rather than a base class: nothing inherits from it, and
-a class satisfies it by having the right shape. That keeps the four algorithms
-independent of each other while still letting a caller treat them alike:
-
-    for solver in (GreedySolver(instance), BacktrackingSolver(instance), ...):
-        print(solver.solve().report())
-
-`SolveResult` is the opposite - a concrete class, shared by all of them,
-because what they produce really is the same thing. `stats` is the one place
-an algorithm reports numbers only it has, such as how many times it retreated.
-"""
+"""Shared result types and the protocol every solver implements."""
 
 from dataclasses import dataclass, field
 from typing import Dict, List, Protocol, runtime_checkable
@@ -26,10 +14,10 @@ PROFESSOR_CONTENTION = "professor_contention"
 GROUP_CONTENTION = "group_contention"
 SEARCH_EXHAUSTED = "search_exhausted"
 
-# Causes the instance itself guarantees - a different search cannot help.
+# Causes no search can fix.
 STRUCTURAL_CAUSES = frozenset({NO_ROOM_LARGE_ENOUGH, PROFESSOR_OVERLOADED})
 
-# What a timetabler would do about each cause once the search has given up.
+# Suggested manual action for each cause.
 MANUAL_ACTIONS = {
     NO_ROOM_LARGE_ENOUGH: "split the class into sections or book a larger venue",
     PROFESSOR_OVERLOADED: "reassign some of these classes to another professor",
@@ -42,12 +30,8 @@ MANUAL_ACTIONS = {
 
 @dataclass(frozen=True)
 class CapacityDeficit:
-    """More teaching hours need a room of this size than the estate can supply.
-
-    A per-class check cannot see this: every one of these classes has a room
-    that fits, they just cannot all have one at once. The shortfall is a lower
-    bound on the hours no search will ever place.
-    """
+    """Teaching hours that need rooms of at least `capacity` seats, against
+    the hours those rooms offer in a week."""
 
     capacity: int
     rooms: int
@@ -56,6 +40,7 @@ class CapacityDeficit:
 
     @property
     def shortfall_hours(self) -> int:
+        """Hours that cannot be placed in any schedule."""
         return self.demand_hours - self.supply_hours
 
     def __str__(self) -> str:
@@ -68,12 +53,15 @@ class CapacityDeficit:
 
 @dataclass(frozen=True)
 class Conflict:
+    """A class that could not be placed, and why."""
+
     class_info: ClassInformation
     cause: str
     detail: str
 
     @property
     def is_structural(self) -> bool:
+        """True when no search could place this class."""
         return self.cause in STRUCTURAL_CAUSES
 
     def __str__(self) -> str:
@@ -83,6 +71,8 @@ class Conflict:
 
 @dataclass
 class SolveResult:
+    """The output of a solver: placements, conflicts and solver statistics."""
+
     solver: str
     schedule: Schedule
     assignments: List[ClassAssignment] = field(default_factory=list)
@@ -92,43 +82,57 @@ class SolveResult:
 
     @property
     def is_complete(self) -> bool:
+        """True when every class was placed."""
         return not self.conflicts
 
     @property
     def coverage(self) -> float:
+        """Share of the classes placed, from 0.0 to 1.0."""
         total = len(self.assignments) + len(self.conflicts)
         return len(self.assignments) / total if total else 1.0
 
     @property
     def scheduled_hours(self) -> int:
+        """Teaching hours placed."""
         return sum(a.class_info.duration_hours for a in self.assignments)
 
     @property
     def wasted_seats(self) -> int:
-        """Empty seats summed over every placement - what Stage 3 minimises."""
+        """Empty seats summed over every placement."""
         return sum(a.room.capacity - a.class_info.number_of_students for a in self.assignments)
 
     @property
     def flagged_for_manual_intervention(self) -> List[Conflict]:
-        """Every class the search could not place. Nothing is dropped silently:
-        each one comes back with the reason, for a person to resolve."""
+        """Classes that need a person to place them."""
         return list(self.conflicts)
 
     @property
     def structural_conflicts(self) -> List[Conflict]:
+        """Conflicts no search could fix."""
         return [c for c in self.conflicts if c.is_structural]
 
     @property
     def contention_conflicts(self) -> List[Conflict]:
+        """Conflicts a better search might fix."""
         return [c for c in self.conflicts if not c.is_structural]
 
     def conflicts_by_cause(self) -> Dict[str, List[Conflict]]:
+        """Conflicts grouped by cause, the most common cause first."""
         grouped: Dict[str, List[Conflict]] = {}
         for conflict in self.conflicts:
             grouped.setdefault(conflict.cause, []).append(conflict)
         return dict(sorted(grouped.items(), key=lambda kv: -len(kv[1])))
 
     def report(self, title: str | None = None, examples: int = 3) -> str:
+        """Render a readable summary of the result.
+
+        Args:
+            title: heading for the first line; defaults to the solver name.
+            examples: how many conflicts to list for each cause.
+
+        Returns:
+            The report as multi-line text.
+        """
         total = len(self.assignments) + len(self.conflicts)
         lines = [
             f"{title or self.solver}: placed {len(self.assignments)} of {total} classes "
@@ -162,8 +166,8 @@ class SolveResult:
         return "\n".join(lines)
 
     def manual_intervention_report(self) -> str:
-        """The hand-off list: which classes a person has to deal with, and what
-        kind of action each group needs."""
+        """Render the unplaced classes grouped by cause, with a suggested action
+        for each cause."""
         flagged = self.flagged_for_manual_intervention
         if not flagged:
             return "  nothing flagged for manual intervention"
@@ -183,13 +187,10 @@ class SolveResult:
 
 @runtime_checkable
 class Solver(Protocol):
-    """Anything that turns an instance into a schedule.
-
-    A class satisfies this by having `name` and `solve()` - there is nothing to
-    inherit and nothing to register.
-    """
+    """Anything with a `name` and a `solve()` that returns a `SolveResult`."""
 
     name: str
 
     def solve(self) -> SolveResult:
+        """Build a schedule for the solver's instance."""
         ...

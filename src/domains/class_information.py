@@ -6,6 +6,8 @@ from domains.room import Room
 
 @dataclass(frozen=True, slots=True)
 class ClassInformation:
+    """A class to schedule: its size, professor and length in hours."""
+
     id: str
     name: str
     number_of_students: int
@@ -26,4 +28,5 @@ class ClassInformation:
             )
 
     def fits_in(self, room: Room) -> bool:
+        """True when the room has a seat for every student."""
         return room.has_capacity(self.number_of_students)

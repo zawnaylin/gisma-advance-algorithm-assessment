@@ -1,9 +1,4 @@
-"""Reads a scenario file into domain objects.
-
-A scenario is one complete instance of the problem: the rooms available, the
-classes to place, and the student groups that must not collide. Professors are
-implied by the classes that name them.
-"""
+"""Loads scenario JSON files into domain objects."""
 
 import json
 from dataclasses import dataclass
@@ -20,6 +15,8 @@ SCENARIO_DIR = Path(__file__).parents[2] / "scenarios"
 
 @dataclass(frozen=True)
 class Scenario:
+    """One problem instance as read from a file."""
+
     name: str
     rooms: List[Room]
     classes: List[ClassInformation]
@@ -28,7 +25,7 @@ class Scenario:
 
     @property
     def students(self) -> int:
-        """Head count across all cohorts; 0 when the file gives no group sizes."""
+        """Total students across all groups; 0 when the file gives no group sizes."""
         return sum(group.size for group in self.groups)
 
     def __repr__(self) -> str:
@@ -40,10 +37,16 @@ class Scenario:
 
 
 def available_scenarios() -> List[str]:
+    """Names of the scenario files in `scenarios/`, sorted."""
     return sorted(p.stem for p in SCENARIO_DIR.glob("*.json")) if SCENARIO_DIR.is_dir() else []
 
 
 def load_scenario(name: str = "baseline") -> Scenario:
+    """Load a scenario from `scenarios/` by name.
+
+    Raises:
+        FileNotFoundError: if there is no scenario with that name.
+    """
     path = SCENARIO_DIR / f"{name}.json"
     if not path.is_file():
         raise FileNotFoundError(f"Unknown scenario {name!r}; expected one of {available_scenarios()}.")
@@ -51,6 +54,12 @@ def load_scenario(name: str = "baseline") -> Scenario:
 
 
 def load_file(path: Path, name: str | None = None) -> Scenario:
+    """Load a scenario from a JSON file.
+
+    Args:
+        path: the JSON file.
+        name: the scenario name; defaults to the file name without extension.
+    """
     raw = json.loads(Path(path).read_text())
 
     rooms = [Room(r["room_id"], r["capacity"]) for r in raw["rooms"]]

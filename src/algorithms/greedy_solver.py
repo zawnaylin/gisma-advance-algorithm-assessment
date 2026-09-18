@@ -1,12 +1,4 @@
-"""Stage 1 - the greedy baseline (the "quick start").
-
-Walks the classes once, most constrained first, and gives each one the first
-(time slot, room) pair that breaks no constraint. It never revisits a decision,
-so it is fast but incomplete: a class that finds nothing left is reported as a
-conflict rather than triggering a retreat.
-
-This is the baseline the other three are measured against.
-"""
+"""Stage 1: the greedy baseline."""
 
 from domains.schedule import Schedule
 
@@ -15,12 +7,15 @@ from algorithms.solver import SolveResult
 
 
 class GreedySolver:
+    """Places each class, hardest first, in the first free (time slot, room) pair."""
+
     name = "greedy"
 
     def __init__(self, instance: Instance):
         self.instance = instance
 
     def solve(self) -> SolveResult:
+        """Place every class once; unplaced classes are returned as conflicts."""
         schedule = Schedule()
         result = SolveResult(
             solver=self.name,
@@ -38,6 +33,7 @@ class GreedySolver:
         return result
 
     def _place(self, schedule: Schedule, class_info):
+        """Book the first valid (time slot, room) pair; None if there is none."""
         professor = self.instance.professor_for(class_info)
         groups = self.instance.groups_for(class_info)
 

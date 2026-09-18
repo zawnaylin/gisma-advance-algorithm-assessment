@@ -1,37 +1,4 @@
-"""Stage 4 - backtracking and the "best effort" strategy.
-
-The greedy solver takes the first window that fits and never looks back. This
-one starts from that schedule and then retreats: for each class greedy could
-not place, it finds the placements that would work if a few committed classes
-moved, ejects them, and tries to re-home them somewhere else. If they all find
-a home the swap is kept; if any cannot, every change is rolled back and the
-next candidate is tried.
-
-Chronological backtracking was the obvious first attempt and it does not work
-here. A depth-first search undoes its most recent decision, but the decision
-that stranded a class was made near the root, hundreds of placements earlier -
-300,000 steps of it recovered nothing on any scenario. Directing the retreat at
-the classes that actually failed is what makes the retreat pay.
-
-`Schedule.unassign` is what makes this affordable: a retreat touches one object,
-so an attempt can be unwound exactly rather than by rebuilding the timetable.
-
-Pruning - what the search never looks at:
-
-* rooms too small for the class, and windows outside the teaching day, are
-  never generated (`Instance.candidate_rooms` / `candidate_slots`);
-* a class no room can hold is ruled out before the search starts;
-* a free placement is always tried before anything is ejected;
-* a placement is skipped when more than `max_ejections` classes block it, and
-  ejection chains stop at `depth` levels;
-* the whole search stops after `step_budget` validity checks.
-
-Best effort: a repair is only committed when every class it disturbed found a
-new home, so the number of unplaced classes never rises. Whenever the search
-stops - solved, out of ideas, or out of budget - the schedule it holds is the
-fewest-conflict state it reached, and every class still unplaced is flagged for
-manual intervention with its cause.
-"""
+"""Stage 4: backtracking with ejection, and best-effort reporting."""
 
 from typing import List, Optional, Set
 
@@ -48,11 +15,7 @@ DEFAULT_DEPTH = 3
 
 
 class _Transaction:
-    """Records every change so a failed attempt can be undone exactly.
-
-    Replaying the log backwards restores the schedule: an add is undone by
-    unassigning, a removal by putting the original assignment back.
-    """
+    """A log of placements and removals that can be rolled back."""
 
     def __init__(self, schedule: Schedule, instance: Instance):
         self._schedule = schedule
@@ -60,24 +23,29 @@ class _Transaction:
         self._log: List[tuple] = []
 
     def place(self, class_info, room, professor, time_slot) -> ClassAssignment:
+        """Book a placement and log it."""
         groups = self._instance.groups_for(class_info)
         assignment = self._schedule.add_assignment(class_info, room, professor, time_slot, groups)
         self._log.append(("added", class_info.id))
         return assignment
 
     def remove(self, class_id: str) -> Optional[ClassAssignment]:
+        """Unbook a class and log it; returns the removed assignment, if any."""
         assignment = self._schedule.unassign(class_id)
         if assignment is not None:
             self._log.append(("removed", assignment))
         return assignment
 
     def savepoint(self) -> int:
+        """A mark that `rollback` can return to."""
         return len(self._log)
 
     def commit(self) -> None:
+        """Keep every logged change."""
         self._log.clear()
 
     def rollback(self, mark: int = 0) -> None:
+        """Undo every change logged after `mark`, most recent first."""
         while len(self._log) > mark:
             action, payload = self._log.pop()
             if action == "added":
@@ -93,6 +61,15 @@ class _Transaction:
 
 
 class BacktrackingSolver:
+    """Greedy first pass, then recursive repair of each unplaced class.
+
+    Args:
+        instance: the problem to solve.
+        step_budget: validity checks allowed before the search stops.
+        max_ejections: most classes that may be moved to make room for one.
+        depth: how many levels of moves may chain.
+    """
+
     name = "backtracking"
 
     def __init__(
@@ -109,6 +86,7 @@ class BacktrackingSolver:
         self._steps = 0
 
     def solve(self) -> SolveResult:
+        """Place every class it can; the rest are flagged with their cause."""
         instance = self.instance
         schedule = Schedule()
         self._steps = 0
@@ -116,7 +94,7 @@ class BacktrackingSolver:
         ruled_out = []
         unplaced = []
 
-        # First dive: the greedy schedule, which the search then improves on.
+        # First pass: greedy.
         for class_info in instance.most_constrained_first():
             if not instance.is_placeable(class_info):
                 ruled_out.append(class_info)
@@ -153,6 +131,7 @@ class BacktrackingSolver:
     # --- placement --------------------------------------------------------
 
     def _place_directly(self, schedule: Schedule, class_info: ClassInformation) -> bool:
+        """Book the first free placement; False if there is none."""
         professor = self.instance.professor_for(class_info)
         groups = self.instance.groups_for(class_info)
 
@@ -165,6 +144,7 @@ class BacktrackingSolver:
         return False
 
     def _place_by_ejection(self, schedule: Schedule, class_info: ClassInformation, depth: int) -> bool:
+        """Try to place the class by moving others; keep the result only if it succeeds."""
         transaction = _Transaction(schedule, self.instance)
         if self._attempt(schedule, class_info, depth, transaction):
             transaction.commit()
@@ -179,10 +159,21 @@ class BacktrackingSolver:
         depth: int,
         transaction: _Transaction,
     ) -> bool:
+        """Place the class, ejecting and re-placing blockers recursively.
+
+        Args:
+            schedule: the schedule being repaired.
+            class_info: the class to place.
+            depth: remaining levels of ejection allowed.
+            transaction: log used to undo a failed branch.
+
+        Returns:
+            True if the class and every class it displaced were placed.
+        """
         professor = self.instance.professor_for(class_info)
         groups = self.instance.groups_for(class_info)
 
-        # Somewhere free is always better than displacing somebody.
+        # Free placement first.
         for time_slot, room in self.instance.placements(class_info):
             self._steps += 1
             if not schedule.validate(class_info, room, professor, time_slot, groups):
@@ -202,7 +193,7 @@ class BacktrackingSolver:
                 continue
 
             mark = transaction.savepoint()
-            # Sorted so that a run is reproducible; set order changes per process.
+            # Sorted for reproducible runs.
             ejected = [transaction.remove(class_id) for class_id in sorted(blockers)]
             transaction.place(class_info, room, professor, time_slot)
 
@@ -218,10 +209,10 @@ class BacktrackingSolver:
     def _blockers(
         self, schedule: Schedule, class_info: ClassInformation, room, time_slot
     ) -> Optional[Set[str]]:
-        """Which scheduled classes stand between this class and this placement.
+        """Ids of the scheduled classes that block this placement.
 
-        None means the placement is impossible however much is moved - the room
-        is simply too small.
+        Returns:
+            The blocking class ids, or None if the room is too small for the class.
         """
         if not class_info.fits_in(room):
             return None
@@ -240,9 +231,9 @@ class BacktrackingSolver:
         return blockers
 
     def _unrecovered(self, schedule: Schedule, class_info: ClassInformation) -> Conflict:
+        """Diagnose an unplaced class; report `search_exhausted` if the budget
+        ran out and the cause is not structural."""
         diagnosed = self.instance.diagnose(schedule, class_info)
-        # A structural cause is the better answer even when the budget also ran
-        # out: the search stopping is not why this class has nowhere to go.
         if not diagnosed.is_structural and self._steps >= self.step_budget:
             return Conflict(
                 class_info,

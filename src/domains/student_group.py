@@ -6,16 +6,11 @@ from domains.class_information import ClassInformation
 
 @dataclass(eq=False)
 class StudentGroup:
-    """A cohort: students who all attend the same set of classes.
-
-    This is what makes two classes connected even when their professors
-    differ - if a group attends both, they cannot overlap, or its students
-    would be in two places at once.
-    """
+    """A cohort of students who all attend the same classes."""
 
     id: str
     classes: Sequence[ClassInformation]
-    size: int = 0  # number of students in the cohort; 0 when the scenario does not say
+    size: int = 0  # number of students; 0 when unknown
 
     def __post_init__(self) -> None:
         if not self.classes:
@@ -25,6 +20,7 @@ class StudentGroup:
         self.classes = tuple(self.classes)
 
     def class_ids(self) -> List[str]:
+        """Ids of the group's classes."""
         return [c.id for c in self.classes]
 
     def __repr__(self) -> str:

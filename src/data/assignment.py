@@ -8,6 +8,8 @@ from domains.time_slot import TimeSlot
 
 @dataclass(frozen=True)
 class ClassAssignment:
+    """One placed class: its room, professor and time slot."""
+
     class_info: ClassInformation
     room: Room
     professor: Professor

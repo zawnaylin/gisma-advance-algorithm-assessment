@@ -4,7 +4,7 @@ import random
 from algorithms.graph_engine import GraphColouringSolver
 from algorithms.greedy_solver import GreedySolver
 from algorithms.instance import Instance
-from algorithms.room_allocator import RoomAllocator, min_waste_allocation
+from algorithms.optimizer import RoomAllocator, min_waste_allocation
 from algorithms.solver import SolveResult
 from domains.class_information import ClassInformation
 from domains.professor import Professor

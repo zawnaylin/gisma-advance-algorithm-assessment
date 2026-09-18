@@ -5,6 +5,8 @@ from domains.constraints import AVAILABLE_DAY, START_TIME, END_TIME
 
 @dataclass(frozen=True, slots=True)
 class TimeSlot:
+    """A block of whole hours on one teaching day, from `start_hour` to `end_hour`."""
+
     day: int
     start_hour: int
     end_hour: int
@@ -22,6 +24,7 @@ class TimeSlot:
             raise ValueError(f"start_hour ({self.start_hour}) must be before end_hour ({self.end_hour}).")
 
     def overlaps(self, other: "TimeSlot") -> bool:
+        """True when the two slots share any time on the same day."""
         if self.day != other.day:
             return False
         return self.start_hour < other.end_hour and other.start_hour < self.end_hour

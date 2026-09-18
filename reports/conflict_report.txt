@@ -1,0 +1,137 @@
+CONFLICT REPORT
+Final schedule per scenario: Stage 4 (backtracking, best effort).
+Every class that could not be placed is listed with its cause, and the
+schedule is audited against goals 1-4 (see src/domains/constraints.py).
+
+==============================================================================
+baseline
+==============================================================================
+audit: VALID: 1 people clashes=0 (0 students double-booked), 2 room double-bookings=0, 3 over capacity=0, 4 oversized rooms=22 (wasted seats 4787)
+
+backtracking: placed 240 of 240 classes (100.0%), 480 teaching hours scheduled
+  steps=30456, unplaced_after_first_pass=0, recovered_by_ejection=0, budget_exhausted=False
+  no conflicts
+
+  nothing flagged for manual intervention
+
+==============================================================================
+cohorts
+==============================================================================
+audit: VALID: 1 people clashes=0 (0 students double-booked), 2 room double-bookings=0, 3 over capacity=0, 4 oversized rooms=7 (wasted seats 2965)
+
+backtracking: placed 209 of 240 classes (87.1%), 431 teaching hours scheduled
+  steps=200674, unplaced_after_first_pass=31, recovered_by_ejection=0, budget_exhausted=True
+  0 structural, 31 contention
+  search_exhausted (31) - CONTENTION - a better search may recover these
+      C0066 'CS Workshop (Y1-B)' (29 students, 2h): search budget of 200000 steps ran out; a student group already had a class in 29 of 35 candidate windows.
+      C0132 'ENG Workshop (Y3-B)' (29 students, 2h): search budget of 200000 steps ran out; a student group already had a class in 30 of 35 candidate windows.
+      C0204 'ART Workshop (Y3-B)' (26 students, 2h): search budget of 200000 steps ran out; a student group already had a class in 33 of 35 candidate windows.
+      C0237 'LAW Workshop (Y3-A)' (26 students, 2h): search budget of 200000 steps ran out; a student group already had a class in 35 of 35 candidate windows.
+      C0084 'MATH Workshop (Y1-B)' (24 students, 2h): search budget of 200000 steps ran out; a student group already had a class in 35 of 35 candidate windows.
+      C0171 'PHYS Workshop (Y1-A)' (22 students, 2h): search budget of 200000 steps ran out; a student group already had a class in 26 of 35 candidate windows.
+      C0129 'ENG Workshop (Y3-A)' (22 students, 2h): search budget of 200000 steps ran out; a student group already had a class in 35 of 35 candidate windows.
+      C0231 'LAW Workshop (Y2-A)' (21 students, 2h): search budget of 200000 steps ran out; a student group already had a class in 35 of 35 candidate windows.
+      C0078 'CS Workshop (Y3-B)' (20 students, 2h): search budget of 200000 steps ran out; a student group already had a class in 27 of 35 candidate windows.
+      C0141 'PSY Workshop (Y2-A)' (19 students, 2h): search budget of 200000 steps ran out; a student group already had a class in 35 of 35 candidate windows.
+      C0222 'ECON Workshop (Y3-B)' (18 students, 2h): search budget of 200000 steps ran out; a student group already had a class in 33 of 35 candidate windows.
+      C0219 'ECON Workshop (Y3-A)' (18 students, 2h): search budget of 200000 steps ran out; a student group already had a class in 30 of 35 candidate windows.
+      C0240 'LAW Workshop (Y3-B)' (17 students, 2h): search budget of 200000 steps ran out; a student group already had a class in 33 of 35 candidate windows.
+      C0153 'BIO Workshop (Y1-A)' (17 students, 2h): search budget of 200000 steps ran out; a student group already had a class in 35 of 35 candidate windows.
+      C0075 'CS Workshop (Y3-A)' (14 students, 2h): search budget of 200000 steps ran out; a student group already had a class in 31 of 35 candidate windows.
+      C0192 'ART Workshop (Y1-B)' (14 students, 2h): search budget of 200000 steps ran out; a student group already had a class in 35 of 35 candidate windows.
+      C0114 'BUS Workshop (Y3-B)' (12 students, 2h): search budget of 200000 steps ran out; a student group already had a class in 35 of 35 candidate windows.
+      C0186 'PHYS Workshop (Y3-B)' (10 students, 2h): search budget of 200000 steps ran out; a student group already had a class in 35 of 35 candidate windows.
+      C0235 'LAW Seminar (Y3-A)' (26 students, 1h): search budget of 200000 steps ran out; a student group already had a class in 37 of 40 candidate windows.
+      C0073 'CS Seminar (Y3-A)' (25 students, 1h): search budget of 200000 steps ran out; a student group already had a class in 39 of 40 candidate windows.
+      C0091 'MATH Seminar (Y3-A)' (24 students, 1h): search budget of 200000 steps ran out; a student group already had a class in 40 of 40 candidate windows.
+      C0172 'PHYS Seminar (Y1-B)' (21 students, 1h): search budget of 200000 steps ran out; a student group already had a class in 37 of 40 candidate windows.
+      C0214 'ECON Seminar (Y2-B)' (17 students, 1h): search budget of 200000 steps ran out; a student group already had a class in 38 of 40 candidate windows.
+      C0097 'BUS Seminar (Y1-A)' (17 students, 1h): search budget of 200000 steps ran out; a student group already had a class in 38 of 40 candidate windows.
+      C0178 'PHYS Seminar (Y2-B)' (17 students, 1h): search budget of 200000 steps ran out; a student group already had a class in 38 of 40 candidate windows.
+      C0208 'ECON Seminar (Y1-B)' (17 students, 1h): search budget of 200000 steps ran out; a student group already had a class in 39 of 40 candidate windows.
+      C0202 'ART Seminar (Y3-B)' (15 students, 1h): search budget of 200000 steps ran out; a student group already had a class in 40 of 40 candidate windows.
+      C0112 'BUS Seminar (Y3-B)' (12 students, 1h): search budget of 200000 steps ran out; a student group already had a class in 40 of 40 candidate windows.
+      C0199 'ART Seminar (Y3-A)' (12 students, 1h): search budget of 200000 steps ran out; a student group already had a class in 40 of 40 candidate windows.
+      C0217 'ECON Seminar (Y3-A)' (12 students, 1h): search budget of 200000 steps ran out; a student group already had a class in 37 of 40 candidate windows.
+      C0229 'LAW Seminar (Y2-A)' (10 students, 1h): search budget of 200000 steps ran out; a student group already had a class in 37 of 40 candidate windows.
+
+  FLAGGED FOR MANUAL INTERVENTION: 31 class(es)
+    search_exhausted -> rerun with a larger search budget or place by hand
+      C0066, C0132, C0204, C0237, C0084, C0171, C0129, C0231, C0078, C0141, C0222, C0219, C0240, C0153, C0075, C0192, C0114, C0186, C0235, C0073, C0091, C0172, C0214, C0097, C0178, C0208, C0202, C0112, C0199, C0217, C0229
+
+==============================================================================
+infeasible
+==============================================================================
+audit: VALID: 1 people clashes=0 (0 students double-booked), 2 room double-bookings=0, 3 over capacity=0, 4 oversized rooms=18 (wasted seats 2056)
+
+backtracking: placed 206 of 240 classes (85.8%), 422 teaching hours scheduled
+  steps=200021, unplaced_after_first_pass=39, recovered_by_ejection=5, budget_exhausted=True
+  STRUCTURAL capacity shortfall: classes needing 15+ seats want 446h, but the 11 room(s) that large only offer 440h - at least 6h cannot be placed.
+  32 structural, 2 contention
+  no_room_large_enough (17) - STRUCTURAL - unplaceable in this instance
+      C0001 'Intro to CS (Y1)' (400 students, 2h): needs 400 seats, largest room holds 120.
+      C0002 'CS Fundamentals (Y1)' (400 students, 2h): needs 400 seats, largest room holds 120.
+      C0003 'Intro to CS (Y2)' (400 students, 2h): needs 400 seats, largest room holds 120.
+      C0004 'CS Fundamentals (Y2)' (400 students, 2h): needs 400 seats, largest room holds 120.
+      C0005 'Intro to CS (Y3)' (400 students, 2h): needs 400 seats, largest room holds 120.
+      C0006 'CS Fundamentals (Y3)' (400 students, 2h): needs 400 seats, largest room holds 120.
+      C0007 'Intro to MATH (Y1)' (400 students, 2h): needs 400 seats, largest room holds 120.
+      C0008 'MATH Fundamentals (Y1)' (400 students, 2h): needs 400 seats, largest room holds 120.
+      C0009 'Intro to MATH (Y2)' (400 students, 2h): needs 400 seats, largest room holds 120.
+      C0010 'MATH Fundamentals (Y2)' (400 students, 2h): needs 400 seats, largest room holds 120.
+      C0011 'Intro to MATH (Y3)' (400 students, 2h): needs 400 seats, largest room holds 120.
+      C0012 'MATH Fundamentals (Y3)' (400 students, 2h): needs 400 seats, largest room holds 120.
+      C0046 'ART Fundamentals (Y2)' (186 students, 2h): needs 186 seats, largest room holds 120.
+      C0055 'Intro to LAW (Y1)' (168 students, 2h): needs 168 seats, largest room holds 120.
+      C0036 'BIO Fundamentals (Y3)' (159 students, 2h): needs 159 seats, largest room holds 120.
+      C0054 'ECON Fundamentals (Y3)' (145 students, 2h): needs 145 seats, largest room holds 120.
+      C0057 'Intro to LAW (Y2)' (140 students, 2h): needs 140 seats, largest room holds 120.
+  professor_overloaded (15) - STRUCTURAL - unplaceable in this instance
+      C0090 'MATH Workshop (Y2-B)' (19 students, 2h): professor P999 is down for 60h of teaching, but the week only holds 40h.
+      C0069 'CS Workshop (Y2-A)' (17 students, 2h): professor P999 is down for 60h of teaching, but the week only holds 40h.
+      C0075 'CS Workshop (Y3-A)' (14 students, 2h): professor P999 is down for 60h of teaching, but the week only holds 40h.
+      C0072 'CS Workshop (Y2-B)' (12 students, 2h): professor P999 is down for 60h of teaching, but the week only holds 40h.
+      C0081 'MATH Workshop (Y1-A)' (12 students, 2h): professor P999 is down for 60h of teaching, but the week only holds 40h.
+      C0088 'MATH Seminar (Y2-B)' (29 students, 1h): professor P999 is down for 60h of teaching, but the week only holds 40h.
+      C0061 'CS Seminar (Y1-A)' (28 students, 1h): professor P999 is down for 60h of teaching, but the week only holds 40h.
+      C0064 'CS Seminar (Y1-B)' (28 students, 1h): professor P999 is down for 60h of teaching, but the week only holds 40h.
+      C0067 'CS Seminar (Y2-A)' (27 students, 1h): professor P999 is down for 60h of teaching, but the week only holds 40h.
+      C0082 'MATH Seminar (Y1-B)' (26 students, 1h): professor P999 is down for 60h of teaching, but the week only holds 40h.
+      C0073 'CS Seminar (Y3-A)' (25 students, 1h): professor P999 is down for 60h of teaching, but the week only holds 40h.
+      C0070 'CS Seminar (Y2-B)' (24 students, 1h): professor P999 is down for 60h of teaching, but the week only holds 40h.
+      C0085 'MATH Seminar (Y2-A)' (22 students, 1h): professor P999 is down for 60h of teaching, but the week only holds 40h.
+      C0079 'MATH Seminar (Y1-A)' (21 students, 1h): professor P999 is down for 60h of teaching, but the week only holds 40h.
+      C0076 'CS Seminar (Y3-B)' (19 students, 1h): professor P999 is down for 60h of teaching, but the week only holds 40h.
+  search_exhausted (2) - CONTENTION - a better search may recover these
+      C0045 'Intro to ART (Y2)' (62 students, 2h): search budget of 200000 steps ran out; all 3 rooms that fit were booked in 19 of 35 candidate windows.
+      C0030 'PSY Fundamentals (Y3)' (61 students, 2h): search budget of 200000 steps ran out; all 3 rooms that fit were booked in 19 of 35 candidate windows.
+
+  FLAGGED FOR MANUAL INTERVENTION: 34 class(es)
+    no_room_large_enough -> split the class into sections or book a larger venue
+      C0001, C0002, C0003, C0004, C0005, C0006, C0007, C0008, C0009, C0010, C0011, C0012, C0046, C0055, C0036, C0054, C0057
+    professor_overloaded -> reassign some of these classes to another professor
+      C0090, C0069, C0075, C0072, C0081, C0088, C0061, C0064, C0067, C0082, C0073, C0070, C0085, C0079, C0076
+    search_exhausted -> rerun with a larger search budget or place by hand
+      C0045, C0030
+
+==============================================================================
+tight
+==============================================================================
+audit: VALID: 1 people clashes=0 (0 students double-booked), 2 room double-bookings=0, 3 over capacity=0, 4 oversized rooms=39 (wasted seats 9417)
+
+backtracking: placed 240 of 240 classes (100.0%), 480 teaching hours scheduled
+  steps=44529, unplaced_after_first_pass=7, recovered_by_ejection=7, budget_exhausted=False
+  no conflicts
+
+  nothing flagged for manual intervention
+
+==============================================================================
+university
+==============================================================================
+audit: VALID: 1 people clashes=0 (0 students double-booked), 2 room double-bookings=0, 3 over capacity=0, 4 oversized rooms=67 (wasted seats 12897)
+
+backtracking: placed 421 of 421 classes (100.0%), 679 teaching hours scheduled
+  steps=122734, unplaced_after_first_pass=0, recovered_by_ejection=0, budget_exhausted=False
+  no conflicts
+
+  nothing flagged for manual intervention

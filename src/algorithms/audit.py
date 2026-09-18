@@ -1,10 +1,4 @@
-"""An independent check of a finished schedule against the four goals.
-
-Every solver already refuses an invalid placement through `Schedule.validate`.
-This does not trust that: it takes the final list of assignments and checks
-each goal from scratch, pair by pair, so a bug in the bookkeeping cannot hide a
-student who is in two places at once.
-"""
+"""Checks a finished schedule against the four goals, independently of the solvers."""
 
 from dataclasses import dataclass, field
 from itertools import combinations
@@ -18,6 +12,12 @@ from algorithms.instance import Instance
 
 @dataclass
 class Audit:
+    """Every violation of goals 1-4 found in a schedule.
+
+    Clash entries are (who, class id, class id) tuples, where `who` is the
+    group, professor or room involved.
+    """
+
     # Goal 1 - people
     student_clashes: List[Tuple[str, str, str]] = field(default_factory=list)  # (group, class, class)
     professor_clashes: List[Tuple[str, str, str]] = field(default_factory=list)  # (professor, class, class)
@@ -32,6 +32,7 @@ class Audit:
 
     @property
     def hard_violations(self) -> int:
+        """Number of violations of goals 1-3."""
         return (
             len(self.student_clashes)
             + len(self.professor_clashes)
@@ -41,9 +42,11 @@ class Audit:
 
     @property
     def is_valid(self) -> bool:
+        """True when goals 1-3 all hold."""
         return self.hard_violations == 0
 
     def summary(self) -> str:
+        """One line with the verdict and a count for each goal."""
         verdict = "VALID" if self.is_valid else f"INVALID ({self.hard_violations} hard violations)"
         return (
             f"{verdict}: "
@@ -56,6 +59,15 @@ class Audit:
 
 
 def audit(assignments: Sequence[ClassAssignment], instance: Instance) -> Audit:
+    """Check every pair of placements and every room against goals 1-4.
+
+    Args:
+        assignments: the placements of a finished schedule.
+        instance: the problem, used to look up each class's student groups.
+
+    Returns:
+        An `Audit` listing each violation found.
+    """
     result = Audit()
 
     groups_by_class: Dict[str, List] = {c.id: instance.groups_for(c) for c in instance.classes}

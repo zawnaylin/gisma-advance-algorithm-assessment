@@ -1,37 +1,4 @@
-"""Stage 3 - dynamic programming, the "efficiency" engine.
-
-Stage 2 fixes when every class runs. This stage keeps those times exactly and
-decides only where: it reassigns rooms so that the total number of empty seats
-is as small as it can be, without ever putting a class in a room too small for
-it or two classes in one room at once.
-
-The week is solved one time slot at a time - each day is swept hour by hour,
-and at each hour the classes that start then are given rooms from those not
-still occupied by a class that started earlier. That per-slot problem is a
-minimum-waste matching of n classes to m free rooms, solved by DP:
-
-    sort classes by size    s_1 <= s_2 <= ... <= s_n
-    sort free rooms by size c_1 <= c_2 <= ... <= c_m
-
-    state       W[i][j] = least waste seating the i smallest classes using only
-                          the j smallest rooms (infinity if impossible)
-    base        W[0][j] = 0          W[i][0] = infinity for i > 0
-    recurrence  W[i][j] = min( W[i][j-1],                         room j unused
-                               W[i-1][j-1] + c_j - s_i  if c_j >= s_i )  room j to class i
-    answer      W[n][m], and the choices are recovered by walking the table back
-
-Why the sorted order is safe to assume: if a smaller class sits in a bigger
-room than a larger class, swapping the two keeps both feasible (each room still
-holds its class) and leaves the waste unchanged (the same rooms are in use). So
-some optimal allocation never crosses, and the DP only has to consider those.
-That is n*m table cells instead of the m!/(m-n)! ways of handing out rooms -
-for 10 classes and 50 rooms, 500 cells instead of about 3.7 * 10^16 allocations.
-
-A sweep that is optimal slot by slot is not guaranteed optimal for the whole
-day, because a room chosen at 9:00 is still busy at 10:00. Each day is
-therefore checked against the rooms it came in with, and kept only if it wastes
-no more - so this stage never makes a schedule worse.
-"""
+"""Stage 3: dynamic-programming room allocation on fixed time slots."""
 
 import math
 from typing import Dict, List, Optional, Sequence, Tuple
@@ -50,10 +17,17 @@ from algorithms.solver import SolveResult
 def min_waste_allocation(
     classes: Sequence[ClassInformation], rooms: Sequence[Room]
 ) -> Optional[Tuple[int, Dict[str, Room]]]:
-    """Seat every class in its own room with the fewest empty seats in total.
+    """Give each class its own room so the total of empty seats is smallest.
 
-    Returns (waste, {class id: room}), or None when the rooms cannot hold every
-    class at once.
+    `waste[i][j]` is the least waste seating the i smallest classes in the j
+    smallest rooms.
+
+    Args:
+        classes: the classes that start in the same time slot.
+        rooms: the rooms free for that slot.
+
+    Returns:
+        (total waste, {class id: room}), or None if the rooms cannot hold every class.
     """
     classes = sorted(classes, key=lambda c: c.number_of_students)
     rooms = sorted(rooms, key=lambda r: (r.capacity, r.id))
@@ -89,6 +63,13 @@ def min_waste_allocation(
 
 
 class RoomAllocator:
+    """Keeps a schedule's time slots and reassigns rooms to minimise wasted seats.
+
+    Args:
+        instance: the problem being solved.
+        seed: the solver whose time slots are kept; defaults to Stage 2.
+    """
+
     name = "dp-rooms"
 
     def __init__(self, instance: Instance, seed=None):
@@ -96,10 +77,20 @@ class RoomAllocator:
         self.seed = seed if seed is not None else GraphColouringSolver(instance)
 
     def solve(self) -> SolveResult:
+        """Run the seed solver, then reallocate its rooms."""
         return self.allocate(self.seed.solve())
 
     def allocate(self, result: SolveResult) -> SolveResult:
-        """Reassign rooms in a finished schedule, keeping every time slot."""
+        """Reassign the rooms of a finished schedule, keeping every time slot.
+
+        A day's new rooms are kept only if they waste no more seats than before.
+
+        Args:
+            result: the schedule to improve.
+
+        Returns:
+            A new result with the same placements and conflicts, and new rooms.
+        """
         by_day: Dict[int, List[ClassAssignment]] = {}
         for assignment in result.assignments:
             by_day.setdefault(assignment.time_slot.day, []).append(assignment)
@@ -118,8 +109,7 @@ class RoomAllocator:
                 continue
             rooms.update(allocated)
 
-        # Rebuilding through Schedule re-checks every hard constraint, so a
-        # mistake here fails loudly instead of producing a double booking.
+        # Rebuild through Schedule so every hard constraint is re-checked.
         schedule = Schedule()
         for a in result.assignments:
             schedule.add_assignment(
@@ -149,7 +139,11 @@ class RoomAllocator:
     def _allocate_day(
         self, assignments: List[ClassAssignment]
     ) -> Tuple[Optional[Dict[str, Room]], int]:
-        """Sweep one day hour by hour; None if some hour cannot be seated."""
+        """Allocate one day's rooms hour by hour, solving each hour with the DP.
+
+        Returns:
+            ({class id: room} or None if some hour cannot be seated, hours solved).
+        """
         allocation: Dict[str, Room] = {}
         running: List[Tuple[int, Room]] = []  # (end hour, room) of classes already seated
         solved = 0
@@ -177,4 +171,5 @@ class RoomAllocator:
 
 
 def _waste(class_info: ClassInformation, room: Room) -> int:
+    """Empty seats when the class sits in the room."""
     return room.capacity - class_info.number_of_students

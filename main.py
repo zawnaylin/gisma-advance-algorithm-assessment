@@ -1,19 +1,10 @@
-"""Runs the four stages against every scenario and prints what each report needs.
-
-Stage 1  greedy baseline
-Stage 2  graph colouring (Welsh-Powell) and the safe/unsafe slot map
-Stage 3  dynamic-programming room allocation on the Stage 2 time slots
-Stage 4  backtracking, best effort, and the manual-intervention list
-
-Every final schedule is also audited against the four goals in domains/constraints.py.
-"""
+"""Runs Stages 1-4 on every scenario, prints the report figures and writes the conflict report."""
 
 import sys
 import time
 from pathlib import Path
 
-# The domain packages live under src/, which is a source root rather than an
-# installed package.
+# Make the packages under src/ importable.
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
 from algorithms.audit import audit
@@ -21,25 +12,32 @@ from algorithms.backtracker import BacktrackingSolver
 from algorithms.graph_engine import GraphColouringSolver
 from algorithms.greedy_solver import GreedySolver
 from algorithms.instance import Instance
-from algorithms.room_allocator import RoomAllocator
+from algorithms.optimizer import RoomAllocator
 from data.loader import available_scenarios, load_scenario
 
 COLUMNS = ("greedy", "graph-welsh-powell", "dp-rooms", "backtracking")
+REPORT_PATH = Path(__file__).parent / "reports" / "conflict_report.txt"
 
 
 def timed(run):
+    """Call `run()` and return (its result, seconds taken)."""
     started = time.perf_counter()
     result = run()
     return result, time.perf_counter() - started
 
 
 def run_scenario(instance):
+    """Run every stage on one instance.
+
+    Returns:
+        ({stage name: (result, seconds)}, the Stage 2 slot map).
+    """
     colouring = GraphColouringSolver(instance)
     coloured = timed(colouring.solve)
     runs = {
         "greedy": timed(GreedySolver(instance).solve),
         "graph-welsh-powell": coloured,
-        # Stage 3 fixes the Stage 2 time slots and only redoes the rooms.
+        # Stage 3 keeps the Stage 2 time slots.
         "dp-rooms": timed(lambda: RoomAllocator(instance).allocate(coloured[0])),
         "backtracking": timed(BacktrackingSolver(instance).solve),
     }
@@ -47,10 +45,12 @@ def run_scenario(instance):
 
 
 def heading(text):
+    """Print a section heading."""
     print(f"\n{'=' * 78}\n{text}\n{'=' * 78}")
 
 
 def main() -> None:
+    """Run all scenarios, print each report section and write the conflict report."""
     results = {}
     slot_maps = {}
     instances = {}
@@ -117,8 +117,38 @@ def main() -> None:
         print(result.report())
         print(result.manual_intervention_report())
 
+    write_conflict_report(results, instances, REPORT_PATH)
+    print(f"\nFull conflict report written to {REPORT_PATH.relative_to(Path(__file__).parent)}")
+
+
+def write_conflict_report(results, instances, path: Path) -> None:
+    """Write the Stage 4 result of every scenario, listing every unplaced class, to `path`."""
+    lines = [
+        "CONFLICT REPORT",
+        "Final schedule per scenario: Stage 4 (backtracking, best effort).",
+        "Every class that could not be placed is listed with its cause, and the",
+        "schedule is audited against goals 1-4 (see src/domains/constraints.py).",
+    ]
+    for name, runs in results.items():
+        result = runs["backtracking"][0]
+        lines += [
+            "",
+            "=" * 78,
+            f"{name}",
+            "=" * 78,
+            f"audit: {audit(result.assignments, instances[name]).summary()}",
+            "",
+            result.report(examples=len(result.conflicts)),
+            "",
+            result.manual_intervention_report(),
+        ]
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
 
 def _change(before: int, after: int) -> str:
+    """Relative change from `before` to `after`, as a signed percentage."""
     return f"{(after - before) / before:+.1%}" if before else "-"
 
 

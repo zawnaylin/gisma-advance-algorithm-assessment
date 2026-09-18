@@ -1,22 +1,4 @@
-"""Builds `university.json`: the instance described in the assessment brief.
-
-    5,000 students, 300 professors, 50 lecture halls.
-
-Structure:
-* 10 departments x 3 years = 30 year groups, 5,000 students between them.
-* Each year group is split into cohorts of at most 34 (a student belongs to
-  exactly one cohort), plus three small honours cohorts in Year 3.
-* A year group attends 3 lectures (2h) together; each cohort also has its own
-  seminar (1h) and lab or workshop (2h); each honours cohort has a small
-  seminar (2h) - the 10-person poetry seminar among them.
-* Two service lectures cross departments, which is exactly the brief's student
-  group example: Year 1 Computer Science takes "Intro to Math" (a Mathematics
-  professor) alongside "Intro to Programming" (a CS professor), so the two
-  cannot overlap even though nobody teaches both.
-* Every class's head count is the sum of the cohorts attending it, so the
-  student numbers are consistent end to end.
-* The estate holds one 500-seat auditorium, so goal 4 (no heating it for a
-  small seminar) can actually be tested.
+"""Builds university.json: 5,000 students, 300 professors, 50 lecture halls.
 
 Run from the repository root:  python scenarios/generate_university.py
 """
@@ -70,7 +52,7 @@ ESTATE = [("AUD", 500, 1), ("H200", 200, 6), ("H100", 100, 4), ("R40", 40, 20), 
 
 
 def year_group_sizes(rng):
-    """30 sizes summing to exactly TOTAL_STUDENTS, varied in +/- pairs."""
+    """Sizes of the 30 year groups, summing to exactly TOTAL_STUDENTS."""
     count = len(DEPARTMENTS) * 3
     base, extra = divmod(TOTAL_STUDENTS, count)
     sizes = [base + (1 if i < extra else 0) for i in range(count)]
@@ -83,15 +65,17 @@ def year_group_sizes(rng):
 
 
 def split(total, parts):
+    """Split `total` into `parts` near-equal whole numbers."""
     base, extra = divmod(total, parts)
     return [base + (1 if i < extra else 0) for i in range(parts)]
 
 
 def build():
+    """Build the scenario as a JSON-ready dict of rooms, classes and student groups."""
     rng = random.Random(SEED)
     sizes = iter(year_group_sizes(rng))
 
-    groups = []  # {"group_id", "size", "year_group", "classes": []}
+    groups = []  # {"group_id", "size", "classes": []}
     by_year_group = {}
     for dept, _ in DEPARTMENTS:
         for year in (1, 2, 3):
@@ -111,6 +95,7 @@ def build():
     classes = []  # {"class_id", "name", "department", "duration_hours", "groups": [...]}
 
     def add_class(name, department, duration, attending):
+        """Add a class and record it on each attending group."""
         class_id = f"C{len(classes) + 1:04d}"
         classes.append({"class_id": class_id, "name": name, "department": department,
                          "duration_hours": duration, "groups": attending})
@@ -139,7 +124,7 @@ def build():
         audience = " + ".join(f"{d} Y{y}" for d, y in year_groups)
         add_class(f"{title} ({audience})", dept, 2, attending)
 
-    # Professors: 30 per department, classes dealt round-robin so all 300 teach.
+    # 30 professors per department; classes dealt round-robin so all 300 teach.
     next_professor = {}
     for index, (dept, _) in enumerate(DEPARTMENTS):
         next_professor[dept] = [f"P{index * PROFESSORS_PER_DEPARTMENT + i + 1:03d}"
@@ -173,6 +158,7 @@ def build():
 
 
 def main():
+    """Write university.json next to this script and print a summary."""
     scenario = build()
     path = Path(__file__).with_name("university.json")
     path.write_text(json.dumps(scenario, indent=2) + "\n")
